@@ -1,19 +1,30 @@
 import os
-from pydantic_settings import BaseSettings
+from functools import lru_cache
+from dotenv import load_dotenv
+from pydantic_settings import BaseSettings, SettingsConfigDict
+from app.core.mongo_settings import MongoSettings
+from app.core.openai_settings import OpenAISettings
+from app.core.qdrant_settings import QdrantSettings
+from app.core.redis_settings import RedisSettings
+
+load_dotenv()
 
 class Settings(BaseSettings):
     """Application settings using pydantic-settings."""
     PROJECT_NAME: str = "AI Commerce Platform"
-    
-    MONGO_URI: str = os.getenv("MONGO_URI", "mongodb://localhost:27017")
-    MONGO_DB: str = os.getenv("MONGO_DB", "ai_commerce")
-    
-    QDRANT_URL: str = os.getenv("QDRANT_URL", "http://localhost:6333")
-    
-    REDIS_URL: str = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+    MONGO_SETTINGS: MongoSettings = MongoSettings()
+    OPEN_AI_SETTINGS: OpenAISettings = OpenAISettings()
+    QDRANT_SETTINGS: QdrantSettings = QdrantSettings()
+    REDIS_SETTINGS: RedisSettings = RedisSettings()
 
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        extra="ignore",
+        case_sensitive=True
+    )
 
-settings = Settings()
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()
+
+settings = get_settings()
