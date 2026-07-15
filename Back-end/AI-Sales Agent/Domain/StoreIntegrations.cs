@@ -1,8 +1,8 @@
 ﻿namespace AI_Sales_Agent.Domain
 {
-    public class StoreIntegrations:BaseEntity
+    public class StoreIntegrations : BaseEntity
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string Provider { get; set; } = string.Empty;
         public string AccessToken { get; set; } = string.Empty;
         public string? RefreshToken { get; set; } 

@@ -1,36 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "C:\\D\\ITI\\AI-Sales Agent\\AI-Sales Agent\\AI-Sales Agent.csproj": {}
+    "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj": {}
   },
   "projects": {
-    "C:\\D\\ITI\\AI-Sales Agent\\AI-Sales Agent\\AI-Sales Agent.csproj": {
+    "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\D\\ITI\\AI-Sales Agent\\AI-Sales Agent\\AI-Sales Agent.csproj",
+        "projectUniqueName": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
         "projectName": "AI-Sales Agent",
-        "projectPath": "C:\\D\\ITI\\AI-Sales Agent\\AI-Sales Agent\\AI-Sales Agent.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\D\\ITI\\AI-Sales Agent\\AI-Sales Agent\\obj\\",
+        "projectPath": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -44,11 +45,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "Carter": {
               "target": "Package",
@@ -61,6 +62,10 @@
             "MediatR": {
               "target": "Package",
               "version": "[14.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.28, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -110,7 +115,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.315/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

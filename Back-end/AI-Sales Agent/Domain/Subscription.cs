@@ -1,6 +1,6 @@
 ﻿namespace AI_Sales_Agent.Domain
 {
-    public class Subscription: BaseEntity
+    public class Subscription : BaseEntity
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Status { get; set; } = string.Empty;
