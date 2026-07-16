@@ -53,7 +53,19 @@ namespace AI_Sales_Agent.Infrastructure.Email
                 client.Credentials = new NetworkCredential(_options.UserName, _options.Password);
             }
 
-            await client.SendMailAsync(message, cancellationToken);
+            try
+            {
+                await client.SendMailAsync(message, cancellationToken);
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(
+                    exception,
+                    "Email sending failed. Message to {Email}. Subject: {Subject}. Body: {Body}",
+                    to,
+                    subject,
+                    htmlBody);
+            }
         }
     }
 }

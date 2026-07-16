@@ -21,17 +21,24 @@ namespace AI_Sales_Agent.Infrastructure.Audit
 
         public async Task LogAsync(string action, Guid? userId = null, string? metadata = null, CancellationToken cancellationToken = default)
         {
-            var httpContext = _httpContextAccessor.HttpContext;
-            _dbContext.AuditLogs.Add(new AuditLog
+            try
             {
-                UserId = userId,
-                Action = action,
-                IpAddress = httpContext?.Connection.RemoteIpAddress?.ToString(),
-                UserAgent = httpContext?.Request.Headers.UserAgent.ToString(),
-                Metadata = metadata
-            });
+                var httpContext = _httpContextAccessor.HttpContext;
+                _dbContext.AuditLogs.Add(new AuditLog
+                {
+                    UserId = userId,
+                    Action = action,
+                    IpAddress = httpContext?.Connection.RemoteIpAddress?.ToString(),
+                    UserAgent = httpContext?.Request.Headers.UserAgent.ToString(),
+                    Metadata = metadata
+                });
 
-            await _dbContext.SaveChangesAsync(cancellationToken);
+                await _dbContext.SaveChangesAsync(cancellationToken);
+            }
+            catch
+            {
+                // Audit failure should not fail the main request.
+            }
         }
     }
 }

@@ -34,7 +34,9 @@ namespace AI_Sales_Agent
                 builder.Configuration.GetSection(EmailOptions.SectionName));
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("DefaultConnection"),
+                    sqlOptions => sqlOptions.EnableRetryOnFailure()));
 
             builder.Services
                 .AddIdentity<User, IdentityRole<Guid>>(options =>
