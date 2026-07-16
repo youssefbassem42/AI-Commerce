@@ -133,6 +133,36 @@ KNOWLEDGE_CHUNK_SCHEMA: Dict[str, Any] = {
     }
 }
 
+KNOWLEDGE_BUSINESS_SUMMARY_SCHEMA: Dict[str, Any] = {
+    "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["document_id", "title", "summary"],
+        "properties": {
+            "document_id": {
+                "bsonType": "string"
+            },
+            "version_number": {
+                "bsonType": "int"
+            },
+            "title": {
+                "bsonType": "string"
+            },
+            "summary": {
+                "bsonType": "string"
+            },
+            "metadata": {
+                "bsonType": "object"
+            },
+            "created_at": {
+                "bsonType": "date"
+            },
+            "updated_at": {
+                "bsonType": "date"
+            }
+        }
+    }
+}
+
 RUNTIME_LOG_SCHEMA: Dict[str, Any] = {
     "$jsonSchema": {
         "bsonType": "object",
@@ -351,6 +381,7 @@ VALIDATORS_MAP: Dict[str, Dict[str, Any]] = {
     "messages": MESSAGE_SCHEMA,
     "knowledge_documents": KNOWLEDGE_DOCUMENT_SCHEMA,
     "knowledge_chunks": KNOWLEDGE_CHUNK_SCHEMA,
+    "knowledge_business_summaries": KNOWLEDGE_BUSINESS_SUMMARY_SCHEMA,
     "runtime_logs": RUNTIME_LOG_SCHEMA,
     "prompt_history": PROMPT_HISTORY_SCHEMA,
     "recommendations": RECOMMENDATION_SCHEMA,
