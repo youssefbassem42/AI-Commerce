@@ -94,6 +94,11 @@ class KnowledgeDocumentResponseSchema(BaseModel):
     current_version: int
     chunks: list[KnowledgeChunkResponseSchema] = Field(default_factory=list)
     chunking_strategy: str
+    processed_text: Optional[str] = None
+    page_count: Optional[int] = None
+    word_count: Optional[int] = None
+    char_count: Optional[int] = None
+    estimated_tokens: Optional[int] = None
     created_at: datetime
     updated_at: datetime
     deleted_at: Optional[datetime] = None

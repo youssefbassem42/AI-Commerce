@@ -35,6 +35,26 @@ class KnowledgeDocument(AggregateRoot[str]):
         default="manual",
         description="Chunking strategy label",
     )
+    processed_text: Optional[str] = Field(
+        default=None,
+        description="Extracted and normalized text content after processing",
+    )
+    page_count: Optional[int] = Field(
+        default=None,
+        description="Number of pages in the source document",
+    )
+    word_count: Optional[int] = Field(
+        default=None,
+        description="Total word count of processed text",
+    )
+    char_count: Optional[int] = Field(
+        default=None,
+        description="Total character count of processed text",
+    )
+    estimated_tokens: Optional[int] = Field(
+        default=None,
+        description="Estimated token count using tiktoken",
+    )
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     deleted_at: Optional[datetime] = Field(default=None)

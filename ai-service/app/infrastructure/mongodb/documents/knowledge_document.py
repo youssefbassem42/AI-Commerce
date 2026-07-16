@@ -53,6 +53,11 @@ class KnowledgeDocumentModel(BaseMongoDocument):
     versions: list[DocumentVersionModel] = Field(default_factory=list)
     current_version: int = Field(default=1, ge=1)
     chunking_strategy: str = Field(default="manual")
+    processed_text: Optional[str] = None
+    page_count: Optional[int] = None
+    word_count: Optional[int] = None
+    char_count: Optional[int] = None
+    estimated_tokens: Optional[int] = None
 
     def to_entity(self) -> KnowledgeDocument:
         return KnowledgeDocument(
@@ -67,6 +72,11 @@ class KnowledgeDocumentModel(BaseMongoDocument):
             versions=[version.to_value_object() for version in self.versions],
             current_version=self.current_version,
             chunking_strategy=self.chunking_strategy,
+            processed_text=self.processed_text,
+            page_count=self.page_count,
+            word_count=self.word_count,
+            char_count=self.char_count,
+            estimated_tokens=self.estimated_tokens,
             created_at=self.created_at,
             updated_at=self.updated_at,
             deleted_at=self.deleted_at,
@@ -86,6 +96,11 @@ class KnowledgeDocumentModel(BaseMongoDocument):
             versions=[DocumentVersionModel.from_value_object(v) for v in entity.versions],
             current_version=entity.current_version,
             chunking_strategy=entity.chunking_strategy,
+            processed_text=entity.processed_text,
+            page_count=entity.page_count,
+            word_count=entity.word_count,
+            char_count=entity.char_count,
+            estimated_tokens=entity.estimated_tokens,
             created_at=entity.created_at,
             updated_at=entity.updated_at,
             deleted_at=entity.deleted_at,
