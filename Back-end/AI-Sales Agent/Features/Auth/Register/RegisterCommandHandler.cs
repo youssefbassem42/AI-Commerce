@@ -1,6 +1,7 @@
 using System.Net;
 using AI_Sales_Agent.Abstractions;
 using AI_Sales_Agent.Domain;
+using AI_Sales_Agent.Infrastructure.Audit;
 using AI_Sales_Agent.Infrastructure.Email;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -12,15 +13,18 @@ namespace AI_Sales_Agent.Features.Auth.Register
         private readonly UserManager<User> _userManager;
         private readonly IEmailSender _emailSender;
         private readonly IConfiguration _configuration;
+        private readonly IAuditLogger _auditLogger;
 
         public RegisterCommandHandler(
             UserManager<User> userManager,
             IEmailSender emailSender,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            IAuditLogger auditLogger)
         {
             _userManager = userManager;
             _emailSender = emailSender;
             _configuration = configuration;
+            _auditLogger = auditLogger;
         }
 
         public async Task<ApiResult> Handle(RegisterCommand request, CancellationToken cancellationToken)
@@ -55,6 +59,8 @@ namespace AI_Sales_Agent.Features.Auth.Register
                 "Verify your email",
                 $"<p>Welcome {WebUtility.HtmlEncode(user.FirstName)}.</p><p>Verify your email here: <a href=\"{verifyUrl}\">Verify email</a></p>",
                 cancellationToken);
+
+            await _auditLogger.LogAsync("Auth.Register", user.Id, cancellationToken: cancellationToken);
 
             return ApiResult.Success("Account registered. Please verify your email.");
         }

@@ -19,6 +19,8 @@ namespace AI_Sales_Agent.Data
         public DbSet<Feature> Features => Set<Feature>();
         public DbSet<PlanFeature> PlanFeatures => Set<PlanFeature>();
         public DbSet<UserStorePermission> UserStorePermissions => Set<UserStorePermission>();
+        public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
+        public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -51,6 +53,23 @@ namespace AI_Sales_Agent.Data
                 .WithMany(store => store.UserPermissions)
                 .HasForeignKey(permission => permission.StoreId)
                 .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<RefreshToken>()
+                .HasIndex(refreshToken => refreshToken.TokenHash)
+                .IsUnique();
+
+            modelBuilder.Entity<RefreshToken>()
+                .Property(refreshToken => refreshToken.TokenHash)
+                .HasMaxLength(256);
+
+            modelBuilder.Entity<RefreshToken>()
+                .HasOne(refreshToken => refreshToken.User)
+                .WithMany(user => user.RefreshTokens)
+                .HasForeignKey(refreshToken => refreshToken.UserId);
+
+            modelBuilder.Entity<AuditLog>()
+                .Property(auditLog => auditLog.Action)
+                .HasMaxLength(150);
 
             modelBuilder.Entity<Store>()
                 .HasOne(store => store.User)

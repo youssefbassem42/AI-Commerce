@@ -4,11 +4,13 @@ using System.Text;
 using AI_Sales_Agent.Abstractions;
 using AI_Sales_Agent.Data;
 using AI_Sales_Agent.Domain;
+using AI_Sales_Agent.Infrastructure.Audit;
 using AI_Sales_Agent.Infrastructure.Auth;
 using AI_Sales_Agent.Infrastructure.Email;
 using AI_Sales_Agent.Infrastructure.Errors;
 using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -98,6 +100,15 @@ namespace AI_Sales_Agent
                     };
                 });
 
+            builder.Services.AddAuthorization(options =>
+            {
+                foreach (var permission in Permissions.All)
+                {
+                    options.AddPolicy(permission, policy =>
+                        policy.Requirements.Add(new PermissionRequirement(permission)));
+                }
+            });
+
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
@@ -131,6 +142,9 @@ namespace AI_Sales_Agent
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
             builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
+            builder.Services.AddScoped<IRefreshTokenService, RefreshTokenService>();
+            builder.Services.AddScoped<IAuditLogger, AuditLogger>();
+            builder.Services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
             builder.Services.AddScoped<IEmailSender, SmtpEmailSender>();
             builder.Services.AddMediatR(configuration =>
                 configuration.RegisterServicesFromAssembly(typeof(Program).Assembly));

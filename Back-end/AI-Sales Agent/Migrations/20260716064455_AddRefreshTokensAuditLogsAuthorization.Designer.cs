@@ -4,6 +4,7 @@ using AI_Sales_Agent.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AI_Sales_Agent.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260716064455_AddRefreshTokensAuditLogsAuthorization")]
+    partial class AddRefreshTokensAuditLogsAuthorization
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +53,7 @@ namespace AI_Sales_Agent.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AuditLogs", (string)null);
+                    b.ToTable("AuditLogs");
                 });
 
             modelBuilder.Entity("AI_Sales_Agent.Domain.Feature", b =>
@@ -81,7 +84,7 @@ namespace AI_Sales_Agent.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Features", (string)null);
+                    b.ToTable("Features");
                 });
 
             modelBuilder.Entity("AI_Sales_Agent.Domain.Plan", b =>
@@ -113,7 +116,7 @@ namespace AI_Sales_Agent.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Plans", (string)null);
+                    b.ToTable("Plans");
                 });
 
             modelBuilder.Entity("AI_Sales_Agent.Domain.PlanFeature", b =>
@@ -137,7 +140,7 @@ namespace AI_Sales_Agent.Migrations
 
                     b.HasIndex("FeatureId");
 
-                    b.ToTable("PlanFeatures", (string)null);
+                    b.ToTable("PlanFeatures");
                 });
 
             modelBuilder.Entity("AI_Sales_Agent.Domain.RefreshToken", b =>
@@ -179,7 +182,7 @@ namespace AI_Sales_Agent.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RefreshTokens", (string)null);
+                    b.ToTable("RefreshTokens");
                 });
 
             modelBuilder.Entity("AI_Sales_Agent.Domain.Store", b =>
@@ -236,7 +239,7 @@ namespace AI_Sales_Agent.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Stores", (string)null);
+                    b.ToTable("Stores");
                 });
 
             modelBuilder.Entity("AI_Sales_Agent.Domain.StoreIntegrations", b =>
@@ -281,7 +284,7 @@ namespace AI_Sales_Agent.Migrations
 
                     b.HasIndex("StoreId");
 
-                    b.ToTable("StoreIntegrations", (string)null);
+                    b.ToTable("StoreIntegrations");
                 });
 
             modelBuilder.Entity("AI_Sales_Agent.Domain.Subscription", b =>
@@ -319,7 +322,7 @@ namespace AI_Sales_Agent.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Subscriptions", (string)null);
+                    b.ToTable("Subscriptions");
                 });
 
             modelBuilder.Entity("AI_Sales_Agent.Domain.User", b =>
@@ -415,7 +418,7 @@ namespace AI_Sales_Agent.Migrations
 
                     b.HasIndex("StoreId");
 
-                    b.ToTable("UserStorePermissions", (string)null);
+                    b.ToTable("UserStorePermissions");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>

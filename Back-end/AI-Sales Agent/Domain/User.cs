@@ -18,5 +18,7 @@ namespace AI_Sales_Agent.Domain
 
         //store permissions
         public ICollection<UserStorePermission> StorePermissions { get; set; } = new List<UserStorePermission>();
+
+        public ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
     }
 }

@@ -1,5 +1,6 @@
 using AI_Sales_Agent.Abstractions;
 using AI_Sales_Agent.Domain;
+using AI_Sales_Agent.Infrastructure.Audit;
 using AI_Sales_Agent.Infrastructure.Auth;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -11,15 +12,21 @@ namespace AI_Sales_Agent.Features.Auth.Login
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IJwtTokenService _jwtTokenService;
+        private readonly IRefreshTokenService _refreshTokenService;
+        private readonly IAuditLogger _auditLogger;
 
         public LoginCommandHandler(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
-            IJwtTokenService jwtTokenService)
+            IJwtTokenService jwtTokenService,
+            IRefreshTokenService refreshTokenService,
+            IAuditLogger auditLogger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _jwtTokenService = jwtTokenService;
+            _refreshTokenService = refreshTokenService;
+            _auditLogger = auditLogger;
         }
 
         public async Task<AuthResult> Handle(LoginCommand request, CancellationToken cancellationToken)
@@ -44,7 +51,11 @@ namespace AI_Sales_Agent.Features.Auth.Login
             user.LastLogin = DateTime.UtcNow;
             await _userManager.UpdateAsync(user);
 
-            return await _jwtTokenService.CreateTokenAsync(user, cancellationToken);
+            var refreshToken = await _refreshTokenService.CreateAsync(user, cancellationToken);
+            await _auditLogger.LogAsync("Auth.Login", user.Id, cancellationToken: cancellationToken);
+
+            var authResult = await _jwtTokenService.CreateTokenAsync(user, cancellationToken);
+            return authResult with { RefreshToken = refreshToken };
         }
     }
 }

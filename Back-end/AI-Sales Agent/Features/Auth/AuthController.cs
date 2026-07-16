@@ -4,6 +4,7 @@ using AI_Sales_Agent.Features.Auth.ForgotPassword;
 using AI_Sales_Agent.Features.Auth.Login;
 using AI_Sales_Agent.Features.Auth.Logout;
 using AI_Sales_Agent.Features.Auth.Register;
+using AI_Sales_Agent.Features.Auth.RefreshToken;
 using AI_Sales_Agent.Features.Auth.ResetPassword;
 using AI_Sales_Agent.Features.Auth.VerifyEmail;
 using MediatR;
@@ -32,6 +33,12 @@ namespace AI_Sales_Agent.Features.Auth
 
         [HttpPost("login")]
         public async Task<ActionResult<AuthResult>> Login(LoginCommand command, CancellationToken cancellationToken)
+        {
+            return Ok(await _sender.Send(command, cancellationToken));
+        }
+
+        [HttpPost("refresh-token")]
+        public async Task<ActionResult<AuthResult>> RefreshToken(RefreshTokenCommand command, CancellationToken cancellationToken)
         {
             return Ok(await _sender.Send(command, cancellationToken));
         }

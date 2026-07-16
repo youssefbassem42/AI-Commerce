@@ -30,6 +30,7 @@ namespace AI_Sales_Agent.Infrastructure.Auth
             var expiresAt = DateTime.UtcNow.AddMinutes(_options.ExpirationMinutes);
             var securityStamp = await _userManager.GetSecurityStampAsync(user);
             var roles = await _userManager.GetRolesAsync(user);
+            var userClaims = await _userManager.GetClaimsAsync(user);
 
             var claims = new List<Claim>
             {
@@ -42,6 +43,7 @@ namespace AI_Sales_Agent.Infrastructure.Auth
             };
 
             claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
+            claims.AddRange(userClaims);
 
             var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey));
             var credentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
@@ -55,6 +57,7 @@ namespace AI_Sales_Agent.Infrastructure.Auth
 
             return new AuthResult(
                 new JwtSecurityTokenHandler().WriteToken(token),
+                string.Empty,
                 expiresAt,
                 user.Id,
                 user.Email ?? string.Empty,

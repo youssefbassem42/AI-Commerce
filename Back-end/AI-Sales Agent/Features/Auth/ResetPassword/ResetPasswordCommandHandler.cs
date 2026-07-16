@@ -2,6 +2,8 @@ using System.Net;
 using System.Text;
 using AI_Sales_Agent.Abstractions;
 using AI_Sales_Agent.Domain;
+using AI_Sales_Agent.Infrastructure.Audit;
+using AI_Sales_Agent.Infrastructure.Auth;
 using MediatR;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.AspNetCore.Identity;
@@ -11,10 +13,17 @@ namespace AI_Sales_Agent.Features.Auth.ResetPassword
     public class ResetPasswordCommandHandler : IRequestHandler<ResetPasswordCommand, ApiResult>
     {
         private readonly UserManager<User> _userManager;
+        private readonly IAuditLogger _auditLogger;
+        private readonly IRefreshTokenService _refreshTokenService;
 
-        public ResetPasswordCommandHandler(UserManager<User> userManager)
+        public ResetPasswordCommandHandler(
+            UserManager<User> userManager,
+            IAuditLogger auditLogger,
+            IRefreshTokenService refreshTokenService)
         {
             _userManager = userManager;
+            _auditLogger = auditLogger;
+            _refreshTokenService = refreshTokenService;
         }
 
         public async Task<ApiResult> Handle(ResetPasswordCommand request, CancellationToken cancellationToken)
@@ -33,6 +42,8 @@ namespace AI_Sales_Agent.Features.Auth.ResetPassword
             }
 
             await _userManager.UpdateSecurityStampAsync(user);
+            await _refreshTokenService.RevokeAllAsync(user.Id, cancellationToken);
+            await _auditLogger.LogAsync("Auth.ResetPassword", user.Id, cancellationToken: cancellationToken);
             return ApiResult.Success("Password reset successfully.");
         }
 
