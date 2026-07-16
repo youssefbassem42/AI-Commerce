@@ -1,5 +1,5 @@
 from typing import Generic, List, TypeVar
-from pydantic import Field
+from pydantic import PrivateAttr
 from app.shared.kernel.entity import Entity
 from app.shared.kernel.domain_event import DomainEvent
 
@@ -7,7 +7,7 @@ ID = TypeVar("ID")
 
 class AggregateRoot(Entity[ID], Generic[ID]):
     """Base class for Aggregate Roots that manage domain events."""
-    _domain_events: List[DomainEvent] = Field(default_factory=list, exclude=True)
+    _domain_events: List[DomainEvent] = PrivateAttr(default_factory=list)
 
     def add_domain_event(self, event: DomainEvent) -> None:
         """Record a domain event."""
