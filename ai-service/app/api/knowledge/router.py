@@ -1,5 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, status
 
+from app.application.knowledge.commands.upload_command import UploadDocumentCommand
 from app.application.knowledge.dto import (
     BusinessSummaryCreateDTO,
     BusinessSummaryUpdateDTO,
@@ -10,20 +11,26 @@ from app.application.knowledge.dto import (
 )
 from app.application.knowledge.services import (
     BusinessSummaryService,
+    DocumentUploadService,
     KnowledgeChunkService,
     KnowledgeDocumentService,
 )
 from app.core.knowledge_settings import knowledge_settings
 from app.domain.knowledge.exceptions import (
     BusinessSummaryNotFoundException,
+    DuplicateUploadException,
+    FileValidationException,
     KnowledgeChunkNotFoundException,
     KnowledgeDocumentNotFoundException,
     KnowledgeDomainException,
+    UploadNotFoundException,
 )
 from app.api.knowledge.dependencies import (
     get_business_summary_service,
+    get_document_upload_service,
     get_knowledge_chunk_service,
     get_knowledge_document_service,
+    write_upload_temp,
 )
 from app.api.knowledge.schemas import (
     BusinessSummaryCreateSchema,
@@ -39,6 +46,8 @@ from app.api.knowledge.schemas import (
     PaginatedBusinessSummaryResponseSchema,
     PaginatedKnowledgeChunkResponseSchema,
     PaginatedKnowledgeDocumentResponseSchema,
+    PaginatedUploadResponseSchema,
+    UploadResponseSchema,
 )
 
 router = APIRouter(prefix=knowledge_settings.route_prefix, tags=["Knowledge Base"])
@@ -51,9 +60,12 @@ def _handle_exception(exc: Exception) -> None:
             KnowledgeDocumentNotFoundException,
             KnowledgeChunkNotFoundException,
             BusinessSummaryNotFoundException,
+            UploadNotFoundException,
         ),
     ):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(exc))
+    if isinstance(exc, (FileValidationException, DuplicateUploadException)):
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=str(exc))
     if isinstance(exc, KnowledgeDomainException):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
     raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(exc))
@@ -244,5 +256,77 @@ async def delete_summary(
 ) -> DeleteResponseSchema:
     try:
         return DeleteResponseSchema(success=await service.delete(summary_id))
+    except Exception as exc:
+        _handle_exception(exc)
+
+
+@router.post("/uploads", response_model=UploadResponseSchema, status_code=status.HTTP_201_CREATED)
+async def upload_document(
+    file: UploadFile,
+    uploaded_by: str = Query(...),
+    organization_id: str = Query(...),
+    store_id: str = Query(...),
+    knowledge_scope: str = Query(default="general"),
+    service: DocumentUploadService = Depends(get_document_upload_service),
+) -> UploadResponseSchema:
+    try:
+        temp_path = await write_upload_temp(file)
+        mime_type = file.content_type or "application/octet-stream"
+        file_size = 0
+        import os as _os
+        try:
+            file_size = _os.path.getsize(temp_path)
+        except OSError:
+            file_size = 0
+
+        command = UploadDocumentCommand(
+            file_path=temp_path,
+            original_filename=file.filename or "upload",
+            mime_type=mime_type,
+            file_size=file_size,
+            uploaded_by=uploaded_by,
+            organization_id=organization_id,
+            store_id=store_id,
+            knowledge_scope=knowledge_scope,
+        )
+        result = await service.upload(command)
+        return UploadResponseSchema(**result.model_dump())
+    except Exception as exc:
+        _handle_exception(exc)
+
+
+@router.get("/uploads/{upload_id}", response_model=UploadResponseSchema)
+async def get_upload(
+    upload_id: str,
+    service: DocumentUploadService = Depends(get_document_upload_service),
+) -> UploadResponseSchema:
+    try:
+        result = await service.get_by_id(upload_id)
+        return UploadResponseSchema(**result.model_dump())
+    except Exception as exc:
+        _handle_exception(exc)
+
+
+@router.get("/uploads", response_model=PaginatedUploadResponseSchema)
+async def list_uploads(
+    page: int = Query(default=1, ge=1),
+    page_size: int = Query(default=knowledge_settings.default_page_size, ge=1, le=knowledge_settings.max_page_size),
+    store_id: str | None = Query(default=None),
+    service: DocumentUploadService = Depends(get_document_upload_service),
+) -> PaginatedUploadResponseSchema:
+    try:
+        result = await service.list(page=page, page_size=page_size, store_id=store_id)
+        return PaginatedUploadResponseSchema(**result.model_dump())
+    except Exception as exc:
+        _handle_exception(exc)
+
+
+@router.delete("/uploads/{upload_id}", response_model=DeleteResponseSchema)
+async def delete_upload(
+    upload_id: str,
+    service: DocumentUploadService = Depends(get_document_upload_service),
+) -> DeleteResponseSchema:
+    try:
+        return DeleteResponseSchema(success=await service.delete(upload_id))
     except Exception as exc:
         _handle_exception(exc)

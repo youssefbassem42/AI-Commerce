@@ -16,3 +16,15 @@ class KnowledgeChunkNotFoundException(KnowledgeDomainException):
 
 class BusinessSummaryNotFoundException(KnowledgeDomainException):
     """Raised when a business summary cannot be found."""
+
+
+class UploadNotFoundException(KnowledgeDomainException):
+    """Raised when a document upload record cannot be found."""
+
+
+class DuplicateUploadException(KnowledgeDomainException):
+    """Raised when a duplicate file upload is detected."""
+
+
+class FileValidationException(KnowledgeDomainException):
+    """Raised when a file fails validation checks."""

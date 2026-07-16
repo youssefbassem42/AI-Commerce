@@ -38,6 +38,15 @@ async def setup_database_indexes(db) -> None:
         IndexModel([("document_id", ASCENDING), ("version_number", ASCENDING)]),
         IndexModel([("created_at", DESCENDING)])
     ])
+
+    await db["knowledge_uploads"].create_indexes([
+        IndexModel([("store_id", ASCENDING)]),
+        IndexModel([("checksum", ASCENDING)], unique=True),
+        IndexModel([("status", ASCENDING)]),
+        IndexModel([("uploaded_by", ASCENDING)]),
+        IndexModel([("created_at", DESCENDING)]),
+        IndexModel([("store_id", ASCENDING), ("status", ASCENDING)]),
+    ])
     
     await db["runtime_logs"].create_indexes([
         IndexModel([("conversation_id", ASCENDING)]),

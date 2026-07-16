@@ -321,3 +321,60 @@ class BusinessSummaryService:
                 f"Business summary '{summary_id}' was not found."
             )
         return deleted
+
+
+class DocumentUploadService:
+    """Application service for uploading documents to the knowledge base."""
+
+    def __init__(
+        self,
+        repository: "UploadRepository",
+        storage: "StorageProvider",
+    ):
+        self.repository = repository
+        self.storage = storage
+
+    async def upload(self, command: "UploadDocumentCommand") -> "UploadDTO":
+        from app.application.knowledge.commands.upload_handler import UploadDocumentHandler
+
+        handler = UploadDocumentHandler(repository=self.repository, storage=self.storage)
+        return await handler.handle(command)
+
+    async def get_by_id(self, upload_id: str) -> "UploadDTO":
+        from app.application.knowledge.dto.upload_dto import UploadDTO
+        from app.domain.knowledge.exceptions import UploadNotFoundException
+
+        entity = await self.repository.find_by_id(upload_id)
+        if entity is None:
+            raise UploadNotFoundException(f"Upload '{upload_id}' was not found.")
+        return UploadDTO(**entity.model_dump())
+
+    async def list(
+        self,
+        page: int = 1,
+        page_size: int = 20,
+        store_id: str | None = None,
+    ) -> "PaginatedResultDTO[UploadDTO]":
+        from app.application.knowledge.dto.knowledge_dto import PaginatedResultDTO
+        from app.application.knowledge.dto.upload_dto import UploadDTO
+
+        filters: dict = {}
+        if store_id:
+            filters["store_id"] = store_id
+
+        items, total = await self.repository.paginate(filters, page=page, page_size=page_size)
+        return PaginatedResultDTO[UploadDTO](
+            items=[UploadDTO(**entity.model_dump()) for entity in items],
+            total=total,
+            page=page,
+            page_size=page_size,
+        )
+
+    async def delete(self, upload_id: str) -> bool:
+        from app.domain.knowledge.exceptions import UploadNotFoundException
+
+        entity = await self.repository.find_by_id(upload_id)
+        if entity is None:
+            raise UploadNotFoundException(f"Upload '{upload_id}' was not found.")
+        self.storage.delete(entity.file_path)
+        return await self.repository.delete(upload_id)

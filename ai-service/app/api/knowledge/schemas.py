@@ -148,3 +148,32 @@ class PaginatedBusinessSummaryResponseSchema(BaseModel):
 
 class DeleteResponseSchema(BaseModel):
     success: bool
+
+
+class UploadResponseSchema(BaseModel):
+    id: str
+    original_filename: str
+    stored_filename: str
+    file_path: str
+    file_size: int
+    mime_type: str
+    extension: str
+    checksum: str
+    content_type: str
+    uploaded_by: str
+    organization_id: str
+    store_id: str
+    knowledge_scope: str
+    status: str
+    document_metadata: DocumentMetadataSchema
+    virus_scan_status: str
+    created_at: datetime
+    updated_at: datetime
+    deleted_at: Optional[datetime] = None
+
+
+class PaginatedUploadResponseSchema(BaseModel):
+    items: list[UploadResponseSchema]
+    total: int
+    page: int
+    page_size: int

@@ -12,6 +12,7 @@ from app.application.knowledge.dto.knowledge_dto import (
     KnowledgeDocumentUpdateDTO,
     PaginatedResultDTO,
 )
+from app.application.knowledge.dto.upload_dto import UploadCreateDTO, UploadDTO
 
 __all__ = [
     "BusinessSummaryCreateDTO",
@@ -26,4 +27,6 @@ __all__ = [
     "KnowledgeDocumentDTO",
     "KnowledgeDocumentUpdateDTO",
     "PaginatedResultDTO",
+    "UploadCreateDTO",
+    "UploadDTO",
 ]

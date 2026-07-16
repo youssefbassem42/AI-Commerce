@@ -27,6 +27,10 @@ def get_knowledge_business_summaries_collection():
     return get_collection(knowledge_settings.summaries_collection)
 
 
+def get_knowledge_uploads_collection():
+    return get_collection(knowledge_settings.uploads_collection)
+
+
 def get_runtime_logs_collection():
     return get_collection("runtime_logs")
 
