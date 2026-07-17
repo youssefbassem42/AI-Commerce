@@ -92,4 +92,12 @@ async def setup_database_indexes(db) -> None:
         IndexModel([("sentiment", ASCENDING)])
     ])
     
+    await db["knowledge_jobs"].create_indexes([
+        IndexModel([("status", ASCENDING), ("job_type", ASCENDING)]),
+        IndexModel([("status", ASCENDING), ("created_at", ASCENDING)]),
+        IndexModel([("celery_task_id", ASCENDING)], sparse=True),
+        IndexModel([("store_id", ASCENDING)]),
+        IndexModel([("created_at", DESCENDING)]),
+    ])
+
     logger.info("Database indexes successfully created.")

@@ -57,3 +57,7 @@ def get_dashboard_insights_collection():
 
 def get_ticket_analysis_collection():
     return get_collection("ticket_analysis")
+
+
+def get_knowledge_jobs_collection():
+    return get_collection("knowledge_jobs")

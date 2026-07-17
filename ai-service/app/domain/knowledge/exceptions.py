@@ -28,3 +28,7 @@ class DuplicateUploadException(KnowledgeDomainException):
 
 class FileValidationException(KnowledgeDomainException):
     """Raised when a file fails validation checks."""
+
+
+class ChunkingException(KnowledgeDomainException):
+    """Raised when document chunking fails."""

@@ -413,6 +413,39 @@ TICKET_ANALYSIS_SCHEMA: Dict[str, Any] = {
     }
 }
 
+KNOWLEDGE_JOB_SCHEMA: Dict[str, Any] = {
+    "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["job_type", "status", "payload", "retry_count", "max_retries"],
+        "properties": {
+            "job_type": {
+                "enum": ["document_processing", "chunk_generation", "summary_generation", "embedding_generation", "vector_sync"],
+            },
+            "status": {
+                "enum": ["pending", "running", "completed", "failed", "retrying", "dead_letter"],
+            },
+            "progress": {
+                "bsonType": "double",
+                "minimum": 0.0,
+                "maximum": 1.0,
+            },
+            "payload": {"bsonType": "object"},
+            "result": {"bsonType": ["object", "null"]},
+            "error_message": {"bsonType": ["string", "null"]},
+            "retry_count": {"bsonType": "int", "minimum": 0},
+            "max_retries": {"bsonType": "int", "minimum": 0},
+            "store_id": {"bsonType": ["string", "null"]},
+            "organization_id": {"bsonType": ["string", "null"]},
+            "triggered_by": {"bsonType": ["string", "null"]},
+            "celery_task_id": {"bsonType": ["string", "null"]},
+            "started_at": {"bsonType": ["date", "null"]},
+            "completed_at": {"bsonType": ["date", "null"]},
+            "created_at": {"bsonType": "date"},
+            "updated_at": {"bsonType": "date"},
+        },
+    }
+}
+
 VALIDATORS_MAP: Dict[str, Dict[str, Any]] = {
     "conversations": CONVERSATION_SCHEMA,
     "messages": MESSAGE_SCHEMA,
@@ -427,6 +460,7 @@ VALIDATORS_MAP: Dict[str, Dict[str, Any]] = {
     "abandoned_cart_campaigns": CAMPAIGN_SCHEMA,
     "dashboard_insights": DASHBOARD_INSIGHT_SCHEMA,
     "ticket_analysis": TICKET_ANALYSIS_SCHEMA,
+    "knowledge_jobs": KNOWLEDGE_JOB_SCHEMA,
 }
 
 async def setup_collection_validators(db) -> None:

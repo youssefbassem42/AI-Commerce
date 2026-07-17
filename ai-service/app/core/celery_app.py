@@ -1,4 +1,5 @@
 from celery import Celery
+from celery.schedules import crontab
 
 from app.core.config import settings
 
@@ -15,5 +16,43 @@ celery_app.conf.update(
     timezone="UTC",
     enable_utc=True,
     task_track_started=True,
-    imports=["app.infrastructure.tasks.celery_tasks"],
+    task_acks_late=True,
+    task_reject_on_worker_lost=True,
+    task_soft_time_limit=3600,
+    task_time_limit=3900,
+    result_expires=86400,
+    imports=[
+        "app.infrastructure.tasks.celery_tasks",
+        "app.workers.ingestion.tasks",
+        "app.workers.summarization.tasks",
+        "app.workers.embedding.tasks",
+        "app.workers.scheduler.tasks",
+        "app.workers.cleanup.tasks",
+    ],
 )
+
+celery_app.conf.task_routes = {
+    "knowledge.process_document": {"queue": "ingestion"},
+    "knowledge.generate_chunks": {"queue": "ingestion"},
+    "knowledge.generate_summary": {"queue": "summarization"},
+    "knowledge.generate_embeddings": {"queue": "embedding"},
+    "knowledge.sync_vectors": {"queue": "embedding"},
+    "knowledge.retry_failed_jobs": {"queue": "scheduler"},
+    "knowledge.cleanup_dead_letters": {"queue": "scheduler"},
+    "knowledge.process_dead_letter_queue": {"queue": "cleanup"},
+    "ai.*": {"queue": "default"},
+}
+
+celery_app.conf.task_default_queue = "default"
+
+celery_app.conf.beat_schedule = {
+    "retry-failed-jobs-every-15m": {
+        "task": "knowledge.retry_failed_jobs",
+        "schedule": crontab(minute="*/15"),
+    },
+    "cleanup-dead-letters-daily": {
+        "task": "knowledge.cleanup_dead_letters",
+        "schedule": crontab(hour=3, minute=0),
+        "kwargs": {"dry_run": False},
+    },
+}
