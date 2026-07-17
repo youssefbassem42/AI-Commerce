@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CommerceMind AI - Processing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#3525cd",
+                    "on-secondary-container": "#00714d",
+                    "inverse-surface": "#283044",
+                    "on-tertiary-fixed": "#2a1700",
+                    "outline-variant": "#c7c4d8",
+                    "tertiary": "#684000",
+                    "surface-dim": "#d2d9f4",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#002113",
+                    "surface-bright": "#faf8ff",
+                    "on-surface": "#131b2e",
+                    "on-primary-fixed": "#0f0069",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary-container": "#885500",
+                    "surface-container-low": "#f2f3ff",
+                    "background": "#faf8ff",
+                    "surface": "#faf8ff",
+                    "on-tertiary-container": "#ffd4a4",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container-high": "#e2e7ff",
+                    "surface-container": "#eaedff",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#dae2fd",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-tint": "#4d44e3",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-background": "#131b2e",
+                    "on-primary-container": "#dad7ff",
+                    "primary-fixed": "#e2dfff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-highest": "#dae2fd",
+                    "secondary": "#006c49",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#6cf8bb",
+                    "inverse-on-surface": "#eef0ff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "primary-container": "#4f46e5",
+                    "outline": "#777587",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-surface-variant": "#464555"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "2xl": "48px",
+                    "xl": "32px",
+                    "container-max": "1440px",
+                    "md": "16px",
+                    "3xl": "64px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-metrics": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-metrics": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+
+        @keyframes pulse-indigo {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.98); }
+        }
+
+        .pulse-active {
+            animation: pulse-indigo 2s infinite ease-in-out;
+        }
+
+        .blur-backdrop {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 8s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden min-h-screen flex flex-col items-center justify-center relative">
+<!-- Storefront Background with Blur Overlay -->
+<div class="fixed inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A high-end, luxury minimalist retail storefront with clean white walls, marble flooring, and strategic warm accent lighting. The scene is shot with a shallow depth of field, creating a soft professional blur that emphasizes textures of glass and light-colored wood. The overall aesthetic is bright, corporate, and sophisticated, dominated by whites and soft grays to match a high-tech SaaS branding." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjNyCw0Xed7IMMTzEkKqwV8ET7Z9dbBpK_k2n1zEIcJ59Xoe81RoHeOBN9oKIFBcWKvXJewwcJPl9X1rdwqnD6tuWLhEUZHIJQqqpBUZ8CSaQVxqYyQkLpnDAq9q6TA5vCocqbKz_izrJRyDVQEHholdvNpnTmbH7KDTrHhM6nhUnShC_UH5She6Vp6jDM0iAZAmd1lDwIdhbHQku15TMwaNBvVTT1CdRI2hEb4VNzBiGc4E4ysbXDzwbfrm9RCQhrxDwrA-OI03Dx')"></div>
+<div class="absolute inset-0 bg-surface/60 blur-backdrop"></div>
+</div>
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-lg py-sm">
+<div class="text-headline-md font-headline-md text-primary">CommerceMind AI</div>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+            Secure Processing Environment
+        </div>
+</header>
+<!-- Main Processing Canvas -->
+<main class="relative z-10 w-full max-w-[560px] px-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(15,23,42,0.05)] border border-outline-variant overflow-hidden p-xl flex flex-col items-center text-center">
+<!-- Icon/Branding -->
+<div class="mb-lg">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-md mx-auto">
+<span class="material-symbols-outlined text-[32px]">auto_awesome</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-tight">
+                    Building your Custom AI Assistant...
+                </h1>
+<p class="text-on-surface-variant font-body-md mt-sm">
+                    Analyzing your commerce ecosystem to generate a bespoke brand voice.
+                </p>
+</div>
+<!-- Central Visual Indicator -->
+<div class="relative w-48 h-48 mb-xl">
+<!-- SVG Progress Circle -->
+<svg class="w-full h-full animate-spin-slow">
+<circle class="text-surface-container-high" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-dasharray="552.92" stroke-dashoffset="150" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<!-- Inner Pulse -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<div class="text-display-metrics font-display-metrics text-primary leading-none">64%</div>
+<div class="font-label-sm text-on-surface-variant mt-xs tracking-widest uppercase">Optimizing</div>
+</div>
+</div>
+<!-- Progressive Checklist -->
+<div class="w-full space-y-md">
+<!-- Item 1: Done -->
+<div class="flex items-center justify-between p-md bg-secondary-container/10 border border-secondary-container/30 rounded-lg transition-all duration-500">
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full bg-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-white" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-on-surface">Connecting social media channels...</span>
+</div>
+<span class="font-label-sm text-on-secondary-container font-bold uppercase tracking-wider">Done</span>
+</div>
+<!-- Item 2: Done -->
+<div class="flex items-center justify-between p-md bg-secondary-container/10 border border-secondary-container/30 rounded-lg transition-all duration-500">
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full bg-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-white" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-on-surface">Scanning website URL &amp; Return policies...</span>
+</div>
+<span class="font-label-sm text-on-secondary-container font-bold uppercase tracking-wider">Done</span>
+</div>
+<!-- Item 3: Active Pulsing -->
+<div class="flex items-center justify-between p-md bg-primary-container/5 border-2 border-primary pulse-active rounded-lg shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-[16px] text-white">bolt</span>
+</div>
+<span class="font-body-md text-primary font-semibold">Training AI on your store's custom voice...</span>
+</div>
+<div class="flex gap-1">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-bounce"></span>
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+</div>
+</div>
+<!-- Item 4: Pending -->
+<div class="flex items-center justify-between p-md bg-surface-container border border-outline-variant rounded-lg opacity-40 grayscale">
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 rounded-full border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-outline">pending</span>
+</div>
+<span class="font-body-md text-on-surface-variant">Deploying conversational logic...</span>
+</div>
+<span class="font-label-sm text-on-surface-variant italic">Pending</span>
+</div>
+</div>
+<!-- Footer Note -->
+<div class="mt-xl pt-lg border-t border-outline-variant w-full">
+<div class="flex items-center justify-center gap-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>
+                    System synchronization in progress. Please do not refresh.
+                </div>
+</div>
+</div>
+</main>
+<!-- Global Footer -->
+<footer class="fixed bottom-0 left-0 w-full z-50 flex flex-col md:flex-row justify-between items-center px-lg py-md text-label-sm text-on-surface-variant">
+<div>© 2024 CommerceMind AI. All rights reserved.</div>
+<div class="flex gap-lg mt-sm md:mt-0">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+</footer>
+<!-- Automated Prototype Transition -->
+<script>
+        // Automatic timed transition to SCREEN_14 after 2.5 seconds
+        setTimeout(() => {
+            // Simulated navigation to the AI Diagnostic screen
+            console.log('Navigating to {{DATA:SCREEN:SCREEN_14}}');
+            // This is a placeholder for the platform's routing mechanism.
+            // In a live environment, this would trigger the actual navigation.
+        }, 2500);
+
+        // Micro-interaction for the progress percentage (speeds up towards end)
+        let progress = 64;
+        const progressElement = document.querySelector('.text-display-metrics');
+        
+        const progressInterval = setInterval(() => {
+            if (progress < 99) {
+                progress += Math.floor(Math.random() * 5) + 1;
+                if (progress > 99) progress = 99;
+                progressElement.textContent = progress + '%';
+            } else {
+                clearInterval(progressInterval);
+            }
+        }, 500);
+
+        // Cursor trail effect for high-tech feel
+        document.addEventListener('mousemove', (e) => {
+            const circle = document.createElement('div');
+            circle.style.position = 'fixed';
+            circle.style.width = '20px';
+            circle.style.height = '20px';
+            circle.style.borderRadius = '50%';
+            circle.style.backgroundColor = '#3525cd';
+            circle.style.opacity = '0.1';
+            circle.style.pointerEvents = 'none';
+            circle.style.left = e.clientX - 10 + 'px';
+            circle.style.top = e.clientY - 10 + 'px';
+            circle.style.zIndex = '100';
+            circle.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';
+            document.body.appendChild(circle);
+            
+            setTimeout(() => {
+                circle.style.transform = 'scale(4)';
+                circle.style.opacity = '0';
+            }, 50);
+            
+            setTimeout(() => {
+                circle.remove();
+            }, 600);
+        });
+    </script>
+</body></html>

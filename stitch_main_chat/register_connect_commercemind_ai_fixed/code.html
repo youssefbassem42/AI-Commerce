@@ -1,0 +1,360 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Register &amp; Connect Channels | CommerceMind AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#3525cd",
+                    "on-secondary-container": "#00714d",
+                    "inverse-surface": "#283044",
+                    "on-tertiary-fixed": "#2a1700",
+                    "outline-variant": "#c7c4d8",
+                    "tertiary": "#684000",
+                    "surface-dim": "#d2d9f4",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#002113",
+                    "surface-bright": "#faf8ff",
+                    "on-surface": "#131b2e",
+                    "on-primary-fixed": "#0f0069",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary-container": "#885500",
+                    "surface-container-low": "#f2f3ff",
+                    "background": "#faf8ff",
+                    "surface": "#faf8ff",
+                    "on-tertiary-container": "#ffd4a4",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container-high": "#e2e7ff",
+                    "surface-container": "#eaedff",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#dae2fd",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "inverse-primary": "#c3c0ff",
+                    "surface-tint": "#4d44e3",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "on-background": "#131b2e",
+                    "on-primary-container": "#dad7ff",
+                    "primary-fixed": "#e2dfff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "surface-container-highest": "#dae2fd",
+                    "secondary": "#006c49",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#6cf8bb",
+                    "inverse-on-surface": "#eef0ff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "primary-container": "#4f46e5",
+                    "outline": "#777587",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-surface-variant": "#464555"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "2xl": "48px",
+                    "xl": "32px",
+                    "container-max": "1440px",
+                    "md": "16px",
+                    "3xl": "64px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-metrics": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-metrics": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bg-indigo-gradient {
+            background: linear-gradient(135deg, #0F172A 0%, #3525cd 100%);
+        }
+        .channel-card-active {
+            border-color: #3525cd;
+            background-color: #eaedff;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-x-hidden">
+<!-- Split Layout Container -->
+<main class="flex min-h-screen w-full flex-col md:flex-row">
+<!-- Left Banner (50%) -->
+<section class="relative hidden md:flex md:w-1/2 bg-indigo-gradient items-center justify-center p-2xl overflow-hidden" style="background: linear-gradient(135deg, #0F172A 0%, #4F46E5 100%);">
+<!-- Background Decorative Elements -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary opacity-20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary opacity-10 blur-[80px] rounded-full -translate-x-1/2 translate-y-1/2"></div>
+<div class="relative z-10 max-w-lg text-center md:text-left">
+<div class="inline-flex items-center space-x-2 px-md py-xs rounded-full bg-primary/20 border border-primary/30 mb-lg">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="text-on-primary-container font-label-sm text-label-sm">Enterprise Ready</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-white mb-md leading-tight">No-code integration.<br>Set up in 3 minutes.</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim/80 mb-3xl">
+                    Connect your existing commerce ecosystem directly to our AI brain without a single line of code.
+                </p>
+<!-- Icon Visual -->
+<div class="grid grid-cols-3 gap-lg p-lg bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
+<div class="flex flex-col items-center justify-center space-y-sm">
+<div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20">
+<span class="material-symbols-outlined text-white text-3xl">chat</span>
+</div>
+<span class="text-white/60 font-label-sm text-label-sm">WhatsApp</span>
+</div>
+<div class="flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl animate-bounce">arrow_forward</span>
+</div>
+<div class="flex flex-col items-center justify-center space-y-sm">
+<div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-xl shadow-primary/40 border-2 border-primary-fixed-dim/30">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<span class="text-white font-label-sm text-label-sm">AI Core</span>
+</div>
+<div class="flex flex-col items-center justify-center space-y-sm">
+<div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20">
+<span class="material-symbols-outlined text-white text-3xl">photo_camera</span>
+</div>
+<span class="text-white/60 font-label-sm text-label-sm">Instagram</span>
+</div>
+<div class="flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl animate-pulse">sync</span>
+</div>
+<div class="flex flex-col items-center justify-center space-y-sm">
+<div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20">
+<span class="material-symbols-outlined text-white text-3xl">shopping_cart</span>
+</div>
+<span class="text-white/60 font-label-sm text-label-sm">Web Store</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Interactive Form (50%) -->
+<section class="w-full md:w-1/2 flex items-center justify-center p-lg md:p-2xl bg-surface">
+<div class="w-full max-w-xl">
+<!-- Branding for Mobile -->
+<div class="md:hidden flex items-center space-x-2 mb-xl">
+<span class="material-symbols-outlined text-primary text-3xl">hub</span>
+<span class="font-headline-md text-headline-md text-primary">CommerceMind AI</span>
+</div>
+<!-- Progress Stepper -->
+<div class="flex items-center space-x-sm mb-2xl">
+<div class="h-1.5 flex-1 rounded-full bg-primary" id="step-dot-1"></div>
+<div class="h-1.5 flex-1 rounded-full bg-surface-container-high transition-colors duration-500" id="step-dot-2"></div>
+<div class="h-1.5 flex-1 rounded-full bg-surface-container-high transition-colors duration-500" id="step-dot-3"></div>
+</div>
+<form class="space-y-xl" id="registration-form">
+<!-- Step 1: User Profile -->
+<div class="step-content" id="step-1">
+<header class="mb-lg">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-xs">Create your account</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Start your 14-day free trial. No credit card required.</p>
+</header>
+<div class="space-y-md">
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="full_name">Full Name</label>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-white" id="full_name" placeholder="John Doe" type="text">
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="email">Business Email</label>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-white" id="email" placeholder="john@company.com" type="email">
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="password">Password</label>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-white" id="password" placeholder="••••••••" type="password">
+</div>
+</div>
+<button class="w-full mt-xl bg-primary text-white py-md rounded-lg font-headline-md text-headline-md hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 active:scale-95 transition-transform" onclick="goToStep(2)" type="button">
+                            Continue to Store Details
+                        </button>
+</div>
+<!-- Step 2: Store Details -->
+<div class="step-content hidden" id="step-2">
+<header class="mb-lg">
+<button class="flex items-center text-primary font-label-sm mb-md" onclick="goToStep(1)" type="button">
+<span class="material-symbols-outlined text-sm mr-1">arrow_back</span> Back
+                            </button>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-xs">About your business</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Tell us more about your commerce environment.</p>
+</header>
+<div class="space-y-md">
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="store_name">Store Name</label>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-white" id="store_name" placeholder="E-com Masters" type="text">
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="website_url">Website URL</label>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-white" id="website_url" placeholder="https://yourstore.com" type="url">
+</div>
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Monthly Order Volume</label>
+<select class="w-full px-md py-sm rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-white">
+<option>0 - 100 orders</option>
+<option>100 - 1,000 orders</option>
+<option>1,000 - 10,000 orders</option>
+<option>10,000+ orders</option>
+</select>
+</div>
+</div>
+<button class="w-full mt-xl bg-primary text-white py-md rounded-lg font-headline-md text-headline-md hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 active:scale-95 transition-transform" onclick="goToStep(3)" type="button">
+                            Next: Connect Channels
+                        </button>
+</div>
+<!-- Step 3: Social Channels -->
+<div class="step-content hidden" id="step-3">
+<header class="mb-lg">
+<button class="flex items-center text-primary font-label-sm mb-md" onclick="goToStep(2)" type="button">
+<span class="material-symbols-outlined text-sm mr-1">arrow_back</span> Back
+                            </button>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-xs">Connect your channels</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Select where the AI should handle customer interactions.</p>
+</header>
+<div class="grid grid-cols-1 gap-md">
+<!-- Channel Item 1 -->
+<div class="group cursor-pointer flex items-center p-md border-2 border-outline-variant rounded-xl transition-all hover:bg-surface-container-low" onclick="toggleChannel(this)">
+<div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 mr-md">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-md text-headline-md leading-tight">WhatsApp Business</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Official API support</p>
+</div>
+<div class="channel-checkbox w-6 h-6 rounded-full border-2 border-outline-variant group-[.active]:bg-primary group-[.active]:border-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm hidden group-[.active]:block">check</span>
+</div>
+</div>
+<!-- Channel Item 2 -->
+<div class="group cursor-pointer flex items-center p-md border-2 border-outline-variant rounded-xl transition-all hover:bg-surface-container-low" onclick="toggleChannel(this)">
+<div class="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center text-pink-600 mr-md">
+<span class="material-symbols-outlined">photo_camera</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-md text-headline-md leading-tight">Instagram Direct</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">DMs and Comments</p>
+</div>
+<div class="channel-checkbox w-6 h-6 rounded-full border-2 border-outline-variant group-[.active]:bg-primary group-[.active]:border-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm hidden group-[.active]:block">check</span>
+</div>
+</div>
+<!-- Channel Item 3 -->
+<div class="group cursor-pointer flex items-center p-md border-2 border-outline-variant rounded-xl transition-all hover:bg-surface-container-low" onclick="toggleChannel(this)">
+<div class="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center text-on-surface mr-md">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-md text-headline-md leading-tight">TikTok Shop</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Product Inquiries</p>
+</div>
+<div class="channel-checkbox w-6 h-6 rounded-full border-2 border-outline-variant group-[.active]:bg-primary group-[.active]:border-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm hidden group-[.active]:block">check</span>
+</div>
+</div>
+</div>
+<div class="mt-xl space-y-md">
+<!-- Link 1: Generate button to Loading Screen SCREEN_13 -->
+<button class="group relative overflow-hidden w-full bg-primary text-white py-md rounded-lg font-headline-md text-headline-md hover:shadow-2xl hover:shadow-primary/30 transition-all active:scale-95" onclick="window.location.href='{{DATA:SCREEN:SCREEN_13}}'" type="button">
+<span class="relative z-10 flex items-center justify-center">Generate My AI Assistant ⚡</span>
+<div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant">
+                                By proceeding, you agree to our <a class="text-primary underline" href="#">Terms</a> and <a class="text-primary underline" href="#">Data Policy</a>.
+                            </p>
+</div>
+</div>
+</form>
+<!-- Link 2: Sign In text link to Sign In screen SCREEN_9 -->
+<div class="mt-lg text-center">
+<p class="font-body-md text-on-surface-variant">
+                        Already have an account? 
+                        <a class="text-primary font-bold hover:underline transition-all" href="{{DATA:SCREEN:SCREEN_18}}">Sign In</a>
+</p>
+</div>
+<!-- Help/Trust Text -->
+<div class="mt-2xl pt-xl border-t border-outline-variant flex justify-between items-center text-on-surface-variant">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="font-label-sm text-label-sm">256-bit encryption</span>
+</div>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="font-label-sm text-label-sm">GDPR Compliant</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Micro-interactions Script -->
+<script>
+        function goToStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.step-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Show current step
+            const currentStep = document.getElementById(`step-${step}`);
+            currentStep.classList.remove('hidden');
+            currentStep.classList.add('animate-in', 'fade-in', 'slide-in-from-right', 'duration-500');
+
+            // Update Progress Stepper
+            for (let i = 1; i <= 3; i++) {
+                const dot = document.getElementById(`step-dot-${i}`);
+                if (i <= step) {
+                    dot.classList.remove('bg-surface-container-high');
+                    dot.classList.add('bg-primary');
+                } else {
+                    dot.classList.remove('bg-primary');
+                    dot.classList.add('bg-surface-container-high');
+                }
+            }
+        }
+
+        function toggleChannel(element) {
+            element.classList.toggle('active');
+            element.classList.toggle('channel-card-active');
+            element.classList.toggle('border-primary');
+        }
+    </script>
+
+
+
+
+</body></html>

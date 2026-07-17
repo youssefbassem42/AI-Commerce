@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CommerceMind AI | Automated Sales Engine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffddb8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#ffd4a4",
+                    "on-surface": "#131b2e",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "secondary-container": "#6cf8bb",
+                    "on-primary-fixed": "#0f0069",
+                    "surface-container": "#eaedff",
+                    "on-surface-variant": "#464555",
+                    "primary-container": "#4f46e5",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#2a1700",
+                    "surface-variant": "#dae2fd",
+                    "primary": "#3525cd",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#005236",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface": "#faf8ff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "outline": "#777587",
+                    "primary-fixed": "#e2dfff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-dim": "#d2d9f4",
+                    "surface-tint": "#4d44e3",
+                    "inverse-on-surface": "#eef0ff",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "background": "#faf8ff",
+                    "inverse-primary": "#c3c0ff",
+                    "outline-variant": "#c7c4d8",
+                    "on-secondary-container": "#00714d",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#dae2fd",
+                    "on-primary-container": "#dad7ff",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f2f3ff",
+                    "inverse-surface": "#283044",
+                    "surface-bright": "#faf8ff",
+                    "secondary": "#006c49",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary": "#684000",
+                    "on-background": "#131b2e",
+                    "tertiary-container": "#885500",
+                    "surface-container-high": "#e2e7ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "sm": "8px",
+                    "container-max": "1440px",
+                    "2xl": "48px",
+                    "base": "4px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "3xl": "64px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-metrics": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-metrics": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.8); }
+        .premium-shadow { box-shadow: 0px 4px 20px rgba(15, 23, 42, 0.05); }
+        .glow-emerald { box-shadow: 0 0 12px rgba(16, 185, 129, 0.4); }
+        .hero-gradient { background: radial-gradient(circle at top right, #EEF2FF 0%, transparent 40%), radial-gradient(circle at bottom left, #F5F3FF 0%, transparent 40%); }
+        .nav-active { color: #3525cd; border-bottom: 2px solid #3525cd; font-weight: 700; }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-lg py-sm bg-surface dark:bg-surface-container-low border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-2">
+<span class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim">CommerceMind AI</span>
+</div>
+<nav class="hidden md:flex items-center gap-xl">
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary py-1" href="#">Features</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Integrations</a>
+</nav>
+<div class="flex items-center gap-md">
+<a class="text-primary font-label-sm text-label-sm hover:opacity-80 transition-opacity px-md py-sm" href="{{DATA:SCREEN:SCREEN_9}}">
+    Sign In
+</a>
+<a class="bg-primary text-on-primary font-label-sm text-label-sm px-lg py-sm rounded-lg active:scale-95 transition-transform premium-shadow" href="{{DATA:SCREEN:SCREEN_7}}">Get Started</a>
+</div>
+</header>
+<main class="pt-32 hero-gradient min-h-screen overflow-x-hidden">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-4 md:px-2xl text-center">
+<!-- Trust Pill -->
+<div class="inline-flex items-center gap-2 px-md py-xs bg-surface-container-lowest border border-outline-variant rounded-full premium-shadow mb-lg animate-fade-in transition-all duration-700 opacity-100 translate-y-0">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 glow-emerald"></span>
+</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">⚡ Loved by 5,000+ independent store owners worldwide</span>
+</div>
+<h1 class="text-display-metrics font-display-metrics max-w-4xl mx-auto mb-md leading-tight text-[#0F172A]">
+                Turn Your Chat &amp; Custom Store into an <span class="text-primary">Automated Sales Engine.</span>
+</h1>
+<p class="text-body-lg font-body-lg text-[#4B5563] max-w-2xl mx-auto mb-xl leading-relaxed">
+                The 24/7 AI Assistant that answers customer questions, recommends products, and processes returns directly inside your website widget.
+            </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-md mb-3xl transition-all duration-700 opacity-100 translate-y-0">
+<a class="bg-primary text-on-primary px-xl py-lg rounded-xl font-headline-md text-headline-md premium-shadow hover:brightness-110 active:scale-95 transition-all w-full md:w-auto text-center" href="{{DATA:SCREEN:SCREEN_7}}">
+                    Start Free Trial
+                </a>
+<button class="flex items-center gap-2 border border-outline-variant bg-surface px-xl py-lg rounded-xl font-headline-md text-headline-md hover:bg-surface-container transition-colors w-full md:w-auto">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                    Watch Demo
+                </button>
+</div>
+<!-- Interactive Preview -->
+<div class="relative max-w-5xl mx-auto mt-2xl transition-all duration-700 opacity-100 translate-y-0">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg items-start">
+<!-- Left: Dashboard Preview -->
+<div class="md:col-span-7 relative group">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="glass-card rounded-2xl p-lg premium-shadow relative overflow-hidden transition-transform duration-500 hover:-translate-y-2">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Store Revenue (AI Influenced)</p>
+<h3 class="text-display-metrics font-display-metrics text-primary">$42,904.00</h3>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded-full text-label-sm font-label-sm flex items-center">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+                                    +24%
+                                </div>
+</div>
+<div class="h-48 w-full relative">
+<!-- Simulated Chart Line -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 100">
+<path d="M0 80 Q 50 70, 100 85 T 200 40 T 300 50 T 400 10" fill="none" stroke="#4F46E5" stroke-linecap="round" stroke-width="4"></path>
+<path d="M0 80 Q 50 70, 100 85 T 200 40 T 300 50 T 400 10 L 400 100 L 0 100 Z" fill="url(#grad)" opacity="0.1"></path>
+<defs>
+<lineargradient id="grad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#4F46E5;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="flex justify-between mt-md border-t border-outline-variant pt-md">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiqwMCVNP-IxYv8LOlPFgmQTVzm8boLOZsjcCa9ZdU5FBKWchXKo5fZAcLDJ2vH8GvTIryCF_MSJL4IqwIzPuS3FYztMxdbaKgXbYSYrkXS-ldLZOUfRMkFaNW_IpXFSUl_L5CxyMnXZOl0Nxn30Db-W7imP3v_1oaXK5DpIeCZGM_6bMDRQPkUfcYdJQxDHZ-5T_BQeYG5MRNdvv4nasGtAjDSbMjU5NCSgxNk9Dp67lMvxqQu9oRR33UOPUneSB6smTxa7cqu0v7"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx2nTGBjrLirxN8gAYgKJ5L50stV0DmEGxWuYMYvTW8fz5kuqvDZnsKOCbXI732oji0nyJXg9UI42dD8RlahR9rPVxnXqLLlMyPNmX2xT2kNQdcleya0WlMJZVCkJS03zLS5aZFTst7yDUtpxyHYzYsnAISNQ0Cc0dK5WP2eFzI35tk2N0jWrcGzpTc3tLKgtz2lmIkELg_BkdNQA3gRyKKzRFTZguw02R8cj7RP3LosmIcWx7q11eTpInQR_C3MW-jFYhrJnSc5-y"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="User avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWyTH2_rLlKsKY20iNTFR9aGIbEaCH6GOEnWDACKfZKGjy7DOz2lWpkr7Fn4_KaCRmGRND8Vn5LRkMpUD6xVMUZH-PSyYvzNy2AKGGiGFL8I00c-6we_HYnTHc4Hxtv26OqLHGKMi1lmcnW6dqT4CoTbtXM7qsA7sn3xQNaFel5Xe3t5f0qHrcUvRMLcbggVeoq6o4rP7PpwiNarPTZMNucYE8hmUd1D5nRNz3mGPWTaC9FKAhsBGsNXh6qaOwphn-fk9Hnp00nzi5"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border-2 border-white flex items-center justify-center text-[10px] font-bold">+12</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Live Shopping Sessions</span>
+</div>
+</div>
+</div>
+<!-- Right: Chat Widget Mockup -->
+<div class="md:col-span-5">
+<div class="glass-card rounded-3xl w-full max-w-[320px] mx-auto overflow-hidden premium-shadow border-2 border-primary/20">
+<div class="bg-primary p-md flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div>
+<p class="text-label-sm font-bold leading-none">CommerceMind Assistant</p>
+<p class="text-[10px] opacity-80">Always active</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</div>
+<div class="p-md h-80 flex flex-col gap-md overflow-y-auto bg-surface-container-low">
+<div class="bg-white p-sm rounded-xl rounded-tl-none shadow-sm text-body-md font-body-md self-start max-w-[85%]">
+                                    Looking for something special? I found this for you!
+                                </div>
+<div class="bg-white p-2 rounded-xl shadow-md self-start max-w-[90%] border border-outline-variant">
+<div class="aspect-square rounded-lg mb-2 overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Premium coffee maker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3M6NddbaGYwtEtwLNgxpXCKCWvo0j6LJevzkJdkdZVlCeCzq5sORqks4SovidMmoAmygGBPbLKqDYrJENfGQbWWhte3Q0-IvMtqN27Akwm2K1iRh9fTOW_GNQz1ERNNcKi8SSOUlAoonGCW_owCKTsBN5S2EpeKyKsiim294A_ZdaujmAgYhjJ0cVgK8T4R2Oa2-VzFSOl_LcNXUa9CimUVmrVFLKlau9UPINa_rW2vywJYyqFCBrkTwn0qGyaKpHFNPGOhJJPbr3"/>
+</div>
+<p class="font-bold text-body-md">Precision Brewer Pro</p>
+<p class="text-primary font-bold text-body-lg">$199.00</p>
+<button class="w-full mt-2 bg-primary text-on-primary py-2 rounded-lg text-label-sm font-bold flex items-center justify-center gap-1">
+                                        Instant Checkout 💳
+                                    </button>
+</div>
+<div class="bg-primary/10 p-sm rounded-xl rounded-tr-none text-body-md font-body-md self-end max-w-[85%]">
+                                    That's perfect, checking out now.
+                                </div>
+</div>
+<div class="p-sm bg-white border-t border-outline-variant flex items-center gap-2">
+<input class="flex-1 border-none focus:ring-0 text-body-md" placeholder="Type a message..." type="text"/>
+<button class="text-primary">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Features Section -->
+<section class="max-w-container-max mx-auto px-4 md:px-2xl py-3xl">
+<div class="text-center mb-2xl transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="text-headline-lg font-headline-lg mb-md">Supercharge Your Operations</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Intelligent tools designed for high-growth commerce brands.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg transition-all duration-700 opacity-100 translate-y-0">
+<!-- Large: Unified Social Inbox -->
+<div class="md:col-span-2 glass-card rounded-2xl p-lg flex flex-col md:flex-row gap-lg premium-shadow hover:scale-[1.01] transition-transform">
+<div class="md:w-1/2">
+<div class="w-12 h-12 rounded-full bg-[#EEF2FF] flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="all_inbox">all_inbox</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-sm">Unified Social Inbox</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                            Stop switching tabs. Manage WhatsApp, Instagram, and TikTok conversations in a single, AI-powered dashboard that never misses a lead.
+                        </p>
+<div class="mt-lg flex gap-md">
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-emerald-500" data-icon="check_circle">check_circle</span> Auto-tagging
+                            </div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-emerald-500" data-icon="check_circle">check_circle</span> sentiment Analysis
+                            </div>
+</div>
+</div>
+<div class="md:w-1/2 bg-surface-container rounded-xl p-md border border-outline-variant flex flex-col gap-sm overflow-hidden">
+<div class="bg-white p-sm rounded-lg shadow-sm flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-600 text-[16px]" data-icon="chat">chat</span>
+</div>
+<div class="flex-1"><div class="h-2 w-24 bg-outline-variant rounded"></div><div class="h-2 w-12 bg-outline-variant/40 rounded mt-1"></div></div>
+<span class="text-[10px] bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full">WhatsApp</span>
+</div>
+<div class="bg-white p-sm rounded-lg shadow-sm flex items-center gap-3 translate-x-4">
+<div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-pink-600 text-[16px]" data-icon="photo_camera">photo_camera</span>
+</div>
+<div class="flex-1"><div class="h-2 w-32 bg-outline-variant rounded"></div><div class="h-2 w-16 bg-outline-variant/40 rounded mt-1"></div></div>
+<span class="text-[10px] bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">Instagram</span>
+</div>
+<div class="bg-white p-sm rounded-lg shadow-sm flex items-center gap-3 -translate-x-2">
+<div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[16px]" data-icon="music_note">music_note</span>
+</div>
+<div class="flex-1"><div class="h-2 w-20 bg-outline-variant rounded"></div><div class="h-2 w-10 bg-outline-variant/40 rounded mt-1"></div></div>
+<span class="text-[10px] bg-on-surface text-surface px-2 py-0.5 rounded-full">TikTok</span>
+</div>
+</div>
+</div>
+<!-- Small: Embeddable Chat Widget -->
+<div class="glass-card rounded-2xl p-lg flex flex-col premium-shadow hover:scale-[1.01] transition-transform">
+<div class="w-12 h-12 rounded-full bg-[#EEF2FF] flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="code">code</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-sm">Embeddable Widget</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-lg">
+                        Go live in 60 seconds with a single line of JavaScript.
+                    </p>
+<div class="mt-auto bg-slate-900 rounded-lg p-md overflow-hidden">
+<code class="text-[10px] text-emerald-400 font-mono">
+                            &lt;script src="https://ai.cm.io/v1/w.js" data-id="CM_039X"&gt;&lt;/script&gt;
+                        </code>
+</div>
+</div>
+<!-- Small: Custom Product Catalog -->
+<div class="glass-card rounded-2xl p-lg flex flex-col premium-shadow border-t-4 border-primary hover:scale-[1.01] transition-transform">
+<div class="w-12 h-12 rounded-full bg-[#EEF2FF] flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-sm">Smart Catalog</h3>
+<div class="relative mt-md group">
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-sm">
+<div class="aspect-square rounded-lg mb-2 overflow-hidden bg-white">
+<img class="w-full h-full object-cover" data-alt="Premium headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwKIWrsOjGKmErjf3EyJlVMIcwKrgT9q32K3dJDbmOFYYUOc6VhyfPxQFuPmkDYNDHp-Laq9YpzLbb6x5XnOgO3nznmP8V8OGYX18gnRQAjdEUoJwx5vA3xH3CT-AKinkG_O0du5Psrkvh4cCBWCJtlbZkQE_llLI5coAMApbdOQPdoEUXskBco_VStRuqQvR26tzg2ga_PcC_s8oVMp12B3oaKU8ClB0HMgIfQPNL2mJjX6bL6J_LL0Jdsd4CfBlE3ZmOf_vL41-x"/>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-bold">$249.00</span>
+<span class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-[10px] font-bold">15% AI Discount</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Large: Smart Return Portal -->
+<div class="md:col-span-2 glass-card rounded-2xl p-lg flex flex-col md:flex-row items-center gap-lg premium-shadow hover:scale-[1.01] transition-transform">
+<div class="md:w-1/2">
+<div class="w-12 h-12 rounded-full bg-[#EEF2FF] flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="assignment_return">assignment_return</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-sm">Smart Return Portal</h3>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                            Automate the headache of returns. AI validates return reasons, checks policy compliance, and generates shipping labels in seconds.
+                        </p>
+</div>
+<div class="md:w-1/2 w-full">
+<div class="bg-white border border-outline-variant rounded-xl p-md shadow-lg relative overflow-hidden">
+<div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-4">
+<span class="text-label-sm font-bold">Return Label #RT-882</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div class="space-y-2">
+<div class="h-3 w-3/4 bg-surface-container-high rounded"></div>
+<div class="h-3 w-1/2 bg-surface-container-high rounded"></div>
+<div class="mt-4 flex justify-center py-4 bg-surface-container-low border-2 border-dashed border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" data-icon="qr_code_2">qr_code_2</span>
+</div>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-emerald-500 text-white p-2 rounded-tl-xl text-[10px] font-bold">
+                                VERIFIED
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-3xl bg-inverse-surface text-inverse-on-surface text-center">
+<div class="max-w-3xl mx-auto px-4 transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="text-headline-lg font-headline-lg mb-md">Ready to scale without more staff?</h2>
+<p class="text-body-lg font-body-lg opacity-80 mb-xl">Join thousands of stores automating 70% of their customer interactions today.</p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-md">
+<a class="bg-primary text-on-primary px-xl py-lg rounded-xl font-headline-md text-headline-md w-full md:w-auto hover:brightness-110 transition-all text-center" href="{{DATA:SCREEN:SCREEN_7}}">
+                        Get Started for Free
+                    </a>
+<button class="text-inverse-on-surface border border-outline-variant px-xl py-lg rounded-xl font-headline-md text-headline-md w-full md:w-auto hover:bg-white/5 transition-all">
+                        Talk to Sales
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-lg border-t border-outline-variant dark:border-outline bg-surface dark:bg-surface-container-low">
+<div class="w-full flex flex-col md:flex-row justify-between items-center px-lg gap-lg">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim">CommerceMind AI</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2">© 2024 CommerceMind AI. All rights reserved.</p>
+</div>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Help Center</a>
+</div>
+<div class="flex gap-md">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="public">public</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="alternate_email">alternate_email</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple entry animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section > div').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>
