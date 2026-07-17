@@ -325,7 +325,7 @@ async def step4_generate_embeddings(
 
         try:
             start = time.perf_counter()
-            request = EmbeddingRequest(input=texts, model="text-embedding-004")
+            request = EmbeddingRequest(input=texts, model="gemini-embedding-001")
             response = await provider.embeddings(request)
             elapsed = time.perf_counter() - start
             debug_dump("EmbeddingResponse", response)
@@ -338,7 +338,7 @@ async def step4_generate_embeddings(
                 "elapsed": elapsed,
             })
 
-            print_success(f"Model: text-embedding-004")
+            print_success(f"Model: gemini-embedding-001")
             print_label("  Embedding dimension", str(dim))
             print_label("  Embedding count", str(len(response.embeddings)))
             print_label("  Generation time", f"{elapsed:.2f}s")
@@ -362,13 +362,15 @@ async def step5_insert_vectors(
     collection_name = f"kb_{STORE_ID}"
 
     exists = await vector_store.collection_exists(collection_name)
-    if not exists:
-        print_info(f"Creating collection '{collection_name}'")
-        await vector_store.create_collection(
-            collection_name=collection_name,
-            vector_size=1536,
-            distance="Cosine",
-        )
+    if exists:
+        print_info(f"Recreating collection '{collection_name}' (old vector size)")
+        await vector_store.delete_collection(collection_name)
+    print_info(f"Creating collection '{collection_name}'")
+    await vector_store.create_collection(
+        collection_name=collection_name,
+        vector_size=3072,
+        distance="Cosine",
+    )
 
     all_inserted = []
     for entry in embedding_results:
@@ -466,7 +468,7 @@ async def step7_semantic_search(
         use_hybrid=False,
         use_mmr=False,
         rerank=False,
-        embedding_model="text-embedding-004",
+        embedding_model="gemini-embedding-001",
         collection_prefix="kb",
     )
     filters = RetrievalFilters(
@@ -520,6 +522,7 @@ async def step8_build_rag_prompt(
     config = RetrievalConfig(
         top_k=5, score_threshold=0.0, use_hybrid=False,
         use_mmr=False, rerank=False,
+        embedding_model="gemini-embedding-001",
     )
     filters = RetrievalFilters(organization_id=ORG_ID, store_id=STORE_ID)
 
@@ -691,7 +694,7 @@ async def step10_interactive_mode(
             print_info("Exiting interactive mode.")
             break
 
-        config = RetrievalConfig(top_k=5, score_threshold=0.0)
+        config = RetrievalConfig(top_k=5, score_threshold=0.0, embedding_model="gemini-embedding-001")
         filters = RetrievalFilters(organization_id=ORG_ID, store_id=STORE_ID)
 
         try:

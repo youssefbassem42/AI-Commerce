@@ -15,7 +15,7 @@ def test_generate_embeddings_task(mock_factory_cls):
     mock_factory_cls.return_value = mock_factory
     
     mock_response = EmbeddingResponse(
-        model="text-embedding-004",
+        model="gemini-embedding-001",
         provider="gemini",
         embeddings=[[0.1, 0.2], [0.3, 0.4]],
         usage=UsageDTO()
@@ -23,7 +23,7 @@ def test_generate_embeddings_task(mock_factory_cls):
     mock_provider.embeddings.return_value = mock_response
     
     # Run task
-    result = generate_embeddings_task(texts=["hello", "world"], model="text-embedding-004")
+    result = generate_embeddings_task(texts=["hello", "world"], model="gemini-embedding-001")
     
     # Assertions
     assert result == [[0.1, 0.2], [0.3, 0.4]]

@@ -1,4 +1,5 @@
 import logging
+import uuid
 from typing import Any, Optional
 
 from qdrant_client import QdrantClient
@@ -14,6 +15,30 @@ from app.infrastructure.vectorstore.base import (
 )
 
 logger = logging.getLogger(__name__)
+
+
+def _to_qdrant_point_id(id_str: str) -> str:
+    try:
+        int(id_str)
+        return id_str
+    except ValueError:
+        pass
+
+    try:
+        uuid.UUID(hex=id_str)
+        return id_str
+    except (ValueError, AttributeError):
+        pass
+
+    if len(id_str) == 24:
+        try:
+            int(id_str, 16)
+            return uuid.UUID(hex="00000000" + id_str).hex
+        except ValueError:
+            pass
+
+    return str(uuid.uuid5(uuid.NAMESPACE_DNS, id_str))
+
 
 DISTANCE_MAP: dict[str, models.Distance] = {
     "Cosine": models.Distance.COSINE,
@@ -246,7 +271,7 @@ class QdrantProvider(VectorStore):
             return 0
         client = self._ensure_client()
         qdrant_points = [
-            models.PointStruct(id=p.id, vector=p.vector, payload=p.payload)
+            models.PointStruct(id=_to_qdrant_point_id(p.id), vector=p.vector, payload=p.payload)
             for p in points
         ]
         try:

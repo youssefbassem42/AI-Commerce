@@ -104,8 +104,8 @@ class ModelRegistry:
             context_length=2097152,
             pricing=ModelPricing(prompt_cost_per_1m=1.25, completion_cost_per_1m=5.00)
         ),
-        "text-embedding-004": ModelInfo(
-            name="text-embedding-004",
+        "gemini-embedding-001": ModelInfo(
+            name="gemini-embedding-001",
             provider="gemini",
             capabilities=ModelCapabilities(embedding=True, streaming=False),
             context_length=3072,
