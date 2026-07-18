@@ -1,18 +1,26 @@
 from abc import ABC, abstractmethod
-from typing import List, Optional
-from app.shared.kernel.repository import AsyncRepository
+
 from app.domain.knowledge.entities.knowledge_document import KnowledgeDocument
-from app.domain.knowledge.entities.knowledge_chunk import KnowledgeChunk
+from app.shared.kernel.repository import AsyncRepository
+
 
 class KnowledgeRepository(AsyncRepository[KnowledgeDocument, str], ABC):
-    """Domain repository interface for KnowledgeDocument Aggregate."""
+    """Domain repository interface for knowledge documents."""
 
     @abstractmethod
-    async def find_by_store_id(self, store_id: str, limit: int = 20, skip: int = 0) -> List[KnowledgeDocument]:
+    async def find_by_store_id(
+        self,
+        store_id: str,
+        limit: int = 20,
+        skip: int = 0,
+    ) -> list[KnowledgeDocument]:
         """Find knowledge documents belonging to a store."""
-        pass
 
     @abstractmethod
-    async def add_chunks(self, document_id: str, chunks: List[KnowledgeChunk]) -> bool:
-        """Add list of chunks to a knowledge document."""
-        pass
+    async def find_by_status(
+        self,
+        status: str,
+        limit: int = 20,
+        skip: int = 0,
+    ) -> list[KnowledgeDocument]:
+        """Find knowledge documents by status."""
