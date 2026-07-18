@@ -104,6 +104,9 @@ namespace AI_Sales_Agent.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("PlanPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("PlanStatus")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

@@ -264,6 +264,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/api/stores": {
       "get": {
         "tags": [
@@ -298,34 +299,61 @@
                 }
               }
             }
+=======
+    "/api/admin/features": {
+      "get": {
+        "tags": [
+          "FeaturesAdmin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         }
       },
       "post": {
         "tags": [
+<<<<<<< HEAD
           "Stores"
+=======
+          "FeaturesAdmin"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/CreateStoreCommand"
+=======
+                "$ref": "#/components/schemas/CreateFeatureCommand"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "text/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/CreateStoreCommand"
+=======
+                "$ref": "#/components/schemas/CreateFeatureCommand"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "application/*+json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/CreateStoreCommand"
+=======
+                "$ref": "#/components/schemas/CreateFeatureCommand"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             }
           }
         },
         "responses": {
           "200": {
+<<<<<<< HEAD
             "description": "OK",
             "content": {
               "text/plain": {
@@ -344,10 +372,14 @@
                 }
               }
             }
+=======
+            "description": "OK"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         }
       }
     },
+<<<<<<< HEAD
     "/api/stores/{storeId}": {
       "get": {
         "tags": [
@@ -356,6 +388,16 @@
         "parameters": [
           {
             "name": "storeId",
+=======
+    "/api/admin/features/{id}": {
+      "get": {
+        "tags": [
+          "FeaturesAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
             "in": "path",
             "required": true,
             "schema": {
@@ -366,6 +408,7 @@
         ],
         "responses": {
           "200": {
+<<<<<<< HEAD
             "description": "OK",
             "content": {
               "text/plain": {
@@ -384,16 +427,27 @@
                 }
               }
             }
+=======
+            "description": "OK"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         }
       },
       "put": {
         "tags": [
+<<<<<<< HEAD
           "Stores"
         ],
         "parameters": [
           {
             "name": "storeId",
+=======
+          "FeaturesAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
             "in": "path",
             "required": true,
             "schema": {
@@ -406,23 +460,36 @@
           "content": {
             "application/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/UpdateStoreRequest"
+=======
+                "$ref": "#/components/schemas/UpdateFeatureCommand"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "text/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/UpdateStoreRequest"
+=======
+                "$ref": "#/components/schemas/UpdateFeatureCommand"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "application/*+json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/UpdateStoreRequest"
+=======
+                "$ref": "#/components/schemas/UpdateFeatureCommand"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             }
           }
         },
         "responses": {
           "200": {
+<<<<<<< HEAD
             "description": "OK",
             "content": {
               "text/plain": {
@@ -441,16 +508,27 @@
                 }
               }
             }
+=======
+            "description": "OK"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         }
       },
       "delete": {
         "tags": [
+<<<<<<< HEAD
           "Stores"
         ],
         "parameters": [
           {
             "name": "storeId",
+=======
+          "FeaturesAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
             "in": "path",
             "required": true,
             "schema": {
@@ -466,6 +544,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/api/stores/{storeId}/settings": {
       "put": {
         "tags": [
@@ -474,6 +553,78 @@
         "parameters": [
           {
             "name": "storeId",
+=======
+    "/api/admin/plans": {
+      "get": {
+        "tags": [
+          "PlansAdmin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PlansAdmin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePlanCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePlanCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePlanCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/plans/{id}": {
+      "get": {
+        "tags": [
+          "PlansAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PlansAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
             "in": "path",
             "required": true,
             "schema": {
@@ -486,23 +637,36 @@
           "content": {
             "application/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/UpdateStoreSettingsRequest"
+=======
+                "$ref": "#/components/schemas/UpdatePlanCommand"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "text/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/UpdateStoreSettingsRequest"
+=======
+                "$ref": "#/components/schemas/UpdatePlanCommand"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "application/*+json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/UpdateStoreSettingsRequest"
+=======
+                "$ref": "#/components/schemas/UpdatePlanCommand"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             }
           }
         },
         "responses": {
           "200": {
+<<<<<<< HEAD
             "description": "OK",
             "content": {
               "text/plain": {
@@ -522,6 +686,31 @@
               }
             }
           }
+=======
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PlansAdmin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
         }
       }
     },
@@ -634,7 +823,11 @@
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
       "CreateStoreCommand": {
+=======
+      "CreateFeatureCommand": {
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
         "type": "object",
         "properties": {
           "name": {
@@ -645,6 +838,7 @@
             "type": "string",
             "nullable": true
           },
+<<<<<<< HEAD
           "platform": {
             "type": "string",
             "nullable": true
@@ -663,6 +857,39 @@
           },
           "timezone": {
             "type": "string",
+=======
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePlanCommand": {
+        "type": "object",
+        "properties": {
+          "planName": {
+            "type": "string",
+            "nullable": true
+          },
+          "planDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "planStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "planPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "featureIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
             "nullable": true
           }
         },
@@ -750,6 +977,7 @@
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
       "StoreResponse": {
         "type": "object",
         "properties": {
@@ -802,6 +1030,9 @@
         "additionalProperties": false
       },
       "UpdateStoreRequest": {
+=======
+      "UpdateFeatureCommand": {
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
         "type": "object",
         "properties": {
           "name": {
@@ -812,6 +1043,7 @@
             "type": "string",
             "nullable": true
           },
+<<<<<<< HEAD
           "platform": {
             "type": "string",
             "nullable": true
@@ -823,10 +1055,15 @@
           "status": {
             "type": "string",
             "nullable": true
+=======
+          "enabled": {
+            "type": "boolean"
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
       "UpdateStoreSettingsRequest": {
         "type": "object",
         "properties": {
@@ -841,6 +1078,34 @@
           "timezone": {
             "type": "string",
             "nullable": true
+=======
+      "UpdatePlanCommand": {
+        "type": "object",
+        "properties": {
+          "planName": {
+            "type": "string",
+            "nullable": true
+          },
+          "planDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "planStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "planPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "featureIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+>>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         },
         "additionalProperties": false
