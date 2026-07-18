@@ -76,6 +76,15 @@ namespace AI_Sales_Agent.Data
                 .WithMany(user => user.Stores)
                 .HasForeignKey(store => store.UserId);
 
+            modelBuilder.Entity<Store>()
+                .Property(store => store.ShopDomain)
+                .HasMaxLength(250);
+
+            modelBuilder.Entity<Store>()
+                .HasIndex(store => store.ShopDomain)
+                .IsUnique()
+                .HasFilter("[DeletedAt] IS NULL");
+
             modelBuilder.Entity<StoreIntegrations>()
                 .HasOne(integration => integration.Store)
                 .WithMany(store => store.Integrations)

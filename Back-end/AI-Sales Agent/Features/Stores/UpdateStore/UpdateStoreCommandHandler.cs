@@ -3,6 +3,8 @@ using AI_Sales_Agent.Infrastructure.Audit;
 using AI_Sales_Agent.Infrastructure.Auth;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using FluentValidation;
+using FluentValidation.Results;
 
 namespace AI_Sales_Agent.Features.Stores.UpdateStore
 {
@@ -38,6 +40,18 @@ namespace AI_Sales_Agent.Features.Stores.UpdateStore
             if (store is null)
             {
                 return null;
+            }
+
+            var normalizedDomain = request.ShopDomain.Trim().ToLower();
+            var domainExists = await _dbContext.Stores
+                .AnyAsync(s => s.Id != request.StoreId && s.ShopDomain.ToLower() == normalizedDomain && s.DeletedAt == null, cancellationToken);
+
+            if (domainExists)
+            {
+                throw new ValidationException(new[]
+                {
+                    new ValidationFailure("ShopDomain", "A store with this shop domain already exists.")
+                });
             }
 
             store.Name = request.Name.Trim();
