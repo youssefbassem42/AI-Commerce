@@ -133,6 +133,73 @@ KNOWLEDGE_CHUNK_SCHEMA: Dict[str, Any] = {
     }
 }
 
+KNOWLEDGE_UPLOAD_SCHEMA: Dict[str, Any] = {
+    "$jsonSchema": {
+        "bsonType": "object",
+        "required": [
+            "original_filename", "stored_filename", "file_path", "file_size",
+            "mime_type", "extension", "checksum", "content_type",
+            "uploaded_by", "organization_id", "store_id",
+            "status", "virus_scan_status", "created_at", "updated_at",
+        ],
+        "properties": {
+            "original_filename": {"bsonType": "string"},
+            "stored_filename": {"bsonType": "string"},
+            "file_path": {"bsonType": "string"},
+            "file_size": {"bsonType": "int"},
+            "mime_type": {"bsonType": "string"},
+            "extension": {"bsonType": "string"},
+            "checksum": {"bsonType": "string"},
+            "content_type": {"bsonType": "string"},
+            "uploaded_by": {"bsonType": "string"},
+            "organization_id": {"bsonType": "string"},
+            "store_id": {"bsonType": "string"},
+            "knowledge_scope": {"bsonType": "string"},
+            "status": {
+                "enum": ["pending", "uploading", "uploaded", "failed", "rejected"]
+            },
+            "document_metadata": {"bsonType": "object"},
+            "virus_scan_status": {
+                "enum": ["pending", "clean", "infected", "skipped"]
+            },
+            "created_at": {"bsonType": "date"},
+            "updated_at": {"bsonType": "date"},
+            "deleted_at": {"bsonType": ["date", "null"]},
+        },
+    }
+}
+
+
+KNOWLEDGE_BUSINESS_SUMMARY_SCHEMA: Dict[str, Any] = {
+    "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["document_id", "title", "summary"],
+        "properties": {
+            "document_id": {
+                "bsonType": "string"
+            },
+            "version_number": {
+                "bsonType": "int"
+            },
+            "title": {
+                "bsonType": "string"
+            },
+            "summary": {
+                "bsonType": "string"
+            },
+            "metadata": {
+                "bsonType": "object"
+            },
+            "created_at": {
+                "bsonType": "date"
+            },
+            "updated_at": {
+                "bsonType": "date"
+            }
+        }
+    }
+}
+
 RUNTIME_LOG_SCHEMA: Dict[str, Any] = {
     "$jsonSchema": {
         "bsonType": "object",
@@ -351,6 +418,8 @@ VALIDATORS_MAP: Dict[str, Dict[str, Any]] = {
     "messages": MESSAGE_SCHEMA,
     "knowledge_documents": KNOWLEDGE_DOCUMENT_SCHEMA,
     "knowledge_chunks": KNOWLEDGE_CHUNK_SCHEMA,
+    "knowledge_business_summaries": KNOWLEDGE_BUSINESS_SUMMARY_SCHEMA,
+    "knowledge_uploads": KNOWLEDGE_UPLOAD_SCHEMA,
     "runtime_logs": RUNTIME_LOG_SCHEMA,
     "prompt_history": PROMPT_HISTORY_SCHEMA,
     "recommendations": RECOMMENDATION_SCHEMA,

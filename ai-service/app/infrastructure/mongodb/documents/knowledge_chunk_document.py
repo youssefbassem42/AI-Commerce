@@ -1,35 +1,47 @@
-from typing import Dict, Any, Optional
+from typing import Any, Optional
+
 from pydantic import Field
-from app.infrastructure.mongodb.documents.base_document import BaseMongoDocument
+
 from app.domain.knowledge.entities.knowledge_chunk import KnowledgeChunk
+from app.infrastructure.mongodb.documents.base_document import BaseMongoDocument
+
 
 class KnowledgeChunkDocument(BaseMongoDocument):
     """MongoDB document model representing a KnowledgeChunk."""
+
     document_id: str = Field(..., index=True)
+    version_number: int = Field(default=1, ge=1)
+    chunk_index: int = Field(..., ge=0)
+    title: Optional[str] = None
     content: str = Field(...)
-    chunk_index: int = Field(...)
     embedding_id: Optional[str] = Field(None, index=True)
-    metadata: Dict[str, Any] = Field(default_factory=dict)
+    metadata: dict[str, Any] = Field(default_factory=dict)
 
     def to_entity(self) -> KnowledgeChunk:
-        """Map document to domain Entity."""
         return KnowledgeChunk(
             id=str(self.id),
             document_id=self.document_id,
-            content=self.content,
+            version_number=self.version_number,
             chunk_index=self.chunk_index,
+            title=self.title,
+            content=self.content,
             embedding_id=self.embedding_id,
-            metadata=self.metadata
+            metadata=self.metadata,
+            created_at=self.created_at,
+            updated_at=self.updated_at,
         )
 
     @classmethod
     def from_entity(cls, entity: KnowledgeChunk) -> "KnowledgeChunkDocument":
-        """Map domain Entity to MongoDB Document."""
         return cls(
             _id=entity.id,
             document_id=entity.document_id,
-            content=entity.content,
+            version_number=entity.version_number,
             chunk_index=entity.chunk_index,
+            title=entity.title,
+            content=entity.content,
             embedding_id=entity.embedding_id,
-            metadata=entity.metadata
+            metadata=entity.metadata,
+            created_at=entity.created_at,
+            updated_at=entity.updated_at,
         )

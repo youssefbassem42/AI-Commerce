@@ -219,7 +219,8 @@ namespace AI_Sales_Agent.Migrations
 
                     b.Property<string>("ShopDomain")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -236,6 +237,10 @@ namespace AI_Sales_Agent.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ShopDomain")
+                        .IsUnique()
+                        .HasFilter("[DeletedAt] IS NULL");
 
                     b.HasIndex("UserId");
 

@@ -1,45 +1,57 @@
-from app.domain.knowledge.entities.knowledge_document import KnowledgeDocument
+from app.application.knowledge.dto import (
+    BusinessSummaryDTO,
+    DocumentMetadataDTO,
+    DocumentVersionDTO,
+    KnowledgeChunkDTO,
+    KnowledgeDocumentDTO,
+)
+from app.domain.knowledge.entities.business_summary import BusinessSummary
 from app.domain.knowledge.entities.knowledge_chunk import KnowledgeChunk
-from app.infrastructure.mongodb.documents.knowledge_document import KnowledgeDocumentModel
+from app.domain.knowledge.entities.knowledge_document import KnowledgeDocument
+from app.infrastructure.mongodb.documents.business_summary_document import BusinessSummaryDocument
 from app.infrastructure.mongodb.documents.knowledge_chunk_document import KnowledgeChunkDocument
-from app.application.knowledge.dto.knowledge_dto import KnowledgeDocumentDTO, KnowledgeChunkDTO
+from app.infrastructure.mongodb.documents.knowledge_document import KnowledgeDocumentModel
+
 
 class KnowledgeMapper:
-    """Maps Knowledge Aggregate between Mongo Documents, Domain Entities, and DTOs."""
+    """Maps knowledge documents, chunks, and summaries across layers."""
 
     @staticmethod
-    def to_entity(doc: KnowledgeDocumentModel) -> KnowledgeDocument:
-        """Map Mongo Document to Domain Entity."""
+    def to_document_entity(doc: KnowledgeDocumentModel) -> KnowledgeDocument:
         return doc.to_entity()
 
     @staticmethod
-    def to_document(entity: KnowledgeDocument) -> KnowledgeDocumentModel:
-        """Map Domain Entity to Mongo Document."""
-        return KnowledgeDocumentModel.from_entity(entity)
+    def to_chunk_entity(doc: KnowledgeChunkDocument) -> KnowledgeChunk:
+        return doc.to_entity()
 
     @staticmethod
-    def to_dto(entity: KnowledgeDocument) -> KnowledgeDocumentDTO:
-        """Map Domain Entity to DTO."""
+    def to_summary_entity(doc: BusinessSummaryDocument) -> BusinessSummary:
+        return doc.to_entity()
+
+    @staticmethod
+    def to_document_dto(entity: KnowledgeDocument) -> KnowledgeDocumentDTO:
         return KnowledgeDocumentDTO(
             id=entity.id,
             store_id=entity.store_id,
             title=entity.title,
+            description=entity.description,
             source_url=entity.source_url,
             status=entity.status,
             language=entity.language,
-            metadata=entity.metadata,
-            chunks=[
-                KnowledgeChunkDTO(
-                    id=chk.id,
-                    document_id=chk.document_id,
-                    content=chk.content,
-                    chunk_index=chk.chunk_index,
-                    embedding_id=chk.embedding_id,
-                    metadata=chk.metadata
-                )
-                for chk in entity.chunks
-            ],
+            metadata=DocumentMetadataDTO(**entity.metadata.model_dump()),
+            versions=[DocumentVersionDTO(**version.model_dump()) for version in entity.versions],
+            current_version=entity.current_version,
+            chunks=[KnowledgeChunkDTO(**chunk.model_dump()) for chunk in entity.chunks],
             chunking_strategy=entity.chunking_strategy,
             created_at=entity.created_at,
-            updated_at=entity.updated_at
+            updated_at=entity.updated_at,
+            deleted_at=entity.deleted_at,
         )
+
+    @staticmethod
+    def to_chunk_dto(entity: KnowledgeChunk) -> KnowledgeChunkDTO:
+        return KnowledgeChunkDTO(**entity.model_dump())
+
+    @staticmethod
+    def to_summary_dto(entity: BusinessSummary) -> BusinessSummaryDTO:
+        return BusinessSummaryDTO(**entity.model_dump())
