@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AI-Sales Agent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5383608bf1250eb917e473c7db9f4efc68ccedd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e9e1dfd474a6f6cc790fd35ff72cba48c180af6")]
 [assembly: System.Reflection.AssemblyProductAttribute("AI-Sales Agent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AI-Sales Agent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

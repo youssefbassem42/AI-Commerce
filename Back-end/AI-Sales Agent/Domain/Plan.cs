@@ -8,11 +8,12 @@
         public string PlanDescription { get; set; } = string.Empty;
         public string PlanStatus { get; set; } = string.Empty;
 
+        public decimal PlanPrice { get; set; } = 0.0M; 
+
         //Subscription
         public ICollection<Subscription> Subscriptions { get; set; } = new List<Subscription>();
 
         //Plan Features
         public ICollection<PlanFeature> PlanFeatures { get; set; } = new List<PlanFeature>();
-
     }
 }

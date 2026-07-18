@@ -90,6 +90,10 @@ namespace AI_Sales_Agent.Data
                 .HasOne(subscription => subscription.Plan)
                 .WithMany(plan => plan.Subscriptions)
                 .HasForeignKey(subscription => subscription.PlanId);
+
+            modelBuilder.Entity<Plan>()
+                .Property(p => p.PlanPrice)
+                .HasColumnType("decimal(18,2)");
         }
     }
 }
