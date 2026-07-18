@@ -151,6 +151,156 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AI_Sales_Agent.Features.Stores.StoresController",
+    "Method": "GetStores",
+    "RelativePath": "api/stores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[AI_Sales_Agent.Features.Stores.StoreResponse, AI-Sales Agent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AI_Sales_Agent.Features.Stores.StoresController",
+    "Method": "CreateStore",
+    "RelativePath": "api/stores",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "AI_Sales_Agent.Features.Stores.CreateStore.CreateStoreCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AI_Sales_Agent.Features.Stores.StoreResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AI_Sales_Agent.Features.Stores.StoresController",
+    "Method": "GetStore",
+    "RelativePath": "api/stores/{storeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "storeId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AI_Sales_Agent.Features.Stores.StoreResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AI_Sales_Agent.Features.Stores.StoresController",
+    "Method": "UpdateStore",
+    "RelativePath": "api/stores/{storeId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "storeId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "AI_Sales_Agent.Features.Stores.UpdateStoreRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AI_Sales_Agent.Features.Stores.StoreResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AI_Sales_Agent.Features.Stores.StoresController",
+    "Method": "DeleteStore",
+    "RelativePath": "api/stores/{storeId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "storeId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AI_Sales_Agent.Features.Stores.StoresController",
+    "Method": "UpdateStoreSettings",
+    "RelativePath": "api/stores/{storeId}/settings",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "storeId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "AI_Sales_Agent.Features.Stores.UpdateStoreSettingsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AI_Sales_Agent.Features.Stores.StoreResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "AI_Sales_Agent.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
