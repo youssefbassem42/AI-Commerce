@@ -1,15 +1,19 @@
 from app.domain.knowledge.entities.knowledge_chunk import KnowledgeChunk
 from app.domain.knowledge.repositories.chunk_repository import ChunkRepository as IChunkRepository
+from app.domain.knowledge.value_objects.tenant_context import TenantContext
 from app.infrastructure.mongodb.collections import get_knowledge_chunks_collection
 from app.infrastructure.mongodb.documents.knowledge_chunk_document import KnowledgeChunkDocument
-from app.infrastructure.mongodb.repositories.base_repository import BaseMongoRepository
+from app.infrastructure.mongodb.repositories.tenant_repository import TenantAwareRepository
 
 
-class ChunkRepository(BaseMongoRepository[KnowledgeChunkDocument, KnowledgeChunk], IChunkRepository):
-    """MongoDB implementation of the knowledge chunk repository."""
+class ChunkRepository(TenantAwareRepository[KnowledgeChunkDocument, KnowledgeChunk], IChunkRepository):
+    """MongoDB implementation of the knowledge chunk repository.
 
-    def __init__(self):
-        super().__init__(get_knowledge_chunks_collection(), KnowledgeChunkDocument)
+    All queries are automatically scoped by the injected TenantContext.
+    """
+
+    def __init__(self, tenant: TenantContext):
+        super().__init__(get_knowledge_chunks_collection(), KnowledgeChunkDocument, tenant)
 
     async def find_by_document_id(
         self,

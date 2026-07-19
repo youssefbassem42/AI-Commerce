@@ -2,19 +2,23 @@ from app.domain.knowledge.entities.business_summary import BusinessSummary
 from app.domain.knowledge.repositories.business_summary_repository import (
     BusinessSummaryRepository as IBusinessSummaryRepository,
 )
+from app.domain.knowledge.value_objects.tenant_context import TenantContext
 from app.infrastructure.mongodb.collections import get_knowledge_business_summaries_collection
 from app.infrastructure.mongodb.documents.business_summary_document import BusinessSummaryDocument
-from app.infrastructure.mongodb.repositories.base_repository import BaseMongoRepository
+from app.infrastructure.mongodb.repositories.tenant_repository import TenantAwareRepository
 
 
 class BusinessSummaryRepository(
-    BaseMongoRepository[BusinessSummaryDocument, BusinessSummary],
+    TenantAwareRepository[BusinessSummaryDocument, BusinessSummary],
     IBusinessSummaryRepository,
 ):
-    """MongoDB implementation of the business summary repository."""
+    """MongoDB implementation of the business summary repository.
 
-    def __init__(self):
-        super().__init__(get_knowledge_business_summaries_collection(), BusinessSummaryDocument)
+    All queries are automatically scoped by the injected TenantContext.
+    """
+
+    def __init__(self, tenant: TenantContext):
+        super().__init__(get_knowledge_business_summaries_collection(), BusinessSummaryDocument, tenant)
 
     async def find_by_document_id(
         self,
