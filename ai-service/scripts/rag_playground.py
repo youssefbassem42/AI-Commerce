@@ -167,18 +167,21 @@ def _estimate_tokens(text: str) -> int:
         return len(text) // 4
 
 
-async def step1_load_pdfs() -> list[Path]:
+async def step1_load_pdfs(store_slug: str = "") -> list[Path]:
     print_header("STEP 1: Load PDFs")
 
-    pdf_files = sorted(RESOURCES_DIR.glob("*.pdf"))
+    if store_slug:
+        store_dir = PROJECT_ROOT / "resources" / "stores" / store_slug
+    else:
+        store_dir = RESOURCES_DIR
+    pdf_files = sorted(store_dir.glob("*.pdf"))
     if not pdf_files:
-        print_warning(f"No PDFs found in {RESOURCES_DIR}")
-        print_info("Place PDF files in resources/testing/ and re-run.")
-        print_info(f"Creating directory: {RESOURCES_DIR}")
-        RESOURCES_DIR.mkdir(parents=True, exist_ok=True)
+        print_warning(f"No PDFs found in {store_dir}")
+        print_info("Place PDF files in the store directory and re-run.")
+        store_dir.mkdir(parents=True, exist_ok=True)
         return []
 
-    print_success(f"Found {len(pdf_files)} PDF(s) in {RESOURCES_DIR}")
+    print_success(f"Found {len(pdf_files)} PDF(s) in {store_dir}")
     print()
 
     pdfs_info = []
@@ -1160,7 +1163,8 @@ async def main() -> None:
         print_info(f"Created {RESOURCES_DIR}")
         print_info("Place PDF files there and re-run.")
 
-    pdfs = await step1_load_pdfs()
+    store_slug = args.store or "testing"
+    pdfs = await step1_load_pdfs(store_slug=store_slug)
     if not pdfs:
         return
 
