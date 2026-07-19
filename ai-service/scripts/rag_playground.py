@@ -4,13 +4,16 @@ RAG Pipeline Playground
 
 Validates the complete Knowledge Base pipeline using existing project services.
 Place PDF files in resources/testing/ and run:
-    python scripts/rag_playground.py
+    python scripts/rag_playground.py --store electronics
 
-Environment variables:
-    RAG_PLAYGROUND_DEBUG=true   Enable verbose object dumps
-    RAG_STORE_ID=my-store       Override default store ID
+Usage:
+    python scripts/rag_playground.py                              (env-based store)
+    python scripts/rag_playground.py --store electronics
+    python scripts/rag_playground.py --store fashion
+    python scripts/rag_playground.py --store pharmacy
 """
 
+import argparse
 import asyncio
 import json
 import logging
@@ -29,6 +32,39 @@ DEBUG = os.getenv("RAG_PLAYGROUND_DEBUG", "false").lower() in ("true", "1", "yes
 STORE_ID = os.getenv("RAG_STORE_ID", "playground-store")
 ORG_ID = os.getenv("RAG_ORG_ID", "playground-org")
 RESOURCES_DIR = PROJECT_ROOT / "resources" / "testing"
+
+STORE_REGISTRY: dict[str, dict[str, str]] = {
+    "electronics": {
+        "organization_id": "org_elec_001",
+        "store_id": "store_elec_001",
+        "merchant_id": "merchant_elec_001",
+        "integration_id": "int_elec_shopify",
+        "store_slug": "electronics",
+        "language": "en",
+        "currency": "USD",
+        "timezone": "America/New_York",
+    },
+    "fashion": {
+        "organization_id": "org_fashion_002",
+        "store_id": "store_fashion_002",
+        "merchant_id": "merchant_fashion_002",
+        "integration_id": "int_fashion_magento",
+        "store_slug": "fashion",
+        "language": "en",
+        "currency": "EUR",
+        "timezone": "Europe/Paris",
+    },
+    "pharmacy": {
+        "organization_id": "org_pharma_003",
+        "store_id": "store_pharma_003",
+        "merchant_id": "merchant_pharma_003",
+        "integration_id": "int_pharma_custom",
+        "store_slug": "pharmacy",
+        "language": "fr",
+        "currency": "EUR",
+        "timezone": "Europe/Brussels",
+    },
+}
 
 logging.basicConfig(
     level=logging.DEBUG if DEBUG else logging.INFO,
@@ -666,16 +702,24 @@ async def step9_chat_completion(
 
 
 async def step10_interactive_mode(
+    tenant: "TenantContext",
     retriever,
     chat_service,
     summary_data: Optional[dict],
 ) -> None:
     print_header("STEP 10: Interactive Mode")
 
-    from app.application.knowledge.retrieval.config import RetrievalConfig, RetrievalFilters
-    from app.application.rag.prompt import build_rag_messages
-    from app.application.rag.dedup import deduplicate_chunks
-    from app.application.dto.ai_dto import ChatRequest, MessageDTO
+    from app.application.dto.ai_dto import MessageDTO, ChatRequest
+    from app.application.rag.context_builder import ContextBuilder
+    from app.application.rag.prompt_builder import PromptBuilder
+    from app.infrastructure.mongodb.repositories.knowledge_repository import KnowledgeRepository
+    from app.infrastructure.mongodb.repositories.business_summary_repository import (
+        BusinessSummaryRepository,
+    )
+
+    knowledge_repo = KnowledgeRepository()
+    summary_repo = BusinessSummaryRepository()
+    prompt_builder = PromptBuilder()
 
     print_info("Type your questions below. Type 'exit' to quit.")
     print()
@@ -694,53 +738,38 @@ async def step10_interactive_mode(
             print_info("Exiting interactive mode.")
             break
 
-        config = RetrievalConfig(top_k=5, score_threshold=0.0, embedding_model="gemini-embedding-001")
-        filters = RetrievalFilters(organization_id=ORG_ID, store_id=STORE_ID)
+        builder = ContextBuilder(
+            tenant=tenant,
+            retriever=retriever,
+            knowledge_repository=knowledge_repo,
+            business_summary_repository=summary_repo,
+        )
 
         try:
             retrieval_start = time.perf_counter()
-            retrieval_result = await retriever.search(query=question, filters=filters, config=config)
+            ctx = await builder.build(question)
             retrieval_elapsed = time.perf_counter() - retrieval_start
-            chunks = deduplicate_chunks(retrieval_result.results)
         except Exception as e:
-            print_warning(f"Retrieval failed: {e}")
-            chunks = []
+            print_warning(f"Context builder failed: {e}")
+            ctx = None
             retrieval_elapsed = 0
 
         print()
-        print_label("Retrieved chunks", str(len(chunks)))
-        for i, c in enumerate(chunks[:3]):
-            print_label(f"  Chunk [{i + 1}] score", f"{c.score:.4f}")
+        if ctx:
+            print_label("Retrieved chunks", str(len(ctx.chunks)))
+            for i, c in enumerate(ctx.chunks[:3]):
+                print_label(f"  Chunk [{i + 1}] score", f"{c.score:.4f}")
+                preview = c.content[:120].replace("\n", " ")
+                print_label(f"    Preview", f"{preview}...")
 
-        summary_text = None
-        summary_version = None
-        if summary_data:
-            summary_text = summary_data["summary"].summary
-            summary_version = summary_data["summary"].version_number
-
-        chunks_context_lines = []
-        for i, c in enumerate(chunks[:10]):
-            snippet = c.content[:2000]
-            chunks_context_lines.append(
-                f"\n### Retrieved Knowledge Chunk [{i + 1}]\n"
-                f"**Source:** {c.document_title}\n"
-                f"{snippet}\n"
-            )
-        chunks_context = "\n".join(chunks_context_lines)
-
-        system_content, user_content, _ = build_rag_messages(
+        messages = prompt_builder.build(
             user_message=question,
-            chunks_context=chunks_context,
-            business_summary_context=summary_text,
-            business_summary_version=summary_version,
+            context=ctx,
+            conversation_history=None,
         )
 
-        print_label("Final prompt", f"({_estimate_tokens(system_content + user_content)} estimated tokens)")
-
-        messages = [
-            MessageDTO(role="system", content=system_content),
-            MessageDTO(role="user", content=user_content),
-        ]
+        tokens = _estimate_tokens(messages[0].content + messages[-1].content)
+        print_label("Final prompt", f"({tokens} estimated tokens)")
 
         request = ChatRequest(
             messages=messages,
@@ -774,13 +803,357 @@ async def step10_interactive_mode(
             debug_dump("Interactive Chat Error", e)
 
 
+def _resolve_tenant_from_slug(slug: str) -> "TenantContext":
+    from app.application.rag.resolver import TenantContextResolver
+    resolver = TenantContextResolver(store_registry=STORE_REGISTRY)
+    return resolver.from_slug(slug)
+
+
+async def step0_sync_coordinator(
+    tenant: "TenantContext",
+) -> Optional[dict[str, Any]]:
+    """Run KnowledgeSyncCoordinator — detect changes, sync knowledge, bump version."""
+    print_header("STEP 0: Knowledge Sync Coordinator")
+
+    from app.application.knowledge.coordinator import KnowledgeSyncCoordinator
+    from app.application.knowledge.services import (
+        KnowledgeDocumentService,
+        KnowledgeChunkService,
+        BusinessSummaryService,
+    )
+    from app.infrastructure.mongodb.repositories.knowledge_repository import (
+        KnowledgeRepository,
+    )
+    from app.infrastructure.mongodb.repositories.chunk_repository import ChunkRepository
+    from app.infrastructure.mongodb.repositories.business_summary_repository import (
+        BusinessSummaryRepository,
+    )
+
+    knowledge_repo = KnowledgeRepository()
+    doc_service = KnowledgeDocumentService(repository=knowledge_repo)
+    chunk_service = KnowledgeChunkService(repository=ChunkRepository())
+    summary_service = BusinessSummaryService(repository=BusinessSummaryRepository())
+
+    coordinator = KnowledgeSyncCoordinator(
+        tenant=tenant,
+        document_service=doc_service,
+        chunk_service=chunk_service,
+        summary_service=summary_service,
+        knowledge_repository=knowledge_repo,
+    )
+
+    try:
+        start = time.perf_counter()
+        report = await coordinator.run_sync(enqueue_background=False)
+        elapsed = time.perf_counter() - start
+
+        print_success(f"Coordinator finished in {elapsed:.2f}s")
+        print()
+        print_label("Current Knowledge Version", str(report.current_version), Color.BOLD)
+        print_label("New Knowledge Version", str(report.new_version), Color.BOLD)
+        print_label("Total Files", str(report.total_files))
+        print_label("Files Skipped (unchanged)", str(report.files_skipped))
+        print_label("Files Reprocessed", str(report.files_processed))
+        print_label("Chunks Generated", str(report.chunks_generated))
+        print_label("Embeddings Generated", str(report.embeddings_generated))
+        print_label("Summary Updated", str(report.summary_updated))
+        print_label("Vectors Synced", str(report.vectors_synced))
+        print_label("Sync Status", report.sync_status, Color.GREEN if report.sync_status == "completed" else Color.YELLOW)
+        if report.errors:
+            print_warning(f"Errors: {len(report.errors)}")
+            for e in report.errors:
+                print_label("  •", e, Color.RED)
+
+        return report.to_dict()
+
+    except Exception as e:
+        print_error(f"Coordinator failed: {e}")
+        debug_dump("Coordinator Error", e)
+        return None
+
+
+async def step11_resolve_tenant(
+    tenant: "TenantContext",
+) -> None:
+    """Display resolved tenant context."""
+    print_header("STEP 11: Tenant Resolution")
+    print_success(f"Tenant resolved automatically")
+    print_label("  Organization", tenant.organization_id)
+    print_label("  Store ID", tenant.store_id)
+    print_label("  Store Slug", tenant.store_slug, Color.BOLD)
+    print_label("  Merchant ID", tenant.merchant_id)
+    print_label("  Integration ID", tenant.integration_id)
+    print_label("  Language", tenant.language)
+    print_label("  Currency", tenant.currency)
+    print_label("  Timezone", tenant.timezone)
+    print_label("  Knowledge Version", str(tenant.knowledge_version))
+    print_label("  Vector Collection", tenant.collection_name, Color.BOLD)
+
+
+async def step12_load_knowledge_version(
+    tenant: "TenantContext",
+    knowledge_repo,
+) -> Optional[int]:
+    """Load the active knowledge version for the current tenant."""
+    print_header("STEP 12: Active Knowledge Version")
+
+    from app.infrastructure.mongodb.collections import get_knowledge_versions_collection
+    from app.infrastructure.mongodb.documents.knowledge_version_document import (
+        KnowledgeVersionDocument,
+    )
+
+    col = get_knowledge_versions_collection()
+    cursor = col.find(
+        {"organization_id": tenant.organization_id, "store_id": tenant.store_id},
+    ).sort("version_number", -1).limit(1)
+    latest = await cursor.to_list(length=1)
+
+    if latest:
+        doc = KnowledgeVersionDocument.from_mongo_dict(latest[0])
+        print_success(f"Active knowledge version: v{doc.version_number}")
+        print_label("  Status", doc.status)
+        print_label("  Document count", str(doc.document_count))
+        print_label("  Chunk count", str(doc.chunk_count))
+        print_label("  Summary generated", str(doc.summary_generated))
+        print_label("  Vectors synced", str(doc.vectors_synced))
+        if doc.completed_at:
+            print_label("  Completed at", doc.completed_at.isoformat())
+        return doc.version_number
+
+    print_warning("No knowledge versions found for this tenant")
+    return None
+
+
+async def step13_context_builder(
+    tenant: "TenantContext",
+    retriever,
+    knowledge_repo,
+    summary_repo,
+    query: str,
+) -> Optional["BuiltContext"]:
+    """Build tenant-aware RAG context using ContextBuilder."""
+    print_header("STEP 13: Context Builder")
+
+    from app.application.rag.context_builder import ContextBuilder
+
+    builder = ContextBuilder(
+        tenant=tenant,
+        retriever=retriever,
+        knowledge_repository=knowledge_repo,
+        business_summary_repository=summary_repo,
+    )
+
+    try:
+        start = time.perf_counter()
+        ctx = await builder.build(query)
+        elapsed = time.perf_counter() - start
+
+        print_success(f"Context built in {elapsed*1000:.1f}ms")
+        print_label("  Knowledge Version", str(ctx.active_version_number))
+        print_label("  Business Summary", f"{'✓' if ctx.business_summary else '✗'} loaded")
+        print_label("  Chunks Retrieved", str(ctx.total_chunks_retrieved))
+        print_label("  Chunks After Dedup", str(len(ctx.chunks)))
+        if ctx.business_summary_version:
+            print_label("  Summary Version", str(ctx.business_summary_version))
+
+        if ctx.business_summary:
+            print()
+            print_label("Business Summary Preview", ctx.business_summary[:300].replace("\n", " ") + "...")
+
+        print()
+        for i, c in enumerate(ctx.chunks[:5]):
+            print_label(f"  Chunk [{i + 1}]", c.document_title)
+            print_label(f"    Score", f"{c.score:.4f}")
+            print_label(f"    Rank", str(c.rank))
+            preview = c.content[:150].replace("\n", " ")
+            print_label(f"    Preview", f"{preview}...")
+
+        return ctx
+
+    except Exception as e:
+        print_error(f"Context builder failed: {e}")
+        debug_dump("ContextBuilder Error", e)
+        return None
+
+
+async def step14_prompt_builder(
+    built_context: Optional["BuiltContext"],
+    query: str,
+    conversation_history: Optional[list] = None,
+) -> Optional[dict]:
+    """Build final prompt using PromptBuilder and display all components."""
+    print_header("STEP 14: Prompt Builder")
+
+    if not built_context:
+        print_warning("No built context available")
+        return None
+
+    from app.application.rag.prompt_builder import PromptBuilder
+
+    builder = PromptBuilder()
+    messages = builder.build(
+        user_message=query,
+        context=built_context,
+        conversation_history=conversation_history,
+    )
+
+    system_msg = messages[0].content if messages else ""
+    user_msg = messages[-1].content if len(messages) > 1 else query
+
+    print_label("System Prompt", "")
+    print(f"{system_msg}\n")
+
+    if built_context.business_summary:
+        print_label("Business Summary", "")
+        print(f"{built_context.business_summary}\n")
+
+    print_label("Retrieved Context", "")
+    for i, c in enumerate(built_context.chunks[:5]):
+        snippet = c.content[:200].replace("\n", " ")
+        print_label(f"  Chunk [{i + 1}]", f"{c.document_title}: {snippet}...")
+
+    if conversation_history:
+        print_label("Conversation History", "")
+        for m in conversation_history[-4:]:
+            print(f"  {m.role}: {str(m.content)[:100]}")
+
+    print_label("User Prompt", "")
+    print(f"{user_msg}\n")
+
+    print_label("Final Prompt (system + user)", f"({_estimate_tokens(system_msg + user_msg)} estimated tokens)")
+
+    full_prompt = builder.build_single_prompt(query, built_context, conversation_history)
+    print()
+    print_label("Single Prompt Preview", full_prompt[:500].replace("\n", " ") + "...")
+
+    return {
+        "messages": messages,
+        "system_content": system_msg,
+        "user_content": user_msg,
+        "full_prompt": full_prompt,
+        "context": built_context,
+    }
+
+
+async def step15_chat_completion_with_display(
+    prompt_data: Optional[dict],
+    chat_service,
+) -> Optional[dict]:
+    """Call ChatService with the final prompt and display full results."""
+    print_header("STEP 15: Chat Completion")
+
+    from app.application.dto.ai_dto import ChatRequest
+
+    if not prompt_data:
+        print_warning("No prompt data available, skipping chat")
+        return None
+
+    messages = prompt_data["messages"]
+
+    request = ChatRequest(
+        messages=messages,
+        model=os.getenv("RAG_LLM_MODEL", "gemini-2.5-flash"),
+        temperature=0.3,
+        max_tokens=1024,
+    )
+
+    try:
+        start = time.perf_counter()
+        response = await chat_service.chat(request=request)
+        elapsed = time.perf_counter() - start
+
+        response_text = response.message.content
+        if isinstance(response_text, list):
+            response_text = " ".join(str(item) for item in response_text)
+
+        usage = response.usage
+        chunk_refs = []
+        context = prompt_data.get("context")
+        if context and context.chunks:
+            for c in context.chunks[:10]:
+                chunk_refs.append({
+                    "chunk_id": c.chunk_id,
+                    "document_title": c.document_title,
+                    "score": c.score,
+                })
+
+        print_success(f"Provider: {response.provider}")
+        print_label("  Model", response.model)
+        print_label("  Execution time", f"{elapsed:.2f}s")
+        print_label("  Prompt tokens", str(usage.prompt_tokens))
+        print_label("  Completion tokens", str(usage.completion_tokens))
+        print_label("  Total tokens", str(usage.total_tokens))
+        print_label("  Cost", f"${usage.cost:.6f}")
+        print()
+        print_label("Response", "")
+        print(f"{response_text}\n")
+
+        if chunk_refs:
+            print_label("Referenced Chunk IDs", "")
+            for ref in chunk_refs:
+                print(f"  • {ref['chunk_id'][:24]}... ({ref['document_title']}, score={ref['score']:.4f})")
+
+        if context:
+            print_label("Knowledge Version", str(context.active_version_number))
+            print_label("Tenant", context.tenant.store_slug if context.tenant else "N/A")
+
+        return {
+            "response": response,
+            "response_text": response_text,
+            "elapsed": elapsed,
+            "chunk_refs": chunk_refs,
+        }
+
+    except Exception as e:
+        print_error(f"Chat completion failed: {e}")
+        debug_dump("Chat Error", e)
+        return None
+
+
+def _parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="RAG Playground — test tenant-isolated knowledge retrieval.",
+    )
+    parser.add_argument(
+        "--store",
+        type=str,
+        default=None,
+        choices=list(STORE_REGISTRY) if STORE_REGISTRY else None,
+        help="Store slug to run the pipeline for (overrides env vars)",
+    )
+    return parser.parse_args()
+
+
 async def main() -> None:
+    args = _parse_args()
+
     print()
     cprint(Color.CYAN + Color.BOLD, "╔══════════════════════════════════════════════════════════╗")
     cprint(Color.CYAN + Color.BOLD, "║        RAG Pipeline Playground — AI Commerce           ║")
     cprint(Color.CYAN + Color.BOLD, "╚══════════════════════════════════════════════════════════╝")
 
     _patch_settings()
+
+    if args.store:
+        tenant = _resolve_tenant_from_slug(args.store)
+        global STORE_ID, ORG_ID
+        STORE_ID = tenant.store_id
+        ORG_ID = tenant.organization_id
+        print_info(f"Using store: {args.store}")
+        print_label("  Organization", tenant.organization_id)
+        print_label("  Store ID", tenant.store_id)
+        print_label("  Store Slug", tenant.store_slug)
+        print_label("  Language", tenant.language)
+        print_label("  Currency", tenant.currency)
+        print_label("  Vector Namespace", tenant.collection_name)
+    else:
+        from app.domain.knowledge.value_objects.tenant_context import TenantContext
+
+        tenant = TenantContext(
+            organization_id=ORG_ID,
+            store_id=STORE_ID,
+            vector_namespace=STORE_ID,
+        )
 
     if not RESOURCES_DIR.exists():
         RESOURCES_DIR.mkdir(parents=True, exist_ok=True)
@@ -817,7 +1190,7 @@ async def main() -> None:
         print_success("Qdrant connected")
     except Exception as e:
         print_warning(f"Qdrant connection failed: {e}")
-        print_info("Vector store steps (5, 7, 8) will be skipped.")
+        print_info("Vector store steps will be skipped.")
         print_info("Start Qdrant: docker run -p 6333:6333 qdrant/qdrant")
 
     factory = LLMProviderFactory()
@@ -829,6 +1202,7 @@ async def main() -> None:
         vector_store=vector_store or QdrantProvider(),
         llm_provider=provider,
         reranker=reranker,
+        tenant=tenant,
     )
     chat_service = ChatService(provider_factory=LLMProviderFactory())
 
@@ -837,6 +1211,16 @@ async def main() -> None:
     summary_repo = BusinessSummaryRepository()
 
     try:
+        await step11_resolve_tenant(tenant)
+
+        knowledge_version = await step12_load_knowledge_version(tenant, knowledge_repo)
+        if knowledge_version:
+            tenant = tenant.__class__(
+                **{**tenant.model_dump(), "knowledge_version": knowledge_version}
+            )
+
+        sync_report = await step0_sync_coordinator(tenant)
+
         processed = await step2_process_documents(
             pdfs, knowledge_repo, ExtractorFactory(), ProcessingPipeline(),
         )
@@ -867,15 +1251,36 @@ async def main() -> None:
             else:
                 print_header(f"STEP 7: Semantic Search — \"{q}\" (skipped — Qdrant unavailable)")
 
-        rag_data = await step8_build_rag_prompt(
+        rag_prompt = await step8_build_rag_prompt(
             "What are your shipping options and return policy?",
             retriever,
             summary_data,
         )
 
-        await step9_chat_completion(rag_data, chat_service)
+        await step9_chat_completion(rag_prompt, chat_service)
 
-        await step10_interactive_mode(retriever, chat_service, summary_data)
+        print()
+        cprint(Color.MAGENTA + Color.BOLD, "━" * 72)
+        cprint(Color.MAGENTA + Color.BOLD, "  INTELLIGENT TENANT-AWARE RAG WORKFLOW")
+        cprint(Color.MAGENTA + Color.BOLD, "━" * 72)
+
+        test_question = "What are your shipping options and return policy?"
+
+        built_context = await step13_context_builder(
+            tenant, retriever, knowledge_repo, summary_repo, test_question,
+        )
+
+        from app.application.dto.ai_dto import MessageDTO
+        history = [
+            MessageDTO(role="user", content="Hello"),
+            MessageDTO(role="assistant", content="Hi! How can I help you today?"),
+        ] if knowledge_version else None
+
+        prompt_data = await step14_prompt_builder(built_context, test_question, history)
+
+        await step15_chat_completion_with_display(prompt_data, chat_service)
+
+        await step10_interactive_mode(tenant, retriever, chat_service, summary_data)
 
     finally:
         if qdrant_connected and vector_store is not None:

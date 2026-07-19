@@ -10,6 +10,7 @@ from app.application.knowledge.retrieval.config import RetrievalConfig, Retrieva
 from app.application.knowledge.retrieval.dto import RetrievedChunkDTO, UnifiedRetrievalResult
 from app.application.knowledge.retrieval.mmr import mmr_rerank
 from app.application.knowledge.retrieval.reranker import ReRanker
+from app.domain.knowledge.value_objects.tenant_context import TenantContext
 from app.infrastructure.providers.base import BaseLLMProvider
 from app.infrastructure.vectorstore.base import SearchResult, VectorStore
 
@@ -23,11 +24,13 @@ class RetrieverService:
         llm_provider: BaseLLMProvider,
         reranker: Optional[ReRanker] = None,
         default_config: Optional[RetrievalConfig] = None,
+        tenant: Optional["TenantContext"] = None,
     ):
         self._vector_store = vector_store
         self._llm_provider = llm_provider
         self._reranker = reranker
         self._default_config = default_config or RetrievalConfig()
+        self._tenant = tenant
         self._collection_cache: dict[str, bool] = {}
 
     async def search(
@@ -37,7 +40,7 @@ class RetrieverService:
         config: Optional[RetrievalConfig] = None,
     ) -> UnifiedRetrievalResult:
         cfg = config or self._default_config
-        filters = filters or RetrievalFilters()
+        filters = self._enforce_tenant_scope(filters or RetrievalFilters())
         start = time.perf_counter()
 
         query_embedding = await self._embed_query(query, cfg.embedding_model)
@@ -101,7 +104,7 @@ class RetrieverService:
         query_text: str = "",
     ) -> UnifiedRetrievalResult:
         cfg = config or self._default_config
-        filters = filters or RetrievalFilters()
+        filters = self._enforce_tenant_scope(filters or RetrievalFilters())
         start = time.perf_counter()
 
         must = self._build_filter_conditions(filters)
@@ -296,6 +299,21 @@ class RetrieverService:
             raise RuntimeError(f"Embedding returned empty result for model '{model}'")
         return response.embeddings[0]
 
+    def _enforce_tenant_scope(self, filters: RetrievalFilters) -> RetrievalFilters:
+        if self._tenant:
+            if not filters.organization_id:
+                filters.organization_id = self._tenant.organization_id
+            if not filters.store_id:
+                filters.store_id = self._tenant.store_id
+            if not filters.knowledge_version:
+                filters.knowledge_version = self._tenant.knowledge_version
+        if filters.organization_id is None or filters.store_id is None:
+            logger.warning(
+                "No tenant scope set — retrieval would be global. "
+                "Always provide organization_id and store_id via tenant or filters."
+            )
+        return filters
+
     def _build_filter_conditions(
         self,
         filters: RetrievalFilters,
@@ -310,8 +328,14 @@ class RetrieverService:
             conditions.append({"key": "language", "op": "eq", "value": filters.language})
         if filters.document_type:
             conditions.append({"key": "document_type", "op": "eq", "value": filters.document_type})
+        if filters.document_status:
+            conditions.append({"key": "document_status", "op": "eq", "value": filters.document_status})
+        else:
+            conditions.append({"key": "document_status", "op": "eq", "value": "active"})
         if filters.knowledge_scope:
             conditions.append({"key": "knowledge_scope", "op": "eq", "value": filters.knowledge_scope})
+        if filters.knowledge_version is not None:
+            conditions.append({"key": "knowledge_version", "op": "eq", "value": filters.knowledge_version})
         if filters.business_version is not None:
             conditions.append({"key": "business_version", "op": "eq", "value": filters.business_version})
         if filters.chunk_ids:
@@ -320,6 +344,8 @@ class RetrieverService:
         return conditions if conditions else None
 
     def _collection_name(self, filters: RetrievalFilters, cfg: RetrievalConfig) -> str:
+        if self._tenant:
+            return self._tenant.collection_name
         tenant = filters.organization_id or filters.store_id or "default"
         return f"{cfg.collection_prefix}_{tenant}"
 

@@ -32,11 +32,13 @@ celery_app.conf.update(
 )
 
 celery_app.conf.task_routes = {
-    "knowledge.process_document": {"queue": "ingestion"},
-    "knowledge.generate_chunks": {"queue": "ingestion"},
-    "knowledge.generate_summary": {"queue": "summarization"},
-    "knowledge.generate_embeddings": {"queue": "embedding"},
-    "knowledge.sync_vectors": {"queue": "embedding"},
+    "knowledge.*": {"queue": "ingestion"},
+    "kb.extract_document": {"queue": "ingestion"},
+    "kb.chunk_document": {"queue": "ingestion"},
+    "kb.embed_chunks": {"queue": "embedding"},
+    "kb.sync_vector_db": {"queue": "embedding"},
+    "kb.generate_summary": {"queue": "summarization"},
+    "kb.bump_version": {"queue": "default"},
     "knowledge.retry_failed_jobs": {"queue": "scheduler"},
     "knowledge.cleanup_dead_letters": {"queue": "scheduler"},
     "knowledge.process_dead_letter_queue": {"queue": "cleanup"},

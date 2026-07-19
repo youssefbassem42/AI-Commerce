@@ -19,6 +19,8 @@ class RetrievalFilters(BaseModel):
     store_id: str | None = Field(default=None, description="Store context ID")
     language: str | None = Field(default=None, description="Document language filter")
     document_type: str | None = Field(default=None, description="Source document type")
+    document_status: str | None = Field(default=None, description="Document status filter ('active', 'archived')")
     knowledge_scope: str | None = Field(default=None, description="Knowledge scope/category")
+    knowledge_version: int | None = Field(default=None, ge=1, description="Knowledge base version filter")
     business_version: int | None = Field(default=None, ge=1, description="Business summary version")
     chunk_ids: list[str] | None = Field(default=None, description="Specific chunk IDs to restrict to")
