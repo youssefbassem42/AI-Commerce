@@ -25,7 +25,7 @@ BATCH_SIZE = 50
 def generate_embeddings_task(
     self,
     chunk_ids: list[str],
-    model: str = "text-embedding-3-small",
+    model: str = "gemini-embedding-001",
     job_id: Optional[str] = None,
 ) -> dict:
     def _run():
@@ -111,7 +111,7 @@ def sync_vectors_task(
     self,
     chunk_ids: list[str],
     collection_name: str = "kb_default",
-    model: str = "text-embedding-3-small",
+    model: str = "gemini-embedding-001",
     job_id: Optional[str] = None,
 ) -> dict:
     def _run():

@@ -10,7 +10,7 @@ class RetrievalConfig(BaseModel):
     rerank: bool = Field(default=False, description="Enable LLM cross-encoder re-ranking")
     rerank_top_k: int = Field(default=5, ge=1, le=50, description="Results to consider for re-ranking")
     hybrid_vector_weight: float = Field(default=0.7, ge=0.0, le=1.0, description="Vector score weight in hybrid")
-    embedding_model: str = Field(default="text-embedding-3-small", description="Model for query embedding")
+    embedding_model: str = Field(default="gemini-embedding-001", description="Model for query embedding")
     collection_prefix: str = Field(default="kb", description="Collection name prefix for tenant isolation")
 
 

@@ -169,7 +169,7 @@ def embed_chunks_task(self, doc_id: str, org_id: str, store_id: str) -> int:
         texts = [c.content for c in chunks]
         factory = LLMProviderFactory()
         provider = factory.get_provider("openai")
-        request = EmbeddingRequest(input=texts, model="text-embedding-3-small")
+        request = EmbeddingRequest(input=texts, model="gemini-embedding-001")
         response = await provider.embeddings(request)
 
         from app.infrastructure.vectorstore.base import VectorRecord

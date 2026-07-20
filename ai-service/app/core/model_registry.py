@@ -83,12 +83,26 @@ class ModelRegistry:
             context_length=1048576,
             pricing=ModelPricing(prompt_cost_per_1m=0.075, completion_cost_per_1m=0.30)
         ),
+        "gemini-flash-lite-latest": ModelInfo(
+            name="gemini-flash-lite-latest",
+            provider="gemini",
+            capabilities=ModelCapabilities(vision=True, json_mode=True, tool_calling=True, streaming=True),
+            context_length=1048576,
+            pricing=ModelPricing(prompt_cost_per_1m=0.075, completion_cost_per_1m=0.30)
+        ),
         "gemini-2.5-pro": ModelInfo(
             name="gemini-2.5-pro",
             provider="gemini",
             capabilities=ModelCapabilities(vision=True, json_mode=True, tool_calling=True, streaming=True),
             context_length=2097152,
             pricing=ModelPricing(prompt_cost_per_1m=1.25, completion_cost_per_1m=5.00)
+        ),
+        "gemini-2.0-flash": ModelInfo(
+            name="gemini-2.0-flash",
+            provider="gemini",
+            capabilities=ModelCapabilities(vision=True, json_mode=True, tool_calling=True, streaming=True),
+            context_length=1048576,
+            pricing=ModelPricing(prompt_cost_per_1m=0.075, completion_cost_per_1m=0.30)
         ),
         "gemini-1.5-flash": ModelInfo(
             name="gemini-1.5-flash",

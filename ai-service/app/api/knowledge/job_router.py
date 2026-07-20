@@ -152,7 +152,7 @@ async def create_summary_generation_job(
 @router.post("/embedding-generation", response_model=JobCreateResponseSchema, status_code=status.HTTP_201_CREATED)
 async def create_embedding_generation_job(
     chunk_ids: list[str] = Query(...),
-    model: str = Query(default="text-embedding-3-small"),
+    model: str = Query(default="gemini-embedding-001"),
     store_id: Optional[str] = Query(default=None),
     organization_id: Optional[str] = Query(default=None),
     triggered_by: Optional[str] = Query(default=None),
@@ -193,7 +193,7 @@ async def create_embedding_generation_job(
 async def create_vector_sync_job(
     chunk_ids: list[str] = Query(...),
     collection_name: str = Query(default="kb_default"),
-    model: str = Query(default="text-embedding-3-small"),
+    model: str = Query(default="gemini-embedding-001"),
     store_id: Optional[str] = Query(default=None),
     organization_id: Optional[str] = Query(default=None),
     triggered_by: Optional[str] = Query(default=None),

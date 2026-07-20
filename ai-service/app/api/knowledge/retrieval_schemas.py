@@ -25,7 +25,7 @@ class RetrievalRequestSchema(BaseModel):
     mmr_lambda: float = Field(default=0.7, ge=0.0, le=1.0)
     rerank: bool = Field(default=False, description="Enable LLM cross-encoder re-ranking")
     rerank_top_k: int = Field(default=5, ge=1, le=50)
-    embedding_model: str = Field(default="text-embedding-3-small")
+    embedding_model: str = Field(default="gemini-embedding-001")
     organization_id: Optional[str] = None
     store_id: Optional[str] = None
     language: Optional[str] = None

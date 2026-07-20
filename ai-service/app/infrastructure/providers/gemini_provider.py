@@ -252,9 +252,11 @@ class GeminiProvider(BaseLLMProvider):
         self, request: EmbeddingRequest, timeout: Optional[float] = None
     ) -> EmbeddingResponse:
         async def _run():
+            config = types.EmbedContentConfig(output_dimensionality=768)
             response = await self.client.aio.models.embed_content(
                 model=request.model,
                 contents=request.input,
+                config=config,
             )
 
             embeddings_list = []

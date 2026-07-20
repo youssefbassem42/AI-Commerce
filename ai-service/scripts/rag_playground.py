@@ -158,6 +158,23 @@ def _patch_settings() -> None:
             logger.info("Patched settings.%s -> %s", attr, val)
 
 
+_last_llm_call: float = 0.0
+
+async def _throttle_if_needed() -> None:
+    """Prevent hitting Gemini free-tier rate limit (5 req/min = 12s spacing)."""
+    global _last_llm_call
+    if os.getenv("RAG_LLM_PROVIDER", "gemini") != "gemini":
+        return
+    now = time.monotonic()
+    elapsed = now - _last_llm_call
+    min_gap = 13.0  # just over 12s needed for 5 req/min
+    if _last_llm_call > 0 and elapsed < min_gap:
+        wait = min_gap - elapsed
+        print_info(f"Rate-limit throttle: waiting {wait:.1f}s...")
+        await asyncio.sleep(wait)
+    _last_llm_call = time.monotonic()
+
+
 def _estimate_tokens(text: str) -> int:
     try:
         import tiktoken
@@ -364,7 +381,7 @@ async def step4_generate_embeddings(
 
         try:
             start = time.perf_counter()
-            request = EmbeddingRequest(input=texts, model="gemini-embedding-001")
+            request = EmbeddingRequest(input=texts, model=os.getenv("RAG_EMBEDDING_MODEL", "gemini-embedding-001"))
             response = await provider.embeddings(request)
             elapsed = time.perf_counter() - start
             debug_dump("EmbeddingResponse", response)
@@ -377,7 +394,7 @@ async def step4_generate_embeddings(
                 "elapsed": elapsed,
             })
 
-            print_success(f"Model: gemini-embedding-001")
+            print_success(f"Model: {os.getenv('RAG_EMBEDDING_MODEL', 'gemini-embedding-001')}")
             print_label("  Embedding dimension", str(dim))
             print_label("  Embedding count", str(len(response.embeddings)))
             print_label("  Generation time", f"{elapsed:.2f}s")
@@ -405,9 +422,11 @@ async def step5_insert_vectors(
         print_info(f"Recreating collection '{collection_name}' (old vector size)")
         await vector_store.delete_collection(collection_name)
     print_info(f"Creating collection '{collection_name}'")
+    embedding_model = os.getenv("RAG_EMBEDDING_MODEL", "gemini-embedding-001")
+    vector_dim = 768 if "gemini" in embedding_model else 3072
     await vector_store.create_collection(
         collection_name=collection_name,
-        vector_size=3072,
+        vector_size=vector_dim,
         distance="Cosine",
     )
 
@@ -464,9 +483,10 @@ async def step6_generate_summary(
         provider=provider,
     )
 
-    config = GenerationConfig(model="gemini-2.5-flash", temperature=0.3, max_tokens=4096)
+    config = GenerationConfig(model=os.getenv("RAG_LLM_MODEL", "gemini-1.5-flash"), temperature=0.3, max_tokens=4096)
 
     try:
+        await _throttle_if_needed()
         start = time.perf_counter()
         summary = await gen_service.generate(STORE_ID, config)
         elapsed = time.perf_counter() - start
@@ -507,7 +527,7 @@ async def step7_semantic_search(
         use_hybrid=False,
         use_mmr=False,
         rerank=False,
-        embedding_model="gemini-embedding-001",
+        embedding_model=os.getenv("RAG_EMBEDDING_MODEL", "gemini-embedding-001"),
         collection_prefix="kb",
     )
     filters = RetrievalFilters(
@@ -561,7 +581,7 @@ async def step8_build_rag_prompt(
     config = RetrievalConfig(
         top_k=5, score_threshold=0.0, use_hybrid=False,
         use_mmr=False, rerank=False,
-        embedding_model="gemini-embedding-001",
+        embedding_model=os.getenv("RAG_EMBEDDING_MODEL", "gemini-embedding-001"),
     )
     filters = RetrievalFilters(organization_id=ORG_ID, store_id=STORE_ID)
 
@@ -663,12 +683,13 @@ async def step9_chat_completion(
 
     request = ChatRequest(
         messages=messages,
-        model="gemini-2.5-flash",
+        model=os.getenv("RAG_LLM_MODEL", "gemini-1.5-flash"),
         temperature=0.3,
         max_tokens=1024,
     )
 
     try:
+        await _throttle_if_needed()
         start = time.perf_counter()
         response = await chat_service.chat(request=request)
         elapsed = time.perf_counter() - start
@@ -776,12 +797,13 @@ async def step10_interactive_mode(
 
         request = ChatRequest(
             messages=messages,
-            model="gemini-2.5-flash",
+            model=os.getenv("RAG_LLM_MODEL", "gemini-1.5-flash"),
             temperature=0.3,
             max_tokens=1024,
         )
 
         try:
+            await _throttle_if_needed()
             chat_start = time.perf_counter()
             response = await chat_service.chat(request=request)
             chat_elapsed = time.perf_counter() - chat_start
@@ -1055,12 +1077,13 @@ async def step15_chat_completion_with_display(
 
     request = ChatRequest(
         messages=messages,
-        model=os.getenv("RAG_LLM_MODEL", "gemini-2.5-flash"),
+        model=os.getenv("RAG_LLM_MODEL", "gemini-1.5-flash"),
         temperature=0.3,
         max_tokens=1024,
     )
 
     try:
+        await _throttle_if_needed()
         start = time.perf_counter()
         response = await chat_service.chat(request=request)
         elapsed = time.perf_counter() - start
@@ -1134,6 +1157,13 @@ async def main() -> None:
     cprint(Color.CYAN + Color.BOLD, "╔══════════════════════════════════════════════════════════╗")
     cprint(Color.CYAN + Color.BOLD, "║        RAG Pipeline Playground — AI Commerce           ║")
     cprint(Color.CYAN + Color.BOLD, "╚══════════════════════════════════════════════════════════╝")
+
+    print_info("Config via env vars:")
+    print_label("  RAG_LLM_PROVIDER", os.getenv("RAG_LLM_PROVIDER", "gemini"))
+    print_label("  RAG_LLM_MODEL", os.getenv("RAG_LLM_MODEL", "gemini-1.5-flash"))
+    print_label("  RAG_EMBEDDING_MODEL", os.getenv("RAG_EMBEDDING_MODEL", "gemini-embedding-001"))
+    print_label("  Tip", "Set RAG_LLM_PROVIDER=openai + OPENAI_API_KEY in .env to avoid rate limits")
+    print()
 
     _patch_settings()
 

@@ -1,4 +1,5 @@
 import asyncio
+import os
 import logging
 from typing import Any, Optional
 
@@ -93,6 +94,7 @@ class ContextBuilder:
             use_hybrid=True,
             use_mmr=True,
             rerank=False,
+            embedding_model=os.getenv("RAG_EMBEDDING_MODEL", "gemini-embedding-001"),
         )
 
     @property

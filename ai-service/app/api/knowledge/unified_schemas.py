@@ -28,7 +28,7 @@ class ChunkDocumentRequestSchema(BaseModel):
 
 class EmbedDocumentRequestSchema(BaseModel):
     document_id: str = Field(..., description="Embed all chunks of this document")
-    model: str = Field(default="text-embedding-3-small")
+    model: str = Field(default="gemini-embedding-001")
     sync_to_vector_store: bool = Field(default=True, description="Sync vectors to Qdrant after embedding")
     collection_name: str = Field(default="kb_default")
     store_id: Optional[str] = None
