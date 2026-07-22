@@ -357,9 +357,9 @@ class QdrantProvider(VectorStore):
                 hnsw_ef=128,
                 exact=False,
             )
-            results = client.search(
+            result = client.query_points(
                 collection_name=collection_name,
-                query_vector=vector,
+                query=vector,
                 query_filter=qdrant_filter,
                 limit=limit,
                 score_threshold=score_threshold,
@@ -372,7 +372,7 @@ class QdrantProvider(VectorStore):
                     score=hit.score,
                     payload=hit.payload or {},
                 )
-                for hit in results
+                for hit in result.points
             ]
         except Exception:
             logger.error(

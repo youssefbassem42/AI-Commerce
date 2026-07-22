@@ -410,12 +410,13 @@ async def step4_generate_embeddings(
 async def step5_insert_vectors(
     embedding_results: list[dict],
     vector_store,
+    tenant: "TenantContext" = None,
 ) -> list[dict]:
     print_header("STEP 5: Vector Store Insertion")
 
     from app.infrastructure.vectorstore.base import VectorRecord
 
-    collection_name = f"kb_{STORE_ID}"
+    collection_name = tenant.collection_name if tenant else f"kb_{STORE_ID}"
 
     exists = await vector_store.collection_exists(collection_name)
     if exists:
@@ -483,7 +484,7 @@ async def step6_generate_summary(
         provider=provider,
     )
 
-    config = GenerationConfig(model=os.getenv("RAG_LLM_MODEL", "gemini-1.5-flash"), temperature=0.3, max_tokens=4096)
+    config = GenerationConfig(model=os.getenv("RAG_LLM_MODEL", "gemini-flash-lite-latest"), temperature=0.3, max_tokens=4096)
 
     try:
         await _throttle_if_needed()
@@ -683,7 +684,7 @@ async def step9_chat_completion(
 
     request = ChatRequest(
         messages=messages,
-        model=os.getenv("RAG_LLM_MODEL", "gemini-1.5-flash"),
+        model=os.getenv("RAG_LLM_MODEL", "gemini-flash-lite-latest"),
         temperature=0.3,
         max_tokens=1024,
     )
@@ -797,7 +798,7 @@ async def step10_interactive_mode(
 
         request = ChatRequest(
             messages=messages,
-            model=os.getenv("RAG_LLM_MODEL", "gemini-1.5-flash"),
+            model=os.getenv("RAG_LLM_MODEL", "gemini-flash-lite-latest"),
             temperature=0.3,
             max_tokens=1024,
         )
@@ -1077,7 +1078,7 @@ async def step15_chat_completion_with_display(
 
     request = ChatRequest(
         messages=messages,
-        model=os.getenv("RAG_LLM_MODEL", "gemini-1.5-flash"),
+        model=os.getenv("RAG_LLM_MODEL", "gemini-flash-lite-latest"),
         temperature=0.3,
         max_tokens=1024,
     )
@@ -1160,7 +1161,7 @@ async def main() -> None:
 
     print_info("Config via env vars:")
     print_label("  RAG_LLM_PROVIDER", os.getenv("RAG_LLM_PROVIDER", "gemini"))
-    print_label("  RAG_LLM_MODEL", os.getenv("RAG_LLM_MODEL", "gemini-1.5-flash"))
+    print_label("  RAG_LLM_MODEL", os.getenv("RAG_LLM_MODEL", "gemini-flash-lite-latest"))
     print_label("  RAG_EMBEDDING_MODEL", os.getenv("RAG_EMBEDDING_MODEL", "gemini-embedding-001"))
     print_label("  Tip", "Set RAG_LLM_PROVIDER=openai + OPENAI_API_KEY in .env to avoid rate limits")
     print()
@@ -1267,7 +1268,7 @@ async def main() -> None:
         embedded = await step4_generate_embeddings(chunked, provider)
 
         if qdrant_connected:
-            await step5_insert_vectors(embedded, vector_store)
+            await step5_insert_vectors(embedded, vector_store, tenant)
         else:
             print_header("STEP 5: Vector Store Insertion (skipped — Qdrant unavailable)")
 
