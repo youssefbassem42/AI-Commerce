@@ -100,4 +100,25 @@ async def setup_database_indexes(db) -> None:
         IndexModel([("created_at", DESCENDING)]),
     ])
 
+    await db["products"].create_indexes([
+        IndexModel([("org_id", ASCENDING), ("store_id", ASCENDING), ("external_id", ASCENDING)], unique=True),
+        IndexModel([("store_id", ASCENDING), ("status", ASCENDING)]),
+        IndexModel([("title", TEXT)], name="product_title_text"),
+        IndexModel([("store_id", ASCENDING), ("updated_at", DESCENDING)]),
+    ])
+
+    await db["categories"].create_indexes([
+        IndexModel([("store_id", ASCENDING), ("external_id", ASCENDING)], unique=True),
+        IndexModel([("store_id", ASCENDING), ("parent_id", ASCENDING)]),
+    ])
+
+    await db["orders"].create_indexes([
+        IndexModel([("store_id", ASCENDING), ("external_id", ASCENDING)], unique=True),
+        IndexModel([("store_id", ASCENDING), ("created_at", DESCENDING)]),
+    ])
+
+    await db["inventory"].create_indexes([
+        IndexModel([("store_id", ASCENDING), ("variant_id", ASCENDING)], unique=True),
+    ])
+
     logger.info("Database indexes successfully created.")

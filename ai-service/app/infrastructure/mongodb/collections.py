@@ -73,3 +73,19 @@ def get_api_keys_collection():
 
 def get_audit_logs_collection():
     return get_collection("audit_logs")
+
+
+def get_products_collection():
+    return get_collection("products")
+
+
+def get_categories_collection():
+    return get_collection("categories")
+
+
+def get_orders_collection():
+    return get_collection("orders")
+
+
+def get_inventory_collection():
+    return get_collection("inventory")
