@@ -65,3 +65,11 @@ def get_knowledge_jobs_collection():
 
 def get_knowledge_versions_collection():
     return get_collection("knowledge_versions")
+
+
+def get_api_keys_collection():
+    return get_collection("api_keys")
+
+
+def get_audit_logs_collection():
+    return get_collection("audit_logs")

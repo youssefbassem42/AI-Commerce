@@ -1,2 +1,4 @@
 .env
 .venv
+phases/
+docs/ARCHITECTURE_AUDIT_INTEGRATION_READINESS.md
