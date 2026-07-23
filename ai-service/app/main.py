@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.ai.router import router as ai_router
 from app.api.auth.router import router as auth_router
+from app.api.integration.router import router as integration_router
 from app.api.chat.router import router as chat_router
 from app.api.commerce.router import router as commerce_router
 from app.api.knowledge.generation_router import router as knowledge_generation_router
@@ -30,6 +31,7 @@ app.add_middleware(AuthMiddleware)
 app.add_middleware(RateLimitMiddleware, limit_per_minute=100)
 app.add_middleware(AITracingMiddleware)
 
+app.include_router(integration_router)
 app.include_router(chat_router)
 app.include_router(ai_router)
 app.include_router(commerce_router)

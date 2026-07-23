@@ -89,3 +89,11 @@ def get_orders_collection():
 
 def get_inventory_collection():
     return get_collection("inventory")
+
+
+def get_customers_collection():
+    return get_collection("customers")
+
+
+def get_integration_connections_collection():
+    return get_collection("integration_connections")

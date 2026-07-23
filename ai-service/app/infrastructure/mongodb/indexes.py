@@ -121,4 +121,16 @@ async def setup_database_indexes(db) -> None:
         IndexModel([("store_id", ASCENDING), ("variant_id", ASCENDING)], unique=True),
     ])
 
+    await db["customers"].create_indexes([
+        IndexModel([("store_id", ASCENDING), ("external_id", ASCENDING)], unique=True),
+        IndexModel([("store_id", ASCENDING), ("email", ASCENDING)]),
+    ])
+
+    await db["integration_connections"].create_indexes([
+        IndexModel([("store_id", ASCENDING)]),
+        IndexModel([("organization_id", ASCENDING), ("store_id", ASCENDING)]),
+        IndexModel([("store_id", ASCENDING), ("name", ASCENDING)], unique=True),
+        IndexModel([("platform_name", ASCENDING)]),
+    ])
+
     logger.info("Database indexes successfully created.")
