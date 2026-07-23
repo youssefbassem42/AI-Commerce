@@ -22,24 +22,30 @@ async def setup_database_indexes(db) -> None:
     ])
     
     await db["knowledge_documents"].create_indexes([
+        IndexModel([("organization_id", ASCENDING), ("store_id", ASCENDING)]),
         IndexModel([("store_id", ASCENDING)]),
         IndexModel([("status", ASCENDING)]),
-        IndexModel([("title", TEXT)], name="knowledge_doc_title_text")
+        IndexModel([("title", TEXT)], name="knowledge_doc_title_text"),
+        IndexModel([("organization_id", ASCENDING), ("store_id", ASCENDING), ("status", ASCENDING)]),
     ])
     
     await db["knowledge_chunks"].create_indexes([
+        IndexModel([("organization_id", ASCENDING), ("store_id", ASCENDING)]),
+        IndexModel([("organization_id", ASCENDING), ("store_id", ASCENDING), ("document_id", ASCENDING)]),
         IndexModel([("document_id", ASCENDING)]),
         IndexModel([("document_id", ASCENDING), ("chunk_index", ASCENDING)], unique=True),
         IndexModel([("embedding_id", ASCENDING)], sparse=True)
     ])
 
     await db["knowledge_business_summaries"].create_indexes([
+        IndexModel([("organization_id", ASCENDING), ("store_id", ASCENDING)]),
         IndexModel([("document_id", ASCENDING)]),
         IndexModel([("document_id", ASCENDING), ("version_number", ASCENDING)]),
         IndexModel([("created_at", DESCENDING)])
     ])
 
     await db["knowledge_uploads"].create_indexes([
+        IndexModel([("organization_id", ASCENDING), ("store_id", ASCENDING)]),
         IndexModel([("store_id", ASCENDING)]),
         IndexModel([("checksum", ASCENDING)], unique=True),
         IndexModel([("status", ASCENDING)]),
