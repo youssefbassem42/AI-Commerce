@@ -21,7 +21,7 @@ namespace AI_Sales_Agent
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
             var jwtOptions = builder.Configuration
@@ -155,6 +155,19 @@ namespace AI_Sales_Agent
 
             var app = builder.Build();
 
+            // Seed Database Roles and Admin User
+            using (var scope = app.Services.CreateScope())
+            {
+                try
+                {
+                    await DbInitializer.SeedAsync(scope.ServiceProvider);
+                }
+                catch (Exception)
+                {
+                    // Log or handle as needed
+                }
+            }
+
             app.UseMiddleware<ExceptionHandlingMiddleware>();
 
             if (app.Environment.IsDevelopment())
@@ -170,7 +183,7 @@ namespace AI_Sales_Agent
 
             app.MapControllers();
 
-            app.Run();
+            await app.RunAsync();
         }
     }
 }

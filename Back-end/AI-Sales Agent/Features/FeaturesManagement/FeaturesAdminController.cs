@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using AI_Sales_Agent.Features.FeaturesManagement.CreateFeature;
 using AI_Sales_Agent.Features.FeaturesManagement.UpdateFeature;
@@ -6,9 +6,13 @@ using AI_Sales_Agent.Features.FeaturesManagement.DeleteFeature;
 using AI_Sales_Agent.Features.FeaturesManagement.GetAllFeatures;
 using AI_Sales_Agent.Features.FeaturesManagement.GetFeatureById; // New Import
 
+using Microsoft.AspNetCore.Authorization;
+using AI_Sales_Agent.Infrastructure.Auth;
+
 namespace AI_Sales_Agent.Controllers;
 
 [ApiController]
+[Authorize(Roles = Roles.Admin)]
 [Route("api/admin/features")]
 public class FeaturesAdminController : ControllerBase
 {

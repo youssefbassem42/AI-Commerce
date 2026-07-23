@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using AI_Sales_Agent.Infrastructure.Auth;
 
 namespace AI_Sales_Agent.Infrastructure.Auth
 {
@@ -14,7 +15,7 @@ namespace AI_Sales_Agent.Infrastructure.Auth
                 return Task.CompletedTask;
             }
 
-            if (context.User.IsInRole("Admin") || context.User.IsInRole("Owner"))
+            if (context.User.IsInRole(Roles.Admin))
             {
                 context.Succeed(requirement);
                 return Task.CompletedTask;

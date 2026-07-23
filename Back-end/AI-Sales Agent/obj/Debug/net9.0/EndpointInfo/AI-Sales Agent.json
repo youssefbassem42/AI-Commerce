@@ -264,42 +264,6 @@
         }
       }
     },
-<<<<<<< HEAD
-    "/api/stores": {
-      "get": {
-        "tags": [
-          "Stores"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/StoreResponse"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/StoreResponse"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/StoreResponse"
-                  }
-                }
-              }
-            }
-=======
     "/api/admin/features": {
       "get": {
         "tags": [
@@ -308,87 +272,39 @@
         "responses": {
           "200": {
             "description": "OK"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         }
       },
       "post": {
         "tags": [
-<<<<<<< HEAD
-          "Stores"
-=======
           "FeaturesAdmin"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/CreateStoreCommand"
-=======
                 "$ref": "#/components/schemas/CreateFeatureCommand"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "text/json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/CreateStoreCommand"
-=======
                 "$ref": "#/components/schemas/CreateFeatureCommand"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "application/*+json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/CreateStoreCommand"
-=======
                 "$ref": "#/components/schemas/CreateFeatureCommand"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             }
           }
         },
         "responses": {
           "200": {
-<<<<<<< HEAD
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              }
-            }
-=======
             "description": "OK"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         }
       }
     },
-<<<<<<< HEAD
-    "/api/stores/{storeId}": {
-      "get": {
-        "tags": [
-          "Stores"
-        ],
-        "parameters": [
-          {
-            "name": "storeId",
-=======
     "/api/admin/features/{id}": {
       "get": {
         "tags": [
@@ -397,7 +313,6 @@
         "parameters": [
           {
             "name": "id",
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
             "in": "path",
             "required": true,
             "schema": {
@@ -408,46 +323,17 @@
         ],
         "responses": {
           "200": {
-<<<<<<< HEAD
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              }
-            }
-=======
             "description": "OK"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         }
       },
       "put": {
         "tags": [
-<<<<<<< HEAD
-          "Stores"
-        ],
-        "parameters": [
-          {
-            "name": "storeId",
-=======
           "FeaturesAdmin"
         ],
         "parameters": [
           {
             "name": "id",
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
             "in": "path",
             "required": true,
             "schema": {
@@ -460,75 +346,34 @@
           "content": {
             "application/json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/UpdateStoreRequest"
-=======
                 "$ref": "#/components/schemas/UpdateFeatureCommand"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "text/json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/UpdateStoreRequest"
-=======
                 "$ref": "#/components/schemas/UpdateFeatureCommand"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "application/*+json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/UpdateStoreRequest"
-=======
                 "$ref": "#/components/schemas/UpdateFeatureCommand"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             }
           }
         },
         "responses": {
           "200": {
-<<<<<<< HEAD
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              }
-            }
-=======
             "description": "OK"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         }
       },
       "delete": {
         "tags": [
-<<<<<<< HEAD
-          "Stores"
-        ],
-        "parameters": [
-          {
-            "name": "storeId",
-=======
           "FeaturesAdmin"
         ],
         "parameters": [
           {
             "name": "id",
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
             "in": "path",
             "required": true,
             "schema": {
@@ -544,16 +389,6 @@
         }
       }
     },
-<<<<<<< HEAD
-    "/api/stores/{storeId}/settings": {
-      "put": {
-        "tags": [
-          "Stores"
-        ],
-        "parameters": [
-          {
-            "name": "storeId",
-=======
     "/api/admin/plans": {
       "get": {
         "tags": [
@@ -624,7 +459,6 @@
         "parameters": [
           {
             "name": "id",
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
             "in": "path",
             "required": true,
             "schema": {
@@ -637,56 +471,23 @@
           "content": {
             "application/json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/UpdateStoreSettingsRequest"
-=======
                 "$ref": "#/components/schemas/UpdatePlanCommand"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "text/json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/UpdateStoreSettingsRequest"
-=======
                 "$ref": "#/components/schemas/UpdatePlanCommand"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             },
             "application/*+json": {
               "schema": {
-<<<<<<< HEAD
-                "$ref": "#/components/schemas/UpdateStoreSettingsRequest"
-=======
                 "$ref": "#/components/schemas/UpdatePlanCommand"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
               }
             }
           }
         },
         "responses": {
           "200": {
-<<<<<<< HEAD
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StoreResponse"
-                }
-              }
-            }
-          }
-=======
             "description": "OK"
           }
         }
@@ -710,7 +511,267 @@
           "200": {
             "description": "OK"
           }
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
+        }
+      }
+    },
+    "/api/stores": {
+      "get": {
+        "tags": [
+          "Stores"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StoreResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StoreResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StoreResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Stores"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateStoreCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateStoreCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateStoreCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stores/{storeId}": {
+      "get": {
+        "tags": [
+          "Stores"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Stores"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Stores"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/stores/{storeId}/settings": {
+      "put": {
+        "tags": [
+          "Stores"
+        ],
+        "parameters": [
+          {
+            "name": "storeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreSettingsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreSettingsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStoreSettingsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StoreResponse"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -823,11 +884,7 @@
         },
         "additionalProperties": false
       },
-<<<<<<< HEAD
-      "CreateStoreCommand": {
-=======
       "CreateFeatureCommand": {
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
         "type": "object",
         "properties": {
           "name": {
@@ -838,26 +895,6 @@
             "type": "string",
             "nullable": true
           },
-<<<<<<< HEAD
-          "platform": {
-            "type": "string",
-            "nullable": true
-          },
-          "shopDomain": {
-            "type": "string",
-            "nullable": true
-          },
-          "currency": {
-            "type": "string",
-            "nullable": true
-          },
-          "language": {
-            "type": "string",
-            "nullable": true
-          },
-          "timezone": {
-            "type": "string",
-=======
           "enabled": {
             "type": "boolean"
           }
@@ -889,7 +926,40 @@
               "type": "string",
               "format": "uuid"
             },
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateStoreCommand": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "shopDomain": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "timezone": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -977,7 +1047,6 @@
         },
         "additionalProperties": false
       },
-<<<<<<< HEAD
       "StoreResponse": {
         "type": "object",
         "properties": {
@@ -1029,10 +1098,7 @@
         },
         "additionalProperties": false
       },
-      "UpdateStoreRequest": {
-=======
       "UpdateFeatureCommand": {
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
         "type": "object",
         "properties": {
           "name": {
@@ -1043,42 +1109,12 @@
             "type": "string",
             "nullable": true
           },
-<<<<<<< HEAD
-          "platform": {
-            "type": "string",
-            "nullable": true
-          },
-          "shopDomain": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "type": "string",
-            "nullable": true
-=======
           "enabled": {
             "type": "boolean"
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
           }
         },
         "additionalProperties": false
       },
-<<<<<<< HEAD
-      "UpdateStoreSettingsRequest": {
-        "type": "object",
-        "properties": {
-          "currency": {
-            "type": "string",
-            "nullable": true
-          },
-          "language": {
-            "type": "string",
-            "nullable": true
-          },
-          "timezone": {
-            "type": "string",
-            "nullable": true
-=======
       "UpdatePlanCommand": {
         "type": "object",
         "properties": {
@@ -1105,7 +1141,50 @@
               "format": "uuid"
             },
             "nullable": true
->>>>>>> 6242d50517622cde963801a58c68f07d8afcf28b
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateStoreRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "shopDomain": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateStoreSettingsRequest": {
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "timezone": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

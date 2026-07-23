@@ -11,6 +11,7 @@ C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\FluentValidation.DependencyInjectionExtensions.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\MediatR.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\MediatR.Contracts.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll

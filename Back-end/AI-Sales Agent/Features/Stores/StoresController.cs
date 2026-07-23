@@ -8,11 +8,12 @@ using AI_Sales_Agent.Features.Stores.UpdateStoreSettings;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using AI_Sales_Agent.Infrastructure.Auth;
 
 namespace AI_Sales_Agent.Features.Stores
 {
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = Roles.Seller)]
     [Route("api/stores")]
     public class StoresController : ControllerBase
     {
