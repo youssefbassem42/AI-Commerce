@@ -1,0 +1,580 @@
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\appsettings.Development.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\appsettings.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.staticwebassets.endpoints.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.exe
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.deps.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.runtimeconfig.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.pdb
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Azure.Core.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Azure.Identity.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Carter.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\FluentValidation.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Humanizer.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\MediatR.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\MediatR.Contracts.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Mono.TextTemplating.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.ClientModel.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.CodeDom.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.Convention.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.Hosting.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.Runtime.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.TypedParts.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Drawing.Common.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Memory.Data.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Runtime.Caching.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Security.Permissions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Windows.Extensions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.csproj.AssemblyReference.cache
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.GeneratedMSBuildEditorConfig.editorconfig
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.AssemblyInfoInputs.cache
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.AssemblyInfo.cs
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.csproj.CoreCompileInputs.cache
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.MvcApplicationPartsAssemblyInfo.cs
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.MvcApplicationPartsAssemblyInfo.cache
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.sourcelink.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\scopedcss\bundle\AI-Sales Agent.styles.css
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.build.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.development.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales.66C90DA1.Up2Date
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\refint\AI-Sales Agent.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.pdb
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.genruntimeconfig.cache
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\ref\AI-Sales Agent.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\appsettings.Development.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\appsettings.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\AI-Sales Agent.staticwebassets.endpoints.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\AI-Sales Agent.exe
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\AI-Sales Agent.deps.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\AI-Sales Agent.runtimeconfig.json
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\AI-Sales Agent.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\AI-Sales Agent.pdb
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Azure.Core.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Azure.Identity.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Carter.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\FluentValidation.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\FluentValidation.DependencyInjectionExtensions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Humanizer.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\MediatR.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\MediatR.Contracts.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.Bcl.AsyncInterfaces.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.CodeAnalysis.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.CodeAnalysis.CSharp.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.CodeAnalysis.Workspaces.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.Data.SqlClient.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.EntityFrameworkCore.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.EntityFrameworkCore.Design.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.EntityFrameworkCore.Relational.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.Extensions.DependencyModel.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.Extensions.Logging.Abstractions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.Identity.Client.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.IdentityModel.Abstractions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.IdentityModel.Logging.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.IdentityModel.Protocols.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.IdentityModel.Tokens.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.OpenApi.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.SqlServer.Server.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Microsoft.Win32.SystemEvents.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Mono.TextTemplating.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Swashbuckle.AspNetCore.Swagger.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.ClientModel.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.CodeDom.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Composition.AttributedModel.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Composition.Convention.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Composition.Hosting.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Composition.Runtime.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Composition.TypedParts.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Configuration.ConfigurationManager.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Diagnostics.DiagnosticSource.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Drawing.Common.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.IdentityModel.Tokens.Jwt.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Memory.Data.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Runtime.Caching.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Security.Cryptography.ProtectedData.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Security.Permissions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\System.Windows.Extensions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\cs\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\de\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\es\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\fr\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\it\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ja\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ko\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\pl\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ru\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\tr\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\artifacts\codex-build\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\appsettings.Development.json
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\appsettings.json
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.staticwebassets.endpoints.json
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.exe
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.deps.json
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.runtimeconfig.json
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.pdb
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Azure.Core.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Azure.Identity.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Carter.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\FluentValidation.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Humanizer.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\MediatR.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\MediatR.Contracts.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Mono.TextTemplating.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.ClientModel.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.CodeDom.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.Convention.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.Hosting.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.Runtime.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.TypedParts.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Drawing.Common.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Memory.Data.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Runtime.Caching.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Security.Permissions.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Windows.Extensions.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.csproj.AssemblyReference.cache
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.GeneratedMSBuildEditorConfig.editorconfig
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.AssemblyInfoInputs.cache
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.AssemblyInfo.cs
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.csproj.CoreCompileInputs.cache
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.MvcApplicationPartsAssemblyInfo.cs
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.MvcApplicationPartsAssemblyInfo.cache
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.sourcelink.json
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\scopedcss\bundle\AI-Sales Agent.styles.css
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.build.json
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.development.json
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets\msbuild.AI-Sales Agent.Microsoft.AspNetCore.StaticWebAssets.props
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets\msbuild.AI-Sales Agent.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets\msbuild.build.AI-Sales Agent.props
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.AI-Sales Agent.props
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.AI-Sales Agent.props
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.pack.json
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales.66C90DA1.Up2Date
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\refint\AI-Sales Agent.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.pdb
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.genruntimeconfig.cache
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\ref\AI-Sales Agent.dll
+C:\D\ITI\AI-Sales Agent\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\appsettings.Development.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\appsettings.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.staticwebassets.endpoints.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.exe
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.deps.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.runtimeconfig.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\AI-Sales Agent.pdb
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Azure.Core.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Azure.Identity.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Carter.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\FluentValidation.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Humanizer.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\MediatR.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\MediatR.Contracts.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Mono.TextTemplating.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.ClientModel.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.CodeDom.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.Convention.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.Hosting.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.Runtime.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Composition.TypedParts.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Drawing.Common.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Memory.Data.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Runtime.Caching.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Security.Permissions.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\System.Windows.Extensions.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.csproj.AssemblyReference.cache
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.GeneratedMSBuildEditorConfig.editorconfig
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.AssemblyInfoInputs.cache
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.AssemblyInfo.cs
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.csproj.CoreCompileInputs.cache
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.MvcApplicationPartsAssemblyInfo.cs
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.MvcApplicationPartsAssemblyInfo.cache
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\rjimswa.dswa.cache.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\scopedcss\bundle\AI-Sales Agent.styles.css
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.build.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.build.json.cache
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.development.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\swae.build.ex.cache
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales.66C90DA1.Up2Date
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\refint\AI-Sales Agent.dll
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.pdb
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.genruntimeconfig.cache
+D:\AI-Commerce-main\Back-end\AI-Sales Agent\obj\Debug\net9.0\ref\AI-Sales Agent.dll
