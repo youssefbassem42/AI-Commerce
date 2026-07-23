@@ -6,6 +6,7 @@ from typing import Any, Optional
 from app.infrastructure.mongodb.collections import (
     get_categories_collection,
     get_customers_collection,
+    get_entities_collection,
     get_inventory_collection,
     get_orders_collection,
     get_products_collection,
@@ -187,6 +188,38 @@ class InventoryWriter(EntityWriter):
         return "inventory"
 
 
+class DynamicEntityWriter(EntityWriter):
+    """Schema-agnostic writer that stores any entity type in the unified
+    ``entities`` collection, preserving every field from the source data dict."""
+
+    def __init__(self, entity_type: str = "unknown"):
+        self._entity_type = entity_type
+
+    async def upsert(self, store_id: str, org_id: str, external_id: str, data: dict[str, Any]) -> bool:
+        collection = get_entities_collection()
+        now = datetime.now(UTC)
+        doc = {
+            "store_id": store_id,
+            "organization_id": org_id,
+            "entity_type": self._entity_type,
+            "external_id": external_id,
+            "data": data,
+            "synced_at": now,
+            "updated_at": now,
+        }
+        for key in ("created_at", "updated_at", "deleted_at", "synced_at"):
+            doc.pop(key, None)
+        result = await collection.update_one(
+            {"store_id": store_id, "external_id": external_id},
+            {"$set": doc, "$setOnInsert": {"created_at": now}},
+            upsert=True,
+        )
+        return result.upserted_id is not None or result.modified_count > 0
+
+    def collection_name(self) -> str:
+        return "entities"
+
+
 WRITER_MAP: dict[str, EntityWriter] = {
     "product": ProductWriter(),
     "order": OrderWriter(),
@@ -197,4 +230,8 @@ WRITER_MAP: dict[str, EntityWriter] = {
 
 
 def get_writer(entity_type: str) -> Optional[EntityWriter]:
-    return WRITER_MAP.get(entity_type)
+    writer = WRITER_MAP.get(entity_type)
+    if writer is not None:
+        return writer
+    logger.info("No dedicated writer for '%s' — using DynamicEntityWriter.", entity_type)
+    return DynamicEntityWriter(entity_type=entity_type)

@@ -97,3 +97,7 @@ def get_customers_collection():
 
 def get_integration_connections_collection():
     return get_collection("integration_connections")
+
+
+def get_entities_collection():
+    return get_collection("entities")

@@ -214,11 +214,12 @@ class GeminiProvider(BaseLLMProvider):
             config.system_instruction = system_instruction
 
         try:
-            async for chunk in self.client.aio.models.generate_content_stream(
+            stream = await self.client.aio.models.generate_content_stream(
                 model=request.model,
                 contents=contents,
                 config=config,
-            ):
+            )
+            async for chunk in stream:
                 content = ""
                 if chunk.candidates and chunk.candidates[0].content:
                     for part in chunk.candidates[0].content.parts:

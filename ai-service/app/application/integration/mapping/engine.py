@@ -79,7 +79,12 @@ class MappingEngine:
                     report.warnings.append(mf.error or f"Optional field '{field_mapping.target}' missing.")
 
         if not report.fields:
-            report.warnings.append("No field mappings defined for this entity.")
+            report.warnings.append("No field mappings defined for this entity; passing through raw data.")
+            return MappedRecord(
+                entity_type=mapping.entity_type,
+                data=dict(external_item),
+                report=report,
+            )
 
         return MappedRecord(
             entity_type=mapping.entity_type,

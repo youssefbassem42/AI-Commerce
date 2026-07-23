@@ -39,6 +39,9 @@ class IntegrationConnection(AggregateRoot[str]):
     discovered_schemas: dict = Field(default_factory=dict)
     last_sync_at: Optional[datetime] = None
     last_sync_status: Optional[str] = None
+    last_vector_sync_at: Optional[datetime] = None
+    last_vector_sync_status: Optional[str] = None
+    vector_sync_error: Optional[str] = None
     error_message: Optional[str] = None
     audit: AuditInfo = Field(default_factory=AuditInfo)
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
@@ -102,6 +105,20 @@ class IntegrationConnection(AggregateRoot[str]):
         self.last_sync_at = datetime.now(UTC)
         self.last_sync_status = status or "success"
         self.error_message = None
+        self.updated_at = datetime.now(UTC)
+
+    def mark_vector_synced(self, status: Optional[str] = None) -> None:
+        if self.status == ConnectionStatus.INACTIVE:
+            raise IntegrationValidationException("Cannot mark vector sync on an inactive connection.")
+        self.last_vector_sync_at = datetime.now(UTC)
+        self.last_vector_sync_status = status or "success"
+        self.vector_sync_error = None
+        self.updated_at = datetime.now(UTC)
+
+    def mark_vector_sync_error(self, message: str) -> None:
+        self.last_vector_sync_at = datetime.now(UTC)
+        self.last_vector_sync_status = "error"
+        self.vector_sync_error = message
         self.updated_at = datetime.now(UTC)
 
     def mark_error(self, message: str) -> None:

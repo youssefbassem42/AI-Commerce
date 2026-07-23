@@ -54,3 +54,7 @@ class MappingSuggestor:
         elif entity_type == "customer":
             base |= {"email"}
         return base
+
+
+def get_required_fields(entity_type: str) -> set[str]:
+    return MappingSuggestor._get_required_fields(entity_type)

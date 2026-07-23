@@ -206,25 +206,27 @@ class IntegrationConnectionDocument(BaseMongoDocument):
 
     @classmethod
     def from_entity(cls, entity: IntegrationConnection) -> "IntegrationConnectionDocument":
-        return cls(
-            _id=entity.id,
-            store_id=entity.store_id,
-            organization_id=entity.organization_id,
-            name=entity.name,
-            platform_name=entity.platform_name,
-            status=entity.status.value,
-            spec_version=entity.spec_version,
-            raw_spec=entity.raw_spec,
-            auth_config=AuthConfigModel.from_vo(entity.auth_config),
-            encrypted_credentials=entity.encrypted_credentials,
-            entity_mappings=[EntityMappingModel.from_vo(em) for em in entity.entity_mappings],
-            discovered_endpoints=entity.discovered_endpoints,
-            discovered_schemas=entity.discovered_schemas,
-            last_sync_at=entity.last_sync_at,
-            last_sync_status=entity.last_sync_status,
-            error_message=entity.error_message,
-            audit=AuditInfoModel.from_vo(entity.audit),
-            created_at=entity.created_at,
-            updated_at=entity.updated_at,
-            deleted_at=entity.deleted_at,
-        )
+        kwargs = {
+            "store_id": entity.store_id,
+            "organization_id": entity.organization_id,
+            "name": entity.name,
+            "platform_name": entity.platform_name,
+            "status": entity.status.value,
+            "spec_version": entity.spec_version,
+            "raw_spec": entity.raw_spec,
+            "auth_config": AuthConfigModel.from_vo(entity.auth_config),
+            "encrypted_credentials": entity.encrypted_credentials,
+            "entity_mappings": [EntityMappingModel.from_vo(em) for em in entity.entity_mappings],
+            "discovered_endpoints": entity.discovered_endpoints,
+            "discovered_schemas": entity.discovered_schemas,
+            "last_sync_at": entity.last_sync_at,
+            "last_sync_status": entity.last_sync_status,
+            "error_message": entity.error_message,
+            "audit": AuditInfoModel.from_vo(entity.audit),
+            "created_at": entity.created_at,
+            "updated_at": entity.updated_at,
+            "deleted_at": entity.deleted_at,
+        }
+        if entity.id:
+            kwargs["_id"] = entity.id
+        return cls(**kwargs)

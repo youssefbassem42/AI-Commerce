@@ -44,20 +44,22 @@ class AuditLogDocument(BaseMongoDocument):
 
     @classmethod
     def from_entity(cls, entity: AuditLog) -> "AuditLogDocument":
-        return cls(
-            _id=entity.id,
-            action=entity.action,
-            actor_id=entity.actor_id,
-            actor_type=entity.actor_type,
-            resource_type=entity.resource_type,
-            resource_id=entity.resource_id,
-            tenant_id=entity.tenant_id,
-            details=entity.details,
-            ip_address=entity.ip_address,
-            user_agent=entity.user_agent,
-            outcome=entity.outcome,
-            failure_reason=entity.failure_reason,
-            timestamp=entity.timestamp,
-            created_at=entity.created_at,
-            updated_at=entity.created_at,
-        )
+        kwargs = {
+            "action": entity.action,
+            "actor_id": entity.actor_id,
+            "actor_type": entity.actor_type,
+            "resource_type": entity.resource_type,
+            "resource_id": entity.resource_id,
+            "tenant_id": entity.tenant_id,
+            "details": entity.details,
+            "ip_address": entity.ip_address,
+            "user_agent": entity.user_agent,
+            "outcome": entity.outcome,
+            "failure_reason": entity.failure_reason,
+            "timestamp": entity.timestamp,
+            "created_at": entity.created_at,
+            "updated_at": entity.created_at,
+        }
+        if entity.id:
+            kwargs["_id"] = entity.id
+        return cls(**kwargs)

@@ -117,6 +117,9 @@ class ConnectionResponseSchema(BaseModel):
     discovered_schemas: dict = Field(default_factory=dict)
     last_sync_at: Optional[datetime] = None
     last_sync_status: Optional[str] = None
+    last_vector_sync_at: Optional[datetime] = None
+    last_vector_sync_status: Optional[str] = None
+    vector_sync_error: Optional[str] = None
     error_message: Optional[str] = None
     created_at: datetime
     updated_at: datetime
@@ -135,6 +138,7 @@ class EntitySyncResultSchema(BaseModel):
     total_mapped: int = 0
     total_upserted: int = 0
     errors: list[str] = Field(default_factory=list)
+    vector_sync: Optional[dict] = None
 
 
 class SyncRequestSchema(BaseModel):

@@ -1,6 +1,7 @@
 import json
 import logging
 from datetime import datetime, UTC
+from bson import ObjectId
 
 from fastapi import Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware
@@ -65,6 +66,7 @@ class AuditMiddleware(BaseHTTPMiddleware):
         async with get_unit_of_work() as uow:
             repo = AuditLogRepository()
             log_entry = AuditLog(
+                id=str(ObjectId()),
                 tenant_id=tenant_id or "unknown",
                 actor_id=actor_id or "anonymous",
                 action=action,

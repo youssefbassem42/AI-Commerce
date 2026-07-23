@@ -3,6 +3,7 @@ from datetime import UTC, datetime
 from typing import Any, Optional
 
 from app.application.integration.mapping.engine import MappingEngine, MappedRecord
+from app.application.integration.sync.knowledge_bridge import CommerceKnowledgeBridge, EntityVectorSyncResult
 from app.application.integration.sync.writers import EntityWriter, get_writer
 from app.domain.integration.entities.integration_connection import IntegrationConnection
 from app.domain.integration.value_objects.entity_mapping import EntityMapping
@@ -25,6 +26,7 @@ class EntitySyncResult:
         self.total_mapped = 0
         self.total_upserted = 0
         self.errors: list[str] = []
+        self.vector_sync: Optional[dict] = None
 
     def to_dict(self) -> dict:
         return {
@@ -33,6 +35,7 @@ class EntitySyncResult:
             "total_mapped": self.total_mapped,
             "total_upserted": self.total_upserted,
             "errors": self.errors,
+            "vector_sync": self.vector_sync,
         }
 
 
@@ -72,11 +75,15 @@ class SyncOrchestrator:
         mapping_engine: Optional[MappingEngine] = None,
         key_manager: Optional[KeyManager] = None,
         auth_handler: Optional[AuthHandler] = None,
+        knowledge_bridge: Optional[CommerceKnowledgeBridge] = None,
+        vector_sync_enabled: bool = True,
     ):
         self._repository = repository or IntegrationConnectionMongoRepository()
         self._mapping_engine = mapping_engine or MappingEngine()
         self._key_manager = key_manager or KeyManager()
         self._auth_handler = auth_handler or AuthHandler()
+        self._knowledge_bridge = knowledge_bridge
+        self._vector_sync_enabled = vector_sync_enabled
 
     async def sync_connection(self, connection_id: str) -> SyncResult:
         connection = await self._repository.find_by_id(connection_id)
@@ -169,6 +176,7 @@ class SyncOrchestrator:
             return
 
         pagination_config = entity_mapping.pagination or PaginationConfig(style=PaginationStyle.NONE)
+        mapped_records: list[dict] = []
 
         try:
             async for page in PaginationIterator(
@@ -185,10 +193,19 @@ class SyncOrchestrator:
                     entity_mapping=entity_mapping,
                     entity_result=entity_result,
                     writer=writer,
+                    mapped_records=mapped_records,
                 )
         except Exception as e:
             logger.exception("Error syncing entity type '%s'", entity_mapping.entity_type)
             entity_result.errors.append(f"Sync failed: {e}")
+
+        if self._vector_sync_enabled and mapped_records:
+            await self._sync_to_vector_store(
+                connection=connection,
+                entity_type=entity_mapping.entity_type,
+                records=mapped_records,
+                entity_result=entity_result,
+            )
 
     async def _process_page(
         self,
@@ -197,6 +214,7 @@ class SyncOrchestrator:
         entity_mapping: EntityMapping,
         entity_result: EntitySyncResult,
         writer: EntityWriter,
+        mapped_records: Optional[list[dict]] = None,
     ) -> None:
         items = page.data
         if not isinstance(items, list):
@@ -226,9 +244,30 @@ class SyncOrchestrator:
                 )
                 if upserted:
                     entity_result.total_upserted += 1
+
+                if mapped_records is not None:
+                    mapped_records.append(dict(mapped.data))
             except Exception as e:
                 logger.exception("Error processing item in entity '%s'", entity_mapping.entity_type)
                 entity_result.errors.append(f"Item processing error: {e}")
+
+    async def _sync_to_vector_store(
+        self,
+        connection: IntegrationConnection,
+        entity_type: str,
+        records: list[dict],
+        entity_result: EntitySyncResult,
+    ) -> None:
+        bridge = self._knowledge_bridge or CommerceKnowledgeBridge()
+        vs_result = await bridge.sync_entity(
+            store_id=connection.store_id,
+            organization_id=connection.organization_id,
+            entity_type=entity_type,
+            records=records,
+        )
+        entity_result.vector_sync = vs_result.to_dict()
+        if vs_result.errors:
+            entity_result.errors.extend(vs_result.errors)
 
     def _resolve_base_url(self, connection: IntegrationConnection) -> str:
         for ep in connection.discovered_endpoints:

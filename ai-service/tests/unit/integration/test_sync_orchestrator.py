@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
 
+from app.application.integration.sync.knowledge_bridge import CommerceKnowledgeBridge
 from app.application.integration.sync.orchestrator import SyncOrchestrator, EntitySyncResult, SyncResult
 from app.application.integration.sync.writers import (
     ProductWriter,

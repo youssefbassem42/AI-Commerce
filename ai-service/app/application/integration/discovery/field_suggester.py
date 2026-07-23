@@ -55,6 +55,9 @@ class FieldSuggester:
         canonical = CANONICAL_FIELDS.get(entity_type, set())
         results: list[SuggestedMapping] = []
 
+        if not canonical:
+            return self._suggest_identity_mappings(external_fields)
+
         for ext_field in external_fields:
             ext_clean = ext_field.lower().replace("-", "_").strip()
 
@@ -96,4 +99,33 @@ class FieldSuggester:
                     )
                 )
 
+        return results
+
+    @staticmethod
+    def _suggest_identity_mappings(external_fields: set[str]) -> list[SuggestedMapping]:
+        """For unknown entity types create identity mappings so raw data is preserved."""
+        id_field = None
+        for candidate in ("id", "external_id", "source_id", "remote_id"):
+            if candidate in external_fields or candidate.replace("_", "") in {f.replace("_", "") for f in external_fields}:
+                id_field = candidate
+                break
+        results: list[SuggestedMapping] = []
+        for f in external_fields:
+            results.append(
+                SuggestedMapping(
+                    source=f,
+                    target=f,
+                    confidence=1.0,
+                    transformer=None,
+                )
+            )
+            if f == id_field:
+                results.append(
+                    SuggestedMapping(
+                        source=f,
+                        target="external_id",
+                        confidence=0.8,
+                        transformer=None,
+                    )
+                )
         return results

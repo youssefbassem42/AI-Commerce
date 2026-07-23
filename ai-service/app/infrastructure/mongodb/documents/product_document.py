@@ -12,15 +12,15 @@ from app.infrastructure.mongodb.documents.base_document import BaseMongoDocument
 
 
 class MoneyModel(BaseModel):
-    amount: Decimal = Field(..., ge=0)
+    amount: float = Field(..., ge=0)
     currency: str = Field(default="USD", min_length=3, max_length=3)
 
     def to_vo(self) -> Money:
-        return Money(amount=self.amount, currency=self.currency)
+        return Money(amount=Decimal(str(self.amount)), currency=self.currency)
 
     @classmethod
     def from_vo(cls, vo: Money) -> "MoneyModel":
-        return cls(amount=vo.amount, currency=vo.currency)
+        return cls(amount=float(vo.amount), currency=vo.currency)
 
 
 class ImageModel(BaseModel):
@@ -83,7 +83,7 @@ class VariantModel(BaseModel):
     price: MoneyModel
     compare_at_price: Optional[MoneyModel] = None
     inventory_quantity: int = 0
-    weight: Optional[Decimal] = None
+    weight: Optional[float] = None
     dimensions: Optional[str] = None
 
     def to_entity(self) -> Variant:
@@ -107,7 +107,7 @@ class VariantModel(BaseModel):
             price=MoneyModel.from_vo(entity.price),
             compare_at_price=MoneyModel.from_vo(entity.compare_at_price) if entity.compare_at_price else None,
             inventory_quantity=entity.inventory_quantity,
-            weight=entity.weight,
+            weight=float(entity.weight) if entity.weight is not None else None,
             dimensions=entity.dimensions,
         )
 

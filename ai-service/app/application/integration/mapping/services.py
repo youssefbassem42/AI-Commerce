@@ -1,6 +1,7 @@
 import json
 import logging
 from typing import Optional
+from bson import ObjectId
 
 from app.application.integration.discovery.endpoint_classifier import EndpointClassifier
 from app.application.integration.discovery.entity_detector import EntityDetector
@@ -210,7 +211,7 @@ class IntegrationApplicationService:
             }
 
         entity = IntegrationConnection(
-            id="",
+            id=str(ObjectId()),
             store_id=data.store_id,
             organization_id=data.organization_id,
             name=data.name,

@@ -40,7 +40,7 @@ class AuditInfoDTO(BaseModel):
 
 
 class VariantDTO(BaseModel):
-    id: str
+    id: str = ""
     sku: str
     title: str
     price: MoneyDTO
@@ -51,7 +51,7 @@ class VariantDTO(BaseModel):
 
 
 class ProductOptionDTO(BaseModel):
-    id: str
+    id: str = ""
     name: str
     values: list[str] = []
 
