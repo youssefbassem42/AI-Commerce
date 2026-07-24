@@ -428,6 +428,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AI_Sales_Agent.Controllers.ConversationsController",
+    "Method": "GetConversations",
+    "RelativePath": "api/stores/{storeId}/conversations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "storeId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AI_Sales_Agent.Controllers.ConversationsController",
+    "Method": "GetMessages",
+    "RelativePath": "api/stores/{storeId}/conversations/{conversationId}/messages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "storeId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "conversationId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AI_Sales_Agent.Features.Stores.StoresController",
     "Method": "UpdateStoreSettings",
     "RelativePath": "api/stores/{storeId}/settings",

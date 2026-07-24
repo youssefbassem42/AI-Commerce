@@ -149,4 +149,10 @@ C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\n
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.pdb
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\AI-Sales Agent.genruntimeconfig.cache
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\ref\AI-Sales Agent.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\DnsClient.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\MongoDB.Bson.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\MongoDB.Driver.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\SharpCompress.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\Snappier.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Debug\net9.0\ZstdSharp.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

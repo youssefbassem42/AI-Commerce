@@ -38,6 +38,17 @@ namespace AI_Sales_Agent
                     builder.Configuration.GetConnectionString("DefaultConnection"),
                     sqlOptions => sqlOptions.EnableRetryOnFailure()));
 
+            // Register MongoDB Services
+            var mongoConnectionString = builder.Configuration.GetValue<string>("MongoSettings:ConnectionString") ?? "mongodb://localhost:27017";
+            var mongoDatabaseName = builder.Configuration.GetValue<string>("MongoSettings:DatabaseName") ?? "ai_commerce";
+
+            builder.Services.AddSingleton<MongoDB.Driver.IMongoClient>(_ => new MongoDB.Driver.MongoClient(mongoConnectionString));
+            builder.Services.AddScoped<MongoDB.Driver.IMongoDatabase>(sp => 
+            {
+                var client = sp.GetRequiredService<MongoDB.Driver.IMongoClient>();
+                return client.GetDatabase(mongoDatabaseName);
+            });
+
             builder.Services
                 .AddIdentity<User, IdentityRole<Guid>>(options =>
                 {
