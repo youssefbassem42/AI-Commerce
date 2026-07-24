@@ -443,6 +443,18 @@
         }
       }
     },
+    "/api/health/mongo": {
+      "get": {
+        "tags": [
+          "MongoHealth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/admin/plans": {
       "get": {
         "tags": [

@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace AI_Sales_Agent.Domain.Mongo
 {
+    [BsonIgnoreExtraElements(Inherited = true)]
     public abstract class MongoBaseDocument
     {
         [BsonId]

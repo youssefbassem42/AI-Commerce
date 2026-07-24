@@ -12,5 +12,8 @@ namespace AI_Sales_Agent.Domain.Mongo
 
         [BsonElement("status")]
         public string Status { get; set; } = "active";
+
+        [BsonElement("messages")]
+        public List<MessageDocument>? Messages { get; set; }
     }
 }

@@ -44,7 +44,7 @@ namespace AI_Sales_Agent.Domain.Mongo
         public bool IsCurrent { get; set; }
 
         [BsonElement("created_at")]
-        public object? CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 
     public class KnowledgeDocumentModel : MongoBaseDocument
@@ -105,5 +105,20 @@ namespace AI_Sales_Agent.Domain.Mongo
 
         [BsonElement("chunking_strategy")]
         public string ChunkingStrategy { get; set; } = "manual";
+
+        [BsonElement("processed_text")]
+        public string? ProcessedText { get; set; }
+
+        [BsonElement("page_count")]
+        public int? PageCount { get; set; }
+
+        [BsonElement("word_count")]
+        public int? WordCount { get; set; }
+
+        [BsonElement("char_count")]
+        public int? CharCount { get; set; }
+
+        [BsonElement("estimated_tokens")]
+        public int? EstimatedTokens { get; set; }
     }
 }

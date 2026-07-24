@@ -309,6 +309,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AI_Sales_Agent.Controllers.MongoHealthController",
+    "Method": "Check",
+    "RelativePath": "api/health/mongo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AI_Sales_Agent.Features.Stores.StoresController",
     "Method": "GetStores",
     "RelativePath": "api/stores",

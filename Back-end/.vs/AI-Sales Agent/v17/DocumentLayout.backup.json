@@ -53,8 +53,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 362,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\appsettings.json",
+              "RelativeDocumentMoniker": "AI-Sales Agent\\appsettings.json",
+              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\appsettings.json",
+              "RelativeToolTip": "AI-Sales Agent\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-16T12:09:38.634Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -65,8 +78,7 @@
               "RelativeToolTip": "AI-Sales Agent\\Data\\DbInitializer.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-23T16:07:27.973Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-23T16:07:27.973Z"
             },
             {
               "$type": "Document",
@@ -78,8 +90,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ViewState": "AgIAAGsbAAAAAAAAAAAQwHYbAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-07-18T16:08:32.688Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-18T16:08:32.688Z"
             },
             {
               "$type": "Document",
@@ -92,19 +103,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-17T10:46:50.571Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\appsettings.json",
-              "RelativeDocumentMoniker": "AI-Sales Agent\\appsettings.json",
-              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\appsettings.json",
-              "RelativeToolTip": "AI-Sales Agent\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-16T12:09:38.634Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -207,10 +205,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

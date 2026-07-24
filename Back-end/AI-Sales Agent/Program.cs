@@ -8,6 +8,7 @@ using AI_Sales_Agent.Infrastructure.Audit;
 using AI_Sales_Agent.Infrastructure.Auth;
 using AI_Sales_Agent.Infrastructure.Email;
 using AI_Sales_Agent.Infrastructure.Errors;
+using AI_Sales_Agent.Infrastructure.Mongo;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -16,6 +17,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MongoDB.Driver;
 
 namespace AI_Sales_Agent
 {
@@ -38,16 +40,34 @@ namespace AI_Sales_Agent
                     builder.Configuration.GetConnectionString("DefaultConnection"),
                     sqlOptions => sqlOptions.EnableRetryOnFailure()));
 
-            // Register MongoDB Services
-            var mongoConnectionString = builder.Configuration.GetValue<string>("MongoSettings:ConnectionString") ?? "mongodb://localhost:27017";
-            var mongoDatabaseName = builder.Configuration.GetValue<string>("MongoSettings:DatabaseName") ?? "ai_commerce";
-
-            builder.Services.AddSingleton<MongoDB.Driver.IMongoClient>(_ => new MongoDB.Driver.MongoClient(mongoConnectionString));
-            builder.Services.AddScoped<MongoDB.Driver.IMongoDatabase>(sp => 
+            builder.Services.Configure<MongoSettings>(
+                builder.Configuration.GetSection(MongoSettings.SectionName));
+            builder.Services.PostConfigure<MongoSettings>(options =>
             {
-                var client = sp.GetRequiredService<MongoDB.Driver.IMongoClient>();
-                return client.GetDatabase(mongoDatabaseName);
+                options.KnowledgeDocumentsCollection = builder.Configuration["KNOWLEDGE_DOCUMENTS_COLLECTION"]
+                    ?? options.KnowledgeDocumentsCollection;
+                options.KnowledgeChunksCollection = builder.Configuration["KNOWLEDGE_CHUNKS_COLLECTION"]
+                    ?? options.KnowledgeChunksCollection;
+                options.KnowledgeSummariesCollection = builder.Configuration["KNOWLEDGE_SUMMARIES_COLLECTION"]
+                    ?? options.KnowledgeSummariesCollection;
+                options.KnowledgeUploadsCollection = builder.Configuration["KNOWLEDGE_UPLOADS_COLLECTION"]
+                    ?? options.KnowledgeUploadsCollection;
             });
+
+            builder.Services.AddSingleton<IMongoClient>(_ =>
+            {
+                var mongoSettings = builder.Configuration
+                    .GetSection(MongoSettings.SectionName)
+                    .Get<MongoSettings>() ?? new MongoSettings();
+                var clientSettings = MongoClientSettings.FromConnectionString(mongoSettings.ConnectionString);
+                clientSettings.MinConnectionPoolSize = mongoSettings.MinConnectionPoolSize;
+                clientSettings.MaxConnectionPoolSize = mongoSettings.MaxConnectionPoolSize;
+
+                return new MongoClient(clientSettings);
+            });
+            builder.Services.AddScoped<IMongoDbContext, MongoDbContext>();
+            builder.Services.AddScoped<IMongoDatabase>(sp =>
+                sp.GetRequiredService<IMongoDbContext>().Database);
 
             builder.Services
                 .AddIdentity<User, IdentityRole<Guid>>(options =>

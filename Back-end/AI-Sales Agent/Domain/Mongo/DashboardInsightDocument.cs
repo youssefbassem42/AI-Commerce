@@ -12,5 +12,8 @@ namespace AI_Sales_Agent.Domain.Mongo
 
         [BsonElement("metadata")]
         public Dictionary<string, object> Metadata { get; set; } = new();
+
+        [BsonElement("calculated_at")]
+        public DateTime CalculatedAt { get; set; } = DateTime.UtcNow;
     }
 }

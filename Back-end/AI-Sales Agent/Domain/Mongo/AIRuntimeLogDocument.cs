@@ -25,6 +25,9 @@ namespace AI_Sales_Agent.Domain.Mongo
         [BsonElement("details")]
         public Dictionary<string, object> Details { get; set; } = new();
 
+        [BsonElement("prompt_histories")]
+        public List<Dictionary<string, object>>? PromptHistories { get; set; }
+
         [BsonElement("timestamp")]
         public DateTime Timestamp { get; set; } = DateTime.UtcNow;
     }
