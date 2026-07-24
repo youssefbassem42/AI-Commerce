@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "RaZXnfJnT1E=",
   "success": true,
-  "projectFilePath": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\Source\\Repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
@@ -107,9 +107,9 @@
       "code": "NU1608",
       "level": "Warning",
       "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 14.2.0 was resolved.",
-      "projectPath": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
+      "projectPath": "C:\\Users\\DELL\\Source\\Repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
+      "filePath": "C:\\Users\\DELL\\Source\\Repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
       "libraryId": "MediatR",
       "targetGraphs": [
         "net9.0"

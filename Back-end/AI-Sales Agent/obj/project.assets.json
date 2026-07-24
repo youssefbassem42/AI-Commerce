@@ -4854,11 +4854,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Source\\Repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
       "projectName": "AI-Sales Agent",
-      "projectPath": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
+      "projectPath": "C:\\Users\\DELL\\Source\\Repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\obj\\",
+      "outputPath": "C:\\Users\\DELL\\Source\\Repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
