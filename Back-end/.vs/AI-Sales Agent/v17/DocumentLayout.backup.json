@@ -1,44 +1,56 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\",
+  "WorkspaceRootPath": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\iti matrial\\gradution_project\\ai-commerce\\back-end\\ai-sales agent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\controllers\\conversationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\controllers\\conversationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\ai-sales agent.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\ai-sales agent.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\iti matrial\\gradution_project\\ai-commerce\\back-end\\ai-sales agent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\iti matrial\\gradution_project\\ai-commerce\\back-end\\ai-sales agent\\features\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\features\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\features\\auth\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\iti matrial\\gradution_project\\ai-commerce\\back-end\\ai-sales agent\\domain\\planfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\domain\\planfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\domain\\planfeature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\iti matrial\\gradution_project\\ai-commerce\\back-end\\ai-sales agent\\domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\iti matrial\\gradution_project\\ai-commerce\\back-end\\ai-sales agent\\domain\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\domain\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\domain\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\iti matrial\\gradution_project\\ai-commerce\\back-end\\ai-sales agent\\domain\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\domain\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\domain\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\iti matrial\\gradution_project\\ai-commerce\\back-end\\ai-sales agent\\domain\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\domain\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\domain\\store.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\iti matrial\\gradution_project\\ai-commerce\\back-end\\ai-sales agent\\domain\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|c:\\users\\dell\\source\\repos\\ai-commerce\\back-end\\ai-sales agent\\domain\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E75B26C5-C651-491C-8167-6E569DDFC0D1}|AI-Sales Agent\\AI-Sales Agent.csproj|solutionrelative:ai-sales agent\\domain\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -49,41 +61,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 362,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAAGsbAAAAAAAAAAAQwHYbAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-07-18T16:08:32.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Program.cs",
-              "RelativeDocumentMoniker": "AI-Sales Agent\\Program.cs",
-              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Program.cs",
-              "RelativeToolTip": "AI-Sales Agent\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-17T10:46:50.571Z",
+              "Title": "AI-Sales Agent",
+              "DocumentMoniker": "C:\\Users\\DELL\\Source\\Repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
+              "RelativeDocumentMoniker": "AI-Sales Agent\\AI-Sales Agent.csproj",
+              "ToolTip": "C:\\Users\\DELL\\Source\\Repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\AI-Sales Agent.csproj",
+              "RelativeToolTip": "AI-Sales Agent\\AI-Sales Agent.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-24T10:10:00.751Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\appsettings.json",
               "RelativeDocumentMoniker": "AI-Sales Agent\\appsettings.json",
-              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\appsettings.json",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\appsettings.json",
               "RelativeToolTip": "AI-Sales Agent\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -93,36 +92,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Features\\Auth\\AuthController.cs",
-              "RelativeDocumentMoniker": "AI-Sales Agent\\Features\\Auth\\AuthController.cs",
-              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Features\\Auth\\AuthController.cs",
-              "RelativeToolTip": "AI-Sales Agent\\Features\\Auth\\AuthController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Data\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "AI-Sales Agent\\Data\\DbInitializer.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Data\\DbInitializer.cs",
+              "RelativeToolTip": "AI-Sales Agent\\Data\\DbInitializer.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-16T11:55:46.264Z",
+              "WhenOpened": "2026-07-23T16:07:27.973Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAGsbAAAAAAAAAAAQwHYbAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-07-18T16:08:32.688Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PlanFeature.cs",
-              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\PlanFeature.cs",
-              "RelativeDocumentMoniker": "AI-Sales Agent\\Domain\\PlanFeature.cs",
-              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\PlanFeature.cs",
-              "RelativeToolTip": "AI-Sales Agent\\Domain\\PlanFeature.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA1AAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Program.cs",
+              "RelativeDocumentMoniker": "AI-Sales Agent\\Program.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Program.cs",
+              "RelativeToolTip": "AI-Sales Agent\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-14T17:54:19.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-17T10:46:50.571Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Features\\Auth\\AuthController.cs",
+              "RelativeDocumentMoniker": "AI-Sales Agent\\Features\\Auth\\AuthController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Features\\Auth\\AuthController.cs",
+              "RelativeToolTip": "AI-Sales Agent\\Features\\Auth\\AuthController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T11:55:46.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlanFeature.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\PlanFeature.cs",
+              "RelativeDocumentMoniker": "AI-Sales Agent\\Domain\\PlanFeature.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\PlanFeature.cs",
+              "RelativeToolTip": "AI-Sales Agent\\Domain\\PlanFeature.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:54:19.122Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "BaseEntity.cs",
-              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\BaseEntity.cs",
               "RelativeDocumentMoniker": "AI-Sales Agent\\Domain\\BaseEntity.cs",
-              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\BaseEntity.cs",
               "RelativeToolTip": "AI-Sales Agent\\Domain\\BaseEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -130,11 +164,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Store.cs",
-              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Store.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Store.cs",
               "RelativeDocumentMoniker": "AI-Sales Agent\\Domain\\Store.cs",
-              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Store.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Store.cs",
               "RelativeToolTip": "AI-Sales Agent\\Domain\\Store.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -142,35 +176,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Subscription.cs",
-              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Subscription.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Subscription.cs",
               "RelativeDocumentMoniker": "AI-Sales Agent\\Domain\\Subscription.cs",
-              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Subscription.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Subscription.cs",
               "RelativeToolTip": "AI-Sales Agent\\Domain\\Subscription.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-14T17:27:11.624Z"
+              "WhenOpened": "2026-07-14T17:27:11.624Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\User.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\User.cs",
               "RelativeDocumentMoniker": "AI-Sales Agent\\Domain\\User.cs",
-              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\User.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\User.cs",
               "RelativeToolTip": "AI-Sales Agent\\Domain\\User.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-14T10:56:25.421Z"
+              "WhenOpened": "2026-07-14T10:56:25.421Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Plan.cs",
-              "DocumentMoniker": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Plan.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Plan.cs",
               "RelativeDocumentMoniker": "AI-Sales Agent\\Domain\\Plan.cs",
-              "ToolTip": "C:\\ITI Matrial\\Gradution_Project\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Plan.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Domain\\Plan.cs",
               "RelativeToolTip": "AI-Sales Agent\\Domain\\Plan.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -180,8 +216,25 @@
         },
         {
           "DockedWidth": 924,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ConversationsController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Controllers\\ConversationsController.cs",
+              "RelativeDocumentMoniker": "AI-Sales Agent\\Controllers\\ConversationsController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\AI-Commerce\\Back-end\\AI-Sales Agent\\Controllers\\ConversationsController.cs",
+              "RelativeToolTip": "AI-Sales Agent\\Controllers\\ConversationsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-24T10:17:09.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
