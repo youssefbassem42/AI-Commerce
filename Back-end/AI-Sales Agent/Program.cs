@@ -183,6 +183,7 @@ namespace AI_Sales_Agent
                 configuration.RegisterServicesFromAssembly(typeof(Program).Assembly));
             builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
             builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            builder.Services.AddSingleton<MongoDbContext>();
 
             var app = builder.Build();
 
