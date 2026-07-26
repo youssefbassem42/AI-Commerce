@@ -7,6 +7,7 @@ C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Azure.Core.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Azure.Identity.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Carter.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\DnsClient.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\FluentValidation.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\FluentValidation.DependencyInjectionExtensions.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\MediatR.dll
@@ -34,6 +35,10 @@ C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Microsoft.OpenApi.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Microsoft.SqlServer.Server.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\MongoDB.Bson.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\MongoDB.Driver.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\SharpCompress.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Snappier.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -47,6 +52,7 @@ C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\System.Security.Permissions.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\System.Windows.Extensions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\ZstdSharp.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\PubTmp\Out\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll

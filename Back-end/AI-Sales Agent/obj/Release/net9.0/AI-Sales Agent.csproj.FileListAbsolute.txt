@@ -302,3 +302,9 @@ C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\AI-Sales Agent.genruntimeconfig.cache
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\ref\AI-Sales Agent.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\obj\Release\net9.0\staticwebassets.upToDateCheck.txt
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\DnsClient.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\MongoDB.Bson.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\MongoDB.Driver.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\SharpCompress.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\Snappier.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\ZstdSharp.dll
