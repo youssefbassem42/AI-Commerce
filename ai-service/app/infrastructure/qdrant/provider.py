@@ -376,11 +376,7 @@ class QdrantProvider(VectorStore):
                     score=hit.score,
                     payload=hit.payload or {},
                 )
-<<<<<<< HEAD
-                for hit in result.points
-=======
-                for hit in response.points
->>>>>>> Pre-Integration-Infra
+for hit in result.points
             ]
         except Exception:
             logger.error(
