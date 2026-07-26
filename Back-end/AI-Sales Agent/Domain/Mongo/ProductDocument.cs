@@ -8,7 +8,7 @@ namespace AI_Sales_Agent.Domain.Mongo
         public string StoreId { get; set; } = string.Empty;
 
         [BsonElement("organization_id")]
-        public string OrganizationId { get; set; } = string.Empty;
+        public string? OrganizationId { get; set; }
 
         [BsonElement("external_id")]
         public string? ExternalId { get; set; }

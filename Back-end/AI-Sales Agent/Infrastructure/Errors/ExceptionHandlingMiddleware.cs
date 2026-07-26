@@ -6,11 +6,16 @@ namespace AI_Sales_Agent.Infrastructure.Errors
     {
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionHandlingMiddleware> _logger;
+        private readonly IWebHostEnvironment _environment;
 
-        public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
+        public ExceptionHandlingMiddleware(
+            RequestDelegate next,
+            ILogger<ExceptionHandlingMiddleware> logger,
+            IWebHostEnvironment environment)
         {
             _next = next;
             _logger = logger;
+            _environment = environment;
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -40,10 +45,19 @@ namespace AI_Sales_Agent.Infrastructure.Errors
             {
                 _logger.LogError(exception, "Unhandled exception.");
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                await context.Response.WriteAsJsonAsync(new
-                {
-                    message = "An unexpected error occurred."
-                });
+                object response = _environment.IsDevelopment()
+                    ? new
+                    {
+                        message = "An unexpected error occurred.",
+                        detail = exception.Message,
+                        exceptionType = exception.GetType().Name
+                    }
+                    : new
+                    {
+                        message = "An unexpected error occurred."
+                    };
+
+                await context.Response.WriteAsJsonAsync(response);
             }
         }
     }
