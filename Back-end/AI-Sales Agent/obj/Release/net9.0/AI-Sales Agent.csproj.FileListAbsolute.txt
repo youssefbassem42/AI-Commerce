@@ -308,3 +308,6 @@ C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\SharpCompress.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\Snappier.dll
 C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\ZstdSharp.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\MassTransit.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\MassTransit.Abstractions.dll
+C:\ITI Matrial\Gradution_Project\AI-Commerce\Back-end\AI-Sales Agent\bin\Release\net9.0\AI-Sales Agent.staticwebassets.runtime.json

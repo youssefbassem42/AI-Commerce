@@ -1,4 +1,3 @@
-﻿
 using Microsoft.AspNetCore.Identity;
 
 namespace AI_Sales_Agent.Domain
@@ -8,7 +7,9 @@ namespace AI_Sales_Agent.Domain
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
 
-        public DateTime? LastLogin {  get; set; } 
+        public DateTime? LastLogin { get; set; }
+
+        public string? ProfilePictureUrl { get; set; }
 
         //Subscription
         public Subscription? Subscription { get; set; }

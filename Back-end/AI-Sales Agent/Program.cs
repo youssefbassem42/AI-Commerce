@@ -209,6 +209,7 @@ namespace AI_Sales_Agent
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
             app.UseAuthentication();
             app.UseAuthorization();
