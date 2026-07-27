@@ -8,6 +8,7 @@ using AI_Sales_Agent.Features.Plans.GetPlanById;
 
 using Microsoft.AspNetCore.Authorization;
 using AI_Sales_Agent.Infrastructure.Auth;
+using MassTransit.Mediator;
 
 namespace AI_Sales_Agent.Controllers;
 
