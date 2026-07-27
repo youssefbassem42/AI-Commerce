@@ -319,6 +319,42 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AI_Sales_Agent.Controllers.SubscriptionsSellerController",
+    "Method": "CancelSubscription",
+    "RelativePath": "api/seller/subscriptions/cancel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AI_Sales_Agent.Controllers.SubscriptionsSellerController",
+    "Method": "GetMySubscription",
+    "RelativePath": "api/seller/subscriptions/my-subscription",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AI_Sales_Agent.Controllers.SubscriptionsSellerController",
+    "Method": "SubscribeOrChangePlan",
+    "RelativePath": "api/seller/subscriptions/subscribe",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "AI_Sales_Agent.Features.Subscriptions.SubscribeToPlan.SubscribeToPlanCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AI_Sales_Agent.Features.Stores.StoresController",
     "Method": "GetStores",
     "RelativePath": "api/stores",
