@@ -32,6 +32,16 @@ namespace AI_Sales_Agent.Features.Stores.CreateStore
                 throw new UnauthorizedAccessException("User is not authenticated.");
             }
 
+            var hasActiveSubscription = await _dbContext.Subscriptions
+                .AnyAsync(s => s.UserId == userId
+                    && s.Status == "Active"
+                    && s.DeletedAt == null, cancellationToken);
+
+            if (!hasActiveSubscription)
+            {
+                throw new BadHttpRequestException("Cannot create a store. You must have an active plan subscription.");
+            }
+
             var normalizedDomain = request.ShopDomain.Trim().ToLower();
             var domainExists = await _dbContext.Stores
                 .AnyAsync(s => s.ShopDomain.ToLower() == normalizedDomain && s.DeletedAt == null, cancellationToken);
