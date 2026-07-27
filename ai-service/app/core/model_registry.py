@@ -149,6 +149,43 @@ class ModelRegistry:
             pricing=ModelPricing(prompt_cost_per_1m=15.00, completion_cost_per_1m=75.00)
         ),
 
+        # OpenRouter Models (routed through openrouter.ai)
+        "openai/gpt-4o-mini": ModelInfo(
+            name="openai/gpt-4o-mini",
+            provider="openrouter",
+            capabilities=ModelCapabilities(vision=True, json_mode=True, tool_calling=True, streaming=True),
+            context_length=128000,
+            pricing=ModelPricing(prompt_cost_per_1m=0.150, completion_cost_per_1m=0.600)
+        ),
+        "openai/gpt-4o": ModelInfo(
+            name="openai/gpt-4o",
+            provider="openrouter",
+            capabilities=ModelCapabilities(vision=True, json_mode=True, tool_calling=True, streaming=True),
+            context_length=128000,
+            pricing=ModelPricing(prompt_cost_per_1m=2.50, completion_cost_per_1m=10.00)
+        ),
+        "google/gemini-2.0-flash-001": ModelInfo(
+            name="google/gemini-2.0-flash-001",
+            provider="openrouter",
+            capabilities=ModelCapabilities(vision=True, json_mode=True, tool_calling=True, streaming=True),
+            context_length=1048576,
+            pricing=ModelPricing(prompt_cost_per_1m=0.10, completion_cost_per_1m=0.40)
+        ),
+        "anthropic/claude-3-5-haiku": ModelInfo(
+            name="anthropic/claude-3-5-haiku",
+            provider="openrouter",
+            capabilities=ModelCapabilities(vision=True, json_mode=True, tool_calling=True, streaming=True),
+            context_length=200000,
+            pricing=ModelPricing(prompt_cost_per_1m=0.80, completion_cost_per_1m=4.00)
+        ),
+        "mistralai/mistral-small-3.1-24b-instruct": ModelInfo(
+            name="mistralai/mistral-small-3.1-24b-instruct",
+            provider="openrouter",
+            capabilities=ModelCapabilities(vision=False, json_mode=True, tool_calling=True, streaming=True),
+            context_length=128000,
+            pricing=ModelPricing(prompt_cost_per_1m=0.0, completion_cost_per_1m=0.0)
+        ),
+
         # DeepSeek Models
         "deepseek-chat": ModelInfo(
             name="deepseek-chat",

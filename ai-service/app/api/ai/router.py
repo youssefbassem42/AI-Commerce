@@ -6,6 +6,7 @@ from fastapi.responses import StreamingResponse
 from app.api.ai.schemas import (
     ChatRequestSchema,
     ChatResponseSchema,
+    MessageSchema,
     StreamingSchema,
     StructuredOutputSchema,
     EmbeddingSchema,
@@ -22,6 +23,21 @@ from app.core.ai_settings import ai_settings
 
 router = APIRouter(prefix="/api/v1/ai", tags=["AI"])
 
+ECOMMERCE_SYSTEM_PROMPT = (
+    "You are an AI assistant for an e-commerce SaaS platform called DigitalHippo. "
+    "You help store owners and customers with product inquiries, order management, "
+    "catalog questions, promo codes, discounts, gift cards, shipping, and general "
+    "store operations. When discussing technical integration, refer to the store's "
+    "connected API capabilities. If you don't know something, say so honestly. "
+    "Always be helpful, concise, and focused on e-commerce tasks."
+)
+
+def _inject_ecommerce_system_message(messages: list[MessageSchema]) -> list[MessageSchema]:
+    has_system = any(m.role == "system" for m in messages)
+    if has_system:
+        return messages
+    return [MessageSchema(role="system", content=ECOMMERCE_SYSTEM_PROMPT)] + messages
+
 @router.post("/chat", response_model=ChatResponseSchema)
 async def chat(
     request: ChatRequestSchema,
@@ -31,9 +47,10 @@ async def chat(
     """
     Generate chat completion response.
     Supports temperature, top_p, max_tokens, json_mode, and automatic fallbacks.
+    Injects e-commerce system prompt if no system message is present.
     """
     try:
-        # Convert schema to application DTO
+        request.messages = _inject_ecommerce_system_message(request.messages)
         request_dto = ChatRequest(**request.model_dump())
         response_dto = await ai_service.chat(request_dto, conversation_id=conversation_id)
         return response_dto
@@ -50,8 +67,10 @@ async def chat_stream(
 ) -> StreamingResponse:
     """
     Stream chat completion response back in SSE (Server-Sent Events) format.
+    Injects e-commerce system prompt if no system message is present.
     """
     try:
+        request.messages = _inject_ecommerce_system_message(request.messages)
         request_dto = ChatRequest(**request.model_dump())
         
         async def event_generator():

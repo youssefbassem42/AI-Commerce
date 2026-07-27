@@ -373,7 +373,7 @@ class QdrantProvider(VectorStore):
                     score=hit.score,
                     payload=hit.payload or {},
                 )
-for hit in result.points
+                for hit in response.points
             ]
         except Exception:
             logger.error(

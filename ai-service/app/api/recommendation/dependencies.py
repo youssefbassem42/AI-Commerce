@@ -16,7 +16,7 @@ from app.infrastructure.providers.factory import LLMProviderFactory
 
 
 def get_recommendation_llm() -> BaseLLMProvider:
-    return LLMProviderFactory().get_provider("openai")
+    return LLMProviderFactory().get_provider("openrouter")
 
 
 async def get_recommendation_service(

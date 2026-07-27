@@ -81,7 +81,8 @@ class BaseMongoRepository(AsyncRepository[EntityType, str], Generic[DocType, Ent
         try:
             doc = self.doc_class.from_entity(entity)
             data = doc.to_mongo_dict()
-            await self.collection.insert_one(data, session=session)
+            result = await self.collection.insert_one(data, session=session)
+            entity.id = str(result.inserted_id)
             await self._flush_domain_events(entity)
             return entity
         except Exception as e:

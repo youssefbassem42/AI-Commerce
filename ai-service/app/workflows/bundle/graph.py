@@ -28,9 +28,11 @@ class BundleSuggestionWorkflow:
         query: str,
         store_id: str,
         customer_id: Optional[str] = None,
+        store_capabilities: Optional[dict[str, bool]] = None,
     ) -> BundleResponse:
         return await self._agent.run(
             query=query,
             store_id=store_id,
             customer_id=customer_id,
+            store_capabilities=store_capabilities,
         )

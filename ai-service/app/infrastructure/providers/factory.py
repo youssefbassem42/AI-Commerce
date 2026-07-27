@@ -46,6 +46,10 @@ class LLMProviderFactory:
             from app.infrastructure.providers.ollama_provider import OllamaProvider
 
             provider_instance = OllamaProvider()
+        elif provider_key == "openrouter":
+            from app.infrastructure.providers.openrouter_provider import OpenRouterProvider
+
+            provider_instance = OpenRouterProvider()
         elif provider_key == "deepseek":
             from app.infrastructure.providers.deepseek_provider import DeepSeekProvider
 

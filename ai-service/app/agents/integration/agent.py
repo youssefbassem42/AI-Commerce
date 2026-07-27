@@ -19,9 +19,10 @@ from app.infrastructure.providers.factory import LLMProviderFactory
 logger = logging.getLogger(__name__)
 
 
-def _select_best_model() -> tuple[BaseLLMProvider, str]:
+async def _select_best_model() -> tuple[BaseLLMProvider, str]:
     factory = LLMProviderFactory()
     preferred = [
+        ("openrouter", "openai/gpt-4o-mini"),
         ("ollama", "llama3"),
         ("deepseek", "deepseek-chat"),
         ("openai", "gpt-4o-mini"),
@@ -31,7 +32,7 @@ def _select_best_model() -> tuple[BaseLLMProvider, str]:
             info = ModelRegistry.get_model_info(model_name)
             if info and info.capabilities.json_mode:
                 provider = factory.get_provider(provider_name)
-                health = provider.health_check()
+                health = await provider.health_check()
                 if health.status == "healthy":
                     return provider, model_name
         except Exception:
@@ -57,12 +58,9 @@ def route_after_capabilities(state: IntegrationMappingState) -> str:
 
 class IntegrationMappingAgent:
     def __init__(self, llm: Optional[BaseLLMProvider] = None, model: Optional[str] = None):
-        if llm is None:
-            self._llm, self._model = _select_best_model()
-        else:
-            self._llm = llm
-            self._model = model or "gpt-4o-mini"
-        self._graph = self._build_graph()
+        self._llm = llm
+        self._model = model
+        self._graph: Optional[StateGraph] = None
 
     def _build_graph(self) -> StateGraph:
         workflow = StateGraph(IntegrationMappingState)
@@ -112,6 +110,11 @@ class IntegrationMappingAgent:
 
     async def analyze(self, raw_spec: Any, platform_name: str, store_id: str, organization_id: str) -> tuple[Optional[IntegrationMappingReport], Optional[str], Optional[dict]]:
         start = time.perf_counter()
+
+        if self._llm is None:
+            self._llm, self._model = await _select_best_model()
+        if self._graph is None:
+            self._graph = self._build_graph()
 
         initial_state: IntegrationMappingState = {
             "raw_spec": raw_spec,

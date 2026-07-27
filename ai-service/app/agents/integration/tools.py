@@ -45,6 +45,7 @@ E_COMMERCE_FEATURES = [
 def _select_best_provider() -> tuple[BaseLLMProvider, str]:
     factory = LLMProviderFactory()
     preferred_models = [
+        ("openrouter", "openai/gpt-4o-mini", 0.15),
         ("ollama", "llama3", 0.0),
         ("deepseek", "deepseek-chat", 0.14),
         ("openai", "gpt-4o-mini", 0.15),
@@ -297,18 +298,34 @@ async def detect_store_capabilities(
     store_id: str,
 ) -> dict[str, bool]:
     unsupported_names = {f.feature_name for f in report.feature_analysis.unsupported_features}
+
+    entity_types = {e.entity_type for e in report.entities}
+
     capabilities: dict[str, bool] = {
+        "has_products": "product" in entity_types,
+        "has_orders": "order" in entity_types,
+        "has_customers": "customer" in entity_types or "user" in entity_types,
+        "has_inventory": "inventory" in entity_types,
+        "has_reviews": "review" in entity_types,
+        "has_shipments": "shipment" in entity_types or "fulfillment" in entity_types,
+        "has_payments": "payment" in entity_types,
+        "has_webhooks": "webhook" in entity_types,
         "has_promo_codes": "promo_codes_coupons" not in unsupported_names and any(
             e.entity_type in ("coupon", "discount") for e in report.entities
         ),
-        "has_products": any(e.entity_type == "product" for e in report.entities),
-        "has_orders": any(e.entity_type == "order" for e in report.entities),
-        "has_customers": any(e.entity_type == "customer" for e in report.entities),
-        "has_inventory": any(e.entity_type == "inventory" for e in report.entities),
-        "has_reviews": any(e.entity_type == "review" for e in report.entities),
-        "has_shipments": any(e.entity_type == "shipment" for e in report.entities),
-        "has_payments": any(e.entity_type == "payment" for e in report.entities),
-        "has_gift_cards": any(e.entity_type == "gift_card" for e in report.entities),
-        "has_webhooks": any(e.entity_type == "webhook" for e in report.entities),
+        "has_gift_cards": "gift_card" in entity_types,
+        "has_discounts": "discount" in entity_types,
+        "has_taxes": "tax" in entity_types,
+        "has_shipping_zones": "shipping_zone" in entity_types,
+        "has_categories": "category" in entity_types or "collection" in entity_types,
+        "has_variants": "variant" in entity_types,
+        "has_refunds": "refund" in entity_types,
+        "has_locations": "location" in entity_types,
+        "has_content_management": "blog_post" in entity_types or "page" in entity_types,
+        "has_store_settings": "store_setting" in entity_types,
+        "has_analytics": "analytics" in entity_types,
+        "has_email_marketing": "email_marketing" in entity_types,
+        "has_abandoned_cart": "abandoned_cart" in entity_types,
+        "has_wishlist": "wishlist" in entity_types,
     }
     return capabilities

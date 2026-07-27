@@ -321,6 +321,26 @@ class RagOrchestrationService:
             return
 
         messages_to_analyze = [request.message]
+
+        user_requested_human = any(
+            keyword in request.message.lower()
+            for keyword in [
+                "talk to a human", "talk to human", "speak to human",
+                "speak to a human", "human support", "real person",
+                "talk to support", "contact support", "create a ticket",
+                "create ticket", "open a ticket", "open ticket",
+                "raise a ticket", "raise ticket", "escalate",
+                "i want to speak", "connect me to", "transfer me",
+            ]
+        )
+
+        if not user_requested_human:
+            logger.info(
+                "Low confidence (%.2f) but user did not request escalation; skipping auto-ticket.",
+                response.confidence_score,
+            )
+            return
+
         if request.conversation_id and self._conversation_service:
             try:
                 history = await self._conversation_service.get_conversation_history(request.conversation_id)

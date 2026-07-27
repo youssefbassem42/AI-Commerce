@@ -36,7 +36,6 @@ class TicketAnalysisDocument(BaseMongoDocument):
     def from_entity(cls, entity: TicketAnalysis) -> "TicketAnalysisDocument":
         """Map domain Entity to MongoDB Document."""
         return cls(
-            _id=entity.id,
             ticket_id=entity.ticket_id,
             store_id=entity.store_id,
             customer_id=entity.customer_id,
